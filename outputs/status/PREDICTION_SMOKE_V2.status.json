@@ -1,0 +1,44 @@
+{
+  "step": "PREDICTION_SMOKE_V2",
+  "status": "PASS",
+  "inputs_checked": [
+    "data/labels/labels_h1_abnormal.parquet",
+    "data/indicators/technical_event_tokens_h1_v2.parquet",
+    "prompts/forecast_prediction_prompt_qwen3_json.txt",
+    "checkpoints/aligned/qwen3_4b/dpo_v2"
+  ],
+  "outputs_created": [
+    "outputs/predictions/test_predictions_qwen3_dpo_flash_medium.parquet",
+    "outputs/metrics/test_predictions_qwen3_dpo_flash_medium.json",
+    "outputs/manifests/PREDICTION_SMOKE_V2.manifest.json",
+    "outputs/status/PREDICTION_SMOKE_V2.status.json"
+  ],
+  "metrics": {
+    "rows": 5000,
+    "split": "test",
+    "checkpoint_used": "checkpoints\\aligned\\qwen3_4b\\dpo_v2",
+    "checkpoint_source": "primary",
+    "parse_ok_rate": 0.9866,
+    "schema_ok_rate": 0.9798,
+    "fallback_used": false,
+    "temperature": 0.0,
+    "do_sample": false,
+    "attn_implementation": "flash_attention_2",
+    "schema_ok_rows": 4899,
+    "parse_ok_rows": 4933,
+    "action_distribution": {
+      "hold": 2442,
+      "long": 1901,
+      "short": 556,
+      "invalid": 101
+    },
+    "selected_rows": 5000,
+    "selected_trading_days": 33,
+    "selected_start_date": "2023-01-03",
+    "selected_end_date": "2023-02-17",
+    "max_days": null,
+    "max_rows_per_day": null
+  },
+  "failures": [],
+  "next_step_allowed": true
+}

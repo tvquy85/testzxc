@@ -1,0 +1,37 @@
+{
+  "prediction_bootstrap": {
+    "comparisons": 12,
+    "bootstrap_samples": 500,
+    "metrics": [
+      "accuracy",
+      "macro_f1",
+      "mcc"
+    ],
+    "required_baselines": [
+      "B1_FinBERT_LR",
+      "B2_Technical_LightGBM",
+      "B3_News_Technical_Late_Fusion",
+      "B4_DLinear"
+    ],
+    "seeds": [
+      11,
+      22,
+      33
+    ]
+  },
+  "backtest_block_bootstrap": {
+    "comparisons": 12,
+    "bootstrap_samples": 500,
+    "block_length": 5,
+    "min_block_days": 20,
+    "cost_bps": 5.0
+  },
+  "ablations": {
+    "path": "outputs/tables/ablation_suite_results.csv",
+    "row_count": 9,
+    "status_counts": {
+      "NOT_RUN": 9
+    },
+    "not_used_as_evidence": true
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "step": "12_FLOW_REWARD_MULTITARGET_V2",
+  "status": "PASS",
+  "inputs_checked": [
+    "data/reward/flow_v2_train_dataset_stage1.pt"
+  ],
+  "outputs_created": [
+    "outputs/metrics/flow_reward_v2_train_metrics_stage1.json",
+    "outputs/manifests/12_FLOW_REWARD_MULTITARGET_V2.manifest.json",
+    "outputs/status/12_FLOW_REWARD_MULTITARGET_V2.status.json",
+    "checkpoints\\flow_reward_v2_stage1\\model.pt"
+  ],
+  "metrics": {
+    "train_loss_by_epoch": [
+      2.342401578979492,
+      1.5847458526992797,
+      1.0102553211784362
+    ],
+    "rows": 12500,
+    "target_dim": 7
+  },
+  "failures": [],
+  "next_step_allowed": true
+}

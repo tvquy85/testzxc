@@ -1,0 +1,30 @@
+{
+  "step": "21_FINAL_REPRO_PACKAGE_AND_AAAI_GATE",
+  "status": "PASS",
+  "inputs_checked": [
+    "outputs/repro/aaai_gate_report.json",
+    "configs",
+    "prompts",
+    "src",
+    "tests",
+    "outputs/tables/final",
+    "outputs/metrics",
+    "outputs/manifests"
+  ],
+  "outputs_created": [
+    "outputs/repro/firefin_repro_package.zip",
+    "outputs/repro/README_REPRODUCE.md",
+    "outputs/repro/REPRODUCIBILITY_CHECKLIST_DRAFT.md",
+    "outputs/repro/aaai_gate_report.json",
+    "outputs/manifests/21_FINAL_REPRO_PACKAGE_AND_AAAI_GATE.manifest.json",
+    "outputs/status/21_FINAL_REPRO_PACKAGE_AND_AAAI_GATE.status.json"
+  ],
+  "metrics": {
+    "decision": "GO",
+    "blocker_count": 0,
+    "included_file_count": 253,
+    "package_size_bytes": 815175
+  },
+  "failures": [],
+  "next_step_allowed": true
+}

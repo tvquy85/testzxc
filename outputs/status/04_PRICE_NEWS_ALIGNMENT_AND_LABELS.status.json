@@ -1,0 +1,16 @@
+{
+  "step": "04_PRICE_NEWS_ALIGNMENT_AND_LABELS",
+  "status": "PASS",
+  "aligned_rows": 156098,
+  "label_distribution": {
+    "Neutral": 71549,
+    "Mild Down": 37127,
+    "Mild Up": 34688,
+    "Strong Up": 6577,
+    "Strong Down": 6157
+  },
+  "leakage_flag_rate": 0.011774654383784545,
+  "date_min": "2018-03-29",
+  "date_max": "2023-12-27",
+  "notes": "Used conservative next-trading-day rule for all event dates."
+}

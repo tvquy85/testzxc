@@ -1,0 +1,13 @@
+{
+  "step": "07_RATIONALE_SCHEMA_AND_PROMPTS",
+  "status": "PASS",
+  "prompt_files": [
+    "prompts/rationale_generation_prompt.txt",
+    "prompts/proxy_inferability_judge_prompt.txt",
+    "prompts/financial_soundness_judge_prompt.txt",
+    "prompts/counterfactual_prompt.txt"
+  ],
+  "schema_file": "src/llm/rationale_schema.py",
+  "example_rendered": true,
+  "notes": "Schema validates probabilities and action consistency."
+}

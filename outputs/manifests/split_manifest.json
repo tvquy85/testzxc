@@ -1,0 +1,27 @@
+{
+  "split_policy": {
+    "train": "date <= 2021-12-31",
+    "val": "2022-01-01 <= date <= 2022-12-31",
+    "test": "date >= 2023-01-01 or remaining future dates"
+  },
+  "input": "data/labels/aligned_samples_h1.parquet",
+  "output": "data/processed/split_membership.parquet",
+  "ranges": {
+    "test": {
+      "rows": 46279,
+      "date_min": "2023-01-03",
+      "date_max": "2023-12-27"
+    },
+    "train": {
+      "rows": 80415,
+      "date_min": "2018-03-29",
+      "date_max": "2021-12-31"
+    },
+    "val": {
+      "rows": 29404,
+      "date_min": "2022-01-03",
+      "date_max": "2022-12-30"
+    }
+  },
+  "sample_id_unique": true
+}

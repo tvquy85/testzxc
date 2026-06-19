@@ -1,0 +1,39 @@
+{
+  "producer_step": "21_FINAL_REPRO_PACKAGE_AND_AAAI_GATE",
+  "run_id": null,
+  "created_at": "2026-06-19T19:26:56+00:00",
+  "artifacts": [
+    {
+      "path": "outputs/repro/firefin_repro_package.zip",
+      "row_count": null,
+      "sha256": "ceda89233996fb30982389886298d1320cc7560f030ea64fee8a0fe0bc3449f3",
+      "timestamp": "2026-06-19T19:26:56+00:00",
+      "producer_step": "21_FINAL_REPRO_PACKAGE_AND_AAAI_GATE",
+      "run_id": null
+    },
+    {
+      "path": "outputs/repro/README_REPRODUCE.md",
+      "row_count": null,
+      "sha256": "a2a6e7ef800a36c09c1c5d4cfcfeb334b1bf862c58080c1e0a1ab8531fc26b49",
+      "timestamp": "2026-06-19T19:26:56+00:00",
+      "producer_step": "21_FINAL_REPRO_PACKAGE_AND_AAAI_GATE",
+      "run_id": null
+    },
+    {
+      "path": "outputs/repro/REPRODUCIBILITY_CHECKLIST_DRAFT.md",
+      "row_count": null,
+      "sha256": "e319b57f6985cb099120566a6a5955ebb70a68efce0b043265617edf211bc05b",
+      "timestamp": "2026-06-19T19:26:56+00:00",
+      "producer_step": "21_FINAL_REPRO_PACKAGE_AND_AAAI_GATE",
+      "run_id": null
+    },
+    {
+      "path": "outputs/repro/aaai_gate_report.json",
+      "row_count": 1,
+      "sha256": "4d7f83d37e6f1c20d0033eb595c60c4b59b254b580113377af25349d62a0167e",
+      "timestamp": "2026-06-19T19:26:56+00:00",
+      "producer_step": "21_FINAL_REPRO_PACKAGE_AND_AAAI_GATE",
+      "run_id": null
+    }
+  ]
+}

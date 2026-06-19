@@ -1,0 +1,23 @@
+{
+  "producer_step": "02_CONFIG_PATHS_AND_REPRO_ENV",
+  "run_id": null,
+  "created_at": "2026-06-19T08:35:16+00:00",
+  "artifacts": [
+    {
+      "path": "outputs/audit/repro_env_report.json",
+      "row_count": 1,
+      "sha256": "c00bb4fc03c13e6f1c6796128b28abff480d5ea02c8b5f3dc704899ede8c53aa",
+      "timestamp": "2026-06-19T08:35:16+00:00",
+      "producer_step": "02_CONFIG_PATHS_AND_REPRO_ENV",
+      "run_id": null
+    },
+    {
+      "path": "requirements.lock.txt",
+      "row_count": null,
+      "sha256": "c486d8855459c7531c06428d7cedab54ef53898e226f2e17cdda095e00463ccb",
+      "timestamp": "2026-06-19T08:35:16+00:00",
+      "producer_step": "02_CONFIG_PATHS_AND_REPRO_ENV",
+      "run_id": null
+    }
+  ]
+}

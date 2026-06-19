@@ -1,0 +1,38 @@
+{
+  "step": "STAGE1_TRAIN_CONFLICT_SUBSET",
+  "status": "PASS",
+  "inputs_checked": [
+    "data/labels/labels_h1_abnormal.parquet",
+    "data/processed/split_membership.parquet",
+    "data/indicators/technical_event_tokens_h1_v2.parquet"
+  ],
+  "outputs_created": [
+    "data/splits/train_conflict_subset_h1.parquet",
+    "outputs/metrics/train_conflict_subset_h1_summary.json",
+    "outputs/manifests/STAGE1_TRAIN_CONFLICT_SUBSET.manifest.json",
+    "outputs/status/STAGE1_TRAIN_CONFLICT_SUBSET.status.json"
+  ],
+  "metrics": {
+    "rows": 2500,
+    "limit": 2500,
+    "split_counts": {
+      "train": 2500
+    },
+    "conflict_score_counts": {
+      "11": 51,
+      "12": 1766,
+      "13": 205,
+      "14": 99,
+      "15": 379
+    },
+    "flag_counts": {
+      "news_tech_conflict": 2500,
+      "mixed_technical_direction": 2476,
+      "strong_label": 757,
+      "high_vol_regime": 2245,
+      "event_keyword": 2324
+    }
+  },
+  "failures": [],
+  "next_step_allowed": true
+}

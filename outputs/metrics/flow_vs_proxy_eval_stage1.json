@@ -1,0 +1,51 @@
+{
+  "split": "val",
+  "split_source": "deterministic_train_holdout_no_test_rows",
+  "rows": 12500,
+  "eval_rows": 2480,
+  "holdout_frac": 0.2,
+  "integration_steps": 12,
+  "methods": [
+    {
+      "method": "proxy_average_reward",
+      "rank_correlation_with_realized_utility": 0.5731198821829241,
+      "calibration_error": 0.2293766523291988,
+      "top_k_rationale_quality": 0.35000000000000003,
+      "preference_pair_accuracy": 0.859375,
+      "variance_by_regime": 9.51949738040281e-05,
+      "status": "RUN",
+      "eval_rows": 2480
+    },
+    {
+      "method": "single_best_judge_reward",
+      "rank_correlation_with_realized_utility": 1.0,
+      "calibration_error": 4.8661904914419405e-09,
+      "top_k_rationale_quality": 0.44899193548387106,
+      "preference_pair_accuracy": 1.0,
+      "variance_by_regime": 2.3395057723973878e-05,
+      "status": "RUN",
+      "eval_rows": 2480
+    },
+    {
+      "method": "flow_reward_v1",
+      "rank_correlation_with_realized_utility": 0.785896954625529,
+      "calibration_error": 0.06973631596991853,
+      "top_k_rationale_quality": 0.3858870967741936,
+      "preference_pair_accuracy": 0.9375,
+      "variance_by_regime": 0.00010926701902408935,
+      "status": "RUN",
+      "eval_rows": 2480
+    },
+    {
+      "method": "flow_reward_v2",
+      "rank_correlation_with_realized_utility": 0.005783709961712826,
+      "calibration_error": 0.11804102105904189,
+      "top_k_rationale_quality": 0.2086693548387097,
+      "preference_pair_accuracy": 0.53125,
+      "variance_by_regime": 6.207504338817671e-05,
+      "status": "RUN",
+      "eval_rows": 2480
+    }
+  ],
+  "claim_improvement": false
+}

@@ -1,0 +1,31 @@
+{
+  "producer_step": "08_STRICT_RATIONALE_SCHEMA_NO_AUTOFIX",
+  "run_id": null,
+  "created_at": "2026-06-19T06:41:46+00:00",
+  "artifacts": [
+    {
+      "path": "src/llm/parse_and_validate_rationale.py",
+      "row_count": null,
+      "sha256": "14a4fd54afd8ab44c4a54a260a50a2f20cc31337da7b57a76d655a72ec63e44c",
+      "timestamp": "2026-06-19T06:41:46+00:00",
+      "producer_step": "08_STRICT_RATIONALE_SCHEMA_NO_AUTOFIX",
+      "run_id": null
+    },
+    {
+      "path": "src/llm/rationale_schema.py",
+      "row_count": null,
+      "sha256": "6cdd30040419788a92569c0c93317883671ad70ff1b5edd646eb5d861dabae45",
+      "timestamp": "2026-06-19T06:41:46+00:00",
+      "producer_step": "08_STRICT_RATIONALE_SCHEMA_NO_AUTOFIX",
+      "run_id": null
+    },
+    {
+      "path": "tests/test_rationale_schema_strict.py",
+      "row_count": null,
+      "sha256": "38f6edc853bbb75df430e15e355c34a04c62c128afe18273a2598afa8d4cad51",
+      "timestamp": "2026-06-19T06:41:46+00:00",
+      "producer_step": "08_STRICT_RATIONALE_SCHEMA_NO_AUTOFIX",
+      "run_id": null
+    }
+  ]
+}

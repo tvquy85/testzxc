@@ -1,0 +1,31 @@
+{
+  "producer_step": "14_RWSFT_DPO_DATASET_REBUILD",
+  "run_id": null,
+  "created_at": "2026-06-19T16:23:43+00:00",
+  "artifacts": [
+    {
+      "path": "data/alignment/rwsft_train_v2.jsonl",
+      "row_count": 7336,
+      "sha256": "4dcc72bebddc753268a95219154b15654aacf37aad126adcfa2e46443c215852",
+      "timestamp": "2026-06-19T16:23:44+00:00",
+      "producer_step": "14_RWSFT_DPO_DATASET_REBUILD",
+      "run_id": null
+    },
+    {
+      "path": "data/alignment/dpo_pairs_train_v2.jsonl",
+      "row_count": 3362,
+      "sha256": "f87ea8afa3eab29eb77cb9a029a63b9a8f5eb0d0b071db8fd09d9512461f9239",
+      "timestamp": "2026-06-19T16:23:44+00:00",
+      "producer_step": "14_RWSFT_DPO_DATASET_REBUILD",
+      "run_id": null
+    },
+    {
+      "path": "outputs/metrics/alignment_dataset_v2_summary.json",
+      "row_count": 1,
+      "sha256": "728729538d4cd2d761fe934a60f0d898f99f09aff01b2947f5118536c8b5fd14",
+      "timestamp": "2026-06-19T16:23:44+00:00",
+      "producer_step": "14_RWSFT_DPO_DATASET_REBUILD",
+      "run_id": null
+    }
+  ]
+}

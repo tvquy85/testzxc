@@ -1,0 +1,23 @@
+{
+  "producer_step": "09_RATIONALE_GENERATION_SCALEUP_TRAIN_ONLY",
+  "run_id": "stage_1_small_scale_5bb2222f",
+  "created_at": "2026-06-19T15:46:02+00:00",
+  "artifacts": [
+    {
+      "path": "data/rationales/raw/train_qwen3_4b_stage1_conflict_3cand.jsonl",
+      "row_count": 7500,
+      "sha256": "c901ee7418666b2a344b672a5619b2402fa29cce6f07c25e86c8d3874faa427b",
+      "timestamp": "2026-06-19T15:46:02+00:00",
+      "producer_step": "09_RATIONALE_GENERATION_SCALEUP_TRAIN_ONLY",
+      "run_id": "stage_1_small_scale_5bb2222f"
+    },
+    {
+      "path": "data/rationales/parsed/train_qwen3_4b_stage1_conflict_3cand.parquet",
+      "row_count": 7500,
+      "sha256": "3e020394fb64204b7584a04f4fdc9116a46f73568259628f46cce46cda551d39",
+      "timestamp": "2026-06-19T15:46:02+00:00",
+      "producer_step": "09_RATIONALE_GENERATION_SCALEUP_TRAIN_ONLY",
+      "run_id": "stage_1_small_scale_5bb2222f"
+    }
+  ]
+}

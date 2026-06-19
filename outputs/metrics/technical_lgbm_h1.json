@@ -1,0 +1,7 @@
+{
+  "model": "Technical_LightGBM",
+  "test_accuracy": 0.45856406799248806,
+  "test_macro_f1": 0.16396366850736382,
+  "test_mcc": 0.054644997121443425,
+  "test_brier": 0.6765835449814305
+}

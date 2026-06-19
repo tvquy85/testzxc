@@ -1,0 +1,25 @@
+{
+  "step": "04_LEAKAGE_GUARDS_AND_UNIT_TESTS",
+  "status": "PASS",
+  "inputs_checked": [
+    "data/labels/labels_h1_abnormal.parquet",
+    "data/processed/split_membership.parquet",
+    "prompts",
+    "data/alignment/rwsft_train_v2.jsonl",
+    "data/alignment/dpo_pairs_train_v2.jsonl",
+    "data/rationales/rwsft_train_h1.jsonl",
+    "data/rationales/preference_pairs_h1.jsonl"
+  ],
+  "outputs_created": [
+    "outputs/audit/leakage_report.json",
+    "outputs/manifests/04_LEAKAGE_GUARDS_AND_UNIT_TESTS.manifest.json",
+    "outputs/status/04_LEAKAGE_GUARDS_AND_UNIT_TESTS.status.json"
+  ],
+  "metrics": {
+    "num_leaks": 0,
+    "legacy_alignment_risk_count": 50,
+    "passed": true
+  },
+  "failures": [],
+  "next_step_allowed": true
+}

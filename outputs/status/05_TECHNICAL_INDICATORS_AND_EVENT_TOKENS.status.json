@@ -1,0 +1,18 @@
+{
+  "step": "05_TECHNICAL_INDICATORS_AND_EVENT_TOKENS",
+  "status": "PASS",
+  "feature_rows": 156098,
+  "token_rows": 156098,
+  "missing_rate": 0.0,
+  "regime_distribution": {
+    "low_vol": 73270,
+    "high_vol": 48528,
+    "normal_vol": 34300
+  },
+  "example_tokens": [
+    "[MACD_BEARISH: hist=-5.18]",
+    "[PRICE_BELOW_SMA20: distance=-8.7%]",
+    "[BOLLINGER_LOWER_PRESSURE: position=-0.08]",
+    "[MARKET_UNDERPERFORMANCE_5D: value=-5.3%]"
+  ]
+}

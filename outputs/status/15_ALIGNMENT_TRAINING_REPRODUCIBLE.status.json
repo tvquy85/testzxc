@@ -1,0 +1,78 @@
+{
+  "step": "15_ALIGNMENT_TRAINING_REPRODUCIBLE",
+  "status": "PASS",
+  "inputs_checked": [
+    "data/alignment/dpo_pairs_train_v2.jsonl",
+    "checkpoints/aligned/qwen3_4b/rwsft_v2",
+    "configs/default_paths.yaml"
+  ],
+  "outputs_created": [
+    "checkpoints\\aligned\\qwen3_4b\\dpo_v2\\trainer_config.json",
+    "checkpoints\\aligned\\qwen3_4b\\dpo_v2\\adapter_config.json",
+    "checkpoints\\aligned\\qwen3_4b\\dpo_v2\\adapter_model.safetensors",
+    "checkpoints\\aligned\\qwen3_4b\\rwsft_v2\\adapter_config.json",
+    "checkpoints\\aligned\\qwen3_4b\\rwsft_v2\\adapter_model.safetensors",
+    "outputs/manifests/15_ALIGNMENT_TRAINING_REPRODUCIBLE.manifest.json",
+    "outputs/status/15_ALIGNMENT_TRAINING_REPRODUCIBLE.status.json"
+  ],
+  "metrics": {
+    "module_inventory": {
+      "torch": {
+        "status": "available",
+        "version": "2.5.1+cu121",
+        "path": "D:\\LOBProj\\LOBExp\\.venv\\Lib\\site-packages\\torch\\__init__.py"
+      },
+      "transformers": {
+        "status": "available",
+        "version": "5.8.0",
+        "path": "D:\\LOBProj\\LOBExp\\.venv\\Lib\\site-packages\\transformers\\__init__.py"
+      },
+      "peft": {
+        "status": "available",
+        "version": "0.15.2",
+        "path": "C:\\Python/Python311/Lib/site-packages\\peft\\__init__.py"
+      },
+      "trl": {
+        "status": "available",
+        "version": "0.15.2",
+        "path": "C:\\Python/Python311/Lib/site-packages\\trl\\__init__.py"
+      },
+      "bitsandbytes": {
+        "status": "available",
+        "version": "0.49.2",
+        "path": "C:\\Python/Python311/Lib/site-packages\\bitsandbytes\\__init__.py"
+      }
+    },
+    "missing_modules": [],
+    "rwsft_smoke_pass": true,
+    "dpo_smoke_pass": true,
+    "max_steps": 10,
+    "dpo_smoke_train_executed": true,
+    "rwsft_status_before_dpo": "PASS",
+    "rwsft_adapter_config": "checkpoints\\aligned\\qwen3_4b\\rwsft_v2\\adapter_config.json",
+    "rwsft_smoke_train_executed": true,
+    "rwsft_loss_first": 2.832744598388672,
+    "rwsft_loss_last": 2.5758602619171143,
+    "rwsft_max_memory_allocated_bytes": 6031056896,
+    "dpo_losses": [
+      0.6931471824645996,
+      0.6931471824645996,
+      0.6931471824645996,
+      0.6931471824645996,
+      0.6931471824645996,
+      0.6931471824645996,
+      0.6931471824645996,
+      0.6931471824645996,
+      0.6931471824645996,
+      0.6931471824645996
+    ],
+    "dpo_loss_first": 0.6931471824645996,
+    "dpo_loss_last": 0.6931471824645996,
+    "dpo_train_records_loaded": 20,
+    "dpo_adapter_config": "checkpoints\\aligned\\qwen3_4b\\dpo_v2\\adapter_config.json",
+    "dpo_cuda_device": "NVIDIA GeForce RTX 3090",
+    "dpo_max_memory_allocated_bytes": 6317639680
+  },
+  "failures": [],
+  "next_step_allowed": true
+}

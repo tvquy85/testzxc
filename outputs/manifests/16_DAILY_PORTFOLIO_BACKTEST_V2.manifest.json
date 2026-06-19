@@ -1,0 +1,23 @@
+{
+  "producer_step": "16_DAILY_PORTFOLIO_BACKTEST_V2",
+  "run_id": null,
+  "created_at": "2026-06-19T18:49:23+00:00",
+  "artifacts": [
+    {
+      "path": "outputs/metrics/backtest_daily_portfolio_v2.json",
+      "row_count": 1,
+      "sha256": "4aef0ddb24ca40c612d146cb22a35a7e67f355dc263ca3de4ab6f873388a38a5",
+      "timestamp": "2026-06-19T18:49:24+00:00",
+      "producer_step": "16_DAILY_PORTFOLIO_BACKTEST_V2",
+      "run_id": null
+    },
+    {
+      "path": "outputs/tables/backtest_daily_returns_v2.csv",
+      "row_count": 33,
+      "sha256": "906281c697726b297ab251c81e1e16c2f133682bf931abbf44b4ae571aced3cb",
+      "timestamp": "2026-06-19T18:49:24+00:00",
+      "producer_step": "16_DAILY_PORTFOLIO_BACKTEST_V2",
+      "run_id": null
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "mean_entailment": 0.04745453190465923,
+  "mean_contradiction": 0.0245635280116403,
+  "hallucination_rate": 0.02
+}

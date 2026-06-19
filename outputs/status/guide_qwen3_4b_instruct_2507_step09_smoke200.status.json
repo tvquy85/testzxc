@@ -1,0 +1,32 @@
+{
+  "step": "09_RATIONALE_GENERATION_SCALEUP_TRAIN_ONLY",
+  "status": "PASS",
+  "inputs_checked": [
+    "data/labels/labels_h1_abnormal.parquet",
+    "data/processed/split_membership.parquet",
+    "data/indicators/technical_event_tokens_h1_v2.parquet",
+    "prompts/rationale_generation_prompt_qwen3_fast_json.txt",
+    "configs/default_paths.yaml"
+  ],
+  "outputs_created": [
+    "data/rationales/debug/qwen3_4b_200.jsonl",
+    "data/rationales/debug/qwen3_4b_200.parquet",
+    "outputs/manifests/guide_qwen3_4b_instruct_2507_smoke200.manifest.json",
+    "outputs/status/guide_qwen3_4b_instruct_2507_step09_smoke200.status.json"
+  ],
+  "metrics": {
+    "row_count": 200,
+    "expected_row_count": 200,
+    "generated_this_run": 200,
+    "unique_sample_count": 200,
+    "parse_ok_rate": 1.0,
+    "schema_ok_rate": 0.985,
+    "avg_output_tokens_est": 215.135,
+    "run_id": "stage_0_sanity_check_eb528431",
+    "stage": "stage_0_sanity_check",
+    "backend": "transformers",
+    "elapsed_seconds": 538.888
+  },
+  "failures": [],
+  "next_step_allowed": true
+}

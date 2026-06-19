@@ -1,0 +1,43 @@
+{
+  "split": "val",
+  "rows": 50,
+  "methods": [
+    {
+      "method": "proxy_average_reward",
+      "rank_correlation_with_realized_utility": null,
+      "calibration_error": null,
+      "top_k_rationale_quality": null,
+      "preference_pair_accuracy": null,
+      "variance_by_regime": null,
+      "status": "PENDING_REAL_EVAL"
+    },
+    {
+      "method": "single_best_judge_reward",
+      "rank_correlation_with_realized_utility": null,
+      "calibration_error": null,
+      "top_k_rationale_quality": null,
+      "preference_pair_accuracy": null,
+      "variance_by_regime": null,
+      "status": "PENDING_REAL_EVAL"
+    },
+    {
+      "method": "flow_reward_v1",
+      "rank_correlation_with_realized_utility": null,
+      "calibration_error": null,
+      "top_k_rationale_quality": null,
+      "preference_pair_accuracy": null,
+      "variance_by_regime": null,
+      "status": "PENDING_REAL_EVAL"
+    },
+    {
+      "method": "flow_reward_v2",
+      "rank_correlation_with_realized_utility": null,
+      "calibration_error": null,
+      "top_k_rationale_quality": null,
+      "preference_pair_accuracy": null,
+      "variance_by_regime": null,
+      "status": "PENDING_REAL_EVAL"
+    }
+  ],
+  "claim_improvement": false
+}

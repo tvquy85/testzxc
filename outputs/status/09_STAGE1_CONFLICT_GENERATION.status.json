@@ -1,0 +1,32 @@
+{
+  "step": "09_RATIONALE_GENERATION_SCALEUP_TRAIN_ONLY",
+  "status": "PASS",
+  "inputs_checked": [
+    "data/splits/train_conflict_subset_h1.parquet",
+    "data/processed/split_membership.parquet",
+    "data/indicators/technical_event_tokens_h1_v2.parquet",
+    "prompts/rationale_generation_prompt_qwen3_fast_json.txt",
+    "configs/default_paths.yaml"
+  ],
+  "outputs_created": [
+    "data/rationales/raw/train_qwen3_4b_stage1_conflict_3cand.jsonl",
+    "data/rationales/parsed/train_qwen3_4b_stage1_conflict_3cand.parquet",
+    "outputs/manifests/09_STAGE1_CONFLICT_GENERATION.manifest.json",
+    "outputs/status/09_STAGE1_CONFLICT_GENERATION.status.json"
+  ],
+  "metrics": {
+    "row_count": 7500,
+    "expected_row_count": 7500,
+    "generated_this_run": 300,
+    "unique_sample_count": 2500,
+    "parse_ok_rate": 0.9957333333333334,
+    "schema_ok_rate": 0.9865333333333334,
+    "avg_output_tokens_est": 222.33373333333333,
+    "run_id": "stage_1_small_scale_5bb2222f",
+    "stage": "stage_1_small_scale",
+    "backend": "transformers",
+    "elapsed_seconds": 870.536
+  },
+  "failures": [],
+  "next_step_allowed": true
+}

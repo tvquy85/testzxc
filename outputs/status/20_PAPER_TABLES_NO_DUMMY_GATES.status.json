@@ -1,0 +1,40 @@
+{
+  "step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+  "status": "PASS",
+  "inputs_checked": [
+    "outputs/metrics",
+    "outputs/tables"
+  ],
+  "outputs_created": [
+    "outputs\\tables\\final\\table_1_prediction_main.csv",
+    "outputs\\tables\\final\\table_2_explanation_quality.csv",
+    "outputs\\tables\\final\\table_3_daily_portfolio_backtest.csv",
+    "outputs\\tables\\final\\table_4_counterfactual_directional.csv",
+    "outputs\\tables\\final\\table_5_ablation.csv",
+    "outputs\\tables\\final\\table_6_scale_and_compute.csv",
+    "outputs\\tables\\final\\table_manifest.json",
+    "outputs/manifests/20_PAPER_TABLES_NO_DUMMY_GATES.manifest.json",
+    "outputs/status/20_PAPER_TABLES_NO_DUMMY_GATES.status.json"
+  ],
+  "metrics": {
+    "tables_created": 6,
+    "table_row_counts": {
+      "table_1_prediction_main.csv": 273,
+      "table_2_explanation_quality.csv": 32,
+      "table_3_daily_portfolio_backtest.csv": 181,
+      "table_4_counterfactual_directional.csv": 13,
+      "table_5_ablation.csv": 9,
+      "table_6_scale_and_compute.csv": 38
+    },
+    "evidence_row_counts": {
+      "table_1_prediction_main.csv": 273,
+      "table_2_explanation_quality.csv": 32,
+      "table_3_daily_portfolio_backtest.csv": 181,
+      "table_4_counterfactual_directional.csv": 13,
+      "table_5_ablation.csv": 0,
+      "table_6_scale_and_compute.csv": 38
+    }
+  },
+  "failures": [],
+  "next_step_allowed": true
+}

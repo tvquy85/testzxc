@@ -1,0 +1,17 @@
+{
+  "step": "08_STRICT_RATIONALE_SCHEMA_NO_AUTOFIX",
+  "status": "PASS",
+  "inputs_checked": [
+    "src/llm/parse_and_validate_rationale.py",
+    "src/llm/rationale_schema.py"
+  ],
+  "outputs_created": [
+    "outputs/manifests/08_STRICT_RATIONALE_SCHEMA_NO_AUTOFIX.manifest.json",
+    "outputs/status/08_STRICT_RATIONALE_SCHEMA_NO_AUTOFIX.status.json"
+  ],
+  "metrics": {
+    "strict_schema_tests": 4
+  },
+  "failures": [],
+  "next_step_allowed": true
+}

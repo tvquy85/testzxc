@@ -1,0 +1,9 @@
+{
+  "step": "08_GENERATE_RATIONALES_LOCAL_LLM",
+  "status": "PASS",
+  "candidate_count": 1200,
+  "unique_sample_count": 400,
+  "schema_ok_rate": 0.775,
+  "generator_model": "e:/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "notes": "Generated candidates with local LLM"
+}

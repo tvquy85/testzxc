@@ -1,0 +1,12 @@
+{
+  "step": "06_BASELINES_FINBERT_TECH_TS",
+  "status": "PASS",
+  "baseline_files": [
+    "outputs/metrics/finbert_baseline_h1.json",
+    "outputs/metrics/technical_lgbm_h1.json",
+    "outputs/metrics/combined_lgbm_h1.json"
+  ],
+  "best_baseline_by_macro_f1": "combined_lgbm",
+  "best_macro_f1": 0.184254488049932,
+  "notes": "FinBERT extracted via HuggingFace cache. TS baseline deferred. Combined LightGBM achieved better F1 than majority class."
+}

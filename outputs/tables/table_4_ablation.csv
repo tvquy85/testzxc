@@ -1,0 +1,7 @@
+variant,removed_component,macro_f1,mcc,grounding_score,sharpe
+Ours (DeepSeek-R1-Distill-1.5B (RWSFT+DPO)),None,0.11697814900440004,0.053373432503218764,N/A,4.012980500821914
+A1,No Technical Indicators,0.12918371322813169,-0.007576809983566467,N/A,N/A
+A3,No Flow Reward (Proxy Score),N/A,N/A,N/A,N/A
+A4,No Grounding Reward,N/A,N/A,N/A,N/A
+A5,No Regime Conditioning,N/A,N/A,N/A,N/A
+A6,DeepSeek-Base (No RWSFT/DPO),0.09092295957284516,0.010247909417325365,N/A,3.4951821734863646

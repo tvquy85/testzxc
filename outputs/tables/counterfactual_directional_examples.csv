@@ -1,0 +1,1901 @@
+sample_id,split,counterfactual_type,expected_direction,original_score,counterfactual_score,delta,directional_pass,no_change,original_action,counterfactual_action,original_schema_ok,counterfactual_schema_ok,original_raw_output,counterfactual_raw_output
+s_109819,test,remove_bad_news,less_negative,1.01,1.01,0.0,False,True,long,long,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.33,
+    ""Mild Up"": 0.33,
+    ""Strong Up"": 0.34
+  },
+  ""action"": ""long""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.33,
+    ""Mild Up"": 0.33,
+    ""Strong Up"": 0.34
+  },
+  ""action"": ""long""
+}"
+s_109819,test,remove_good_news,less_positive,1.01,0.7,-0.31000000000000005,True,False,long,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.33,
+    ""Mild Up"": 0.33,
+    ""Strong Up"": 0.34
+  },
+  ""action"": ""long""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}"
+s_109819,test,neutralize_overbought_oversold,toward_neutral,1.01,1.01,0.0,False,True,long,long,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.33,
+    ""Mild Up"": 0.33,
+    ""Strong Up"": 0.34
+  },
+  ""action"": ""long""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.33,
+    ""Mild Up"": 0.33,
+    ""Strong Up"": 0.34
+  },
+  ""action"": ""long""
+}"
+s_109819,test,high_vol_to_normal_vol,lower_extreme,1.01,1.05,0.040000000000000036,False,False,long,long,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.33,
+    ""Mild Up"": 0.33,
+    ""Strong Up"": 0.34
+  },
+  ""action"": ""long""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.65,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""long""
+}"
+s_109820,test,remove_bad_news,less_negative,-1.48,-1.48,0.0,False,True,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}"
+s_109820,test,remove_good_news,less_positive,-1.48,-1.48,0.0,False,True,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}"
+s_109820,test,neutralize_overbought_oversold,toward_neutral,-1.48,-1.48,0.0,False,True,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}"
+s_109820,test,high_vol_to_normal_vol,lower_extreme,-1.48,-1.2,0.28,True,False,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.55,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.1,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""short""
+}"
+s_109821,test,remove_bad_news,less_negative,-1.2,-0.9499999999999998,0.2500000000000001,True,False,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.55,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.1,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.45,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.1,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""short""
+}"
+s_109821,test,remove_good_news,less_positive,-1.2,-1.2,0.0,False,True,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.55,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.1,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.55,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.1,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""short""
+}"
+s_109821,test,neutralize_overbought_oversold,toward_neutral,-1.2,-1.48,-0.28,False,False,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.55,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.1,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}"
+s_109821,test,high_vol_to_normal_vol,lower_extreme,-1.2,-1.48,-0.28,False,False,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.55,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.1,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}"
+s_109822,test,remove_bad_news,less_negative,-0.8999999999999999,-0.8999999999999999,0.0,False,True,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.45,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.45,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""short""
+}"
+s_109822,test,remove_good_news,less_positive,-0.8999999999999999,-0.8999999999999999,0.0,False,True,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.45,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.45,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""short""
+}"
+s_109822,test,neutralize_overbought_oversold,toward_neutral,-0.8999999999999999,-0.5999999999999999,0.30000000000000004,True,False,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.45,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.35,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.15,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""short""
+}"
+s_109822,test,high_vol_to_normal_vol,lower_extreme,-0.8999999999999999,-0.8999999999999999,0.0,False,True,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.45,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.45,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""short""
+}"
+s_109823,test,remove_bad_news,less_negative,0.7,0.7,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}"
+s_109823,test,remove_good_news,less_positive,0.7,0.3,-0.39999999999999997,True,False,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.45,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}"
+s_109823,test,neutralize_overbought_oversold,toward_neutral,0.7,0.7,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}"
+s_109823,test,high_vol_to_normal_vol,lower_extreme,0.7,1.01,0.31000000000000005,False,False,hold,long,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.33,
+    ""Mild Up"": 0.33,
+    ""Strong Up"": 0.34
+  },
+  ""action"": ""long""
+}"
+s_109824,test,remove_bad_news,less_negative,0.2,0.2,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.55,
+    ""Mild Up"": 0.25,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.55,
+    ""Mild Up"": 0.25,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}"
+s_109824,test,remove_good_news,less_positive,0.2,0.0,-0.2,True,False,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.55,
+    ""Mild Up"": 0.25,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 1.0,
+    ""Mild Up"": 0.0,
+    ""Strong Up"": 0.0
+  },
+  ""action"": ""hold""
+}"
+s_109824,test,neutralize_overbought_oversold,toward_neutral,0.2,0.2,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.55,
+    ""Mild Up"": 0.25,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.55,
+    ""Mild Up"": 0.25,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}"
+s_109824,test,high_vol_to_normal_vol,lower_extreme,0.2,0.30000000000000004,0.10000000000000003,False,False,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.55,
+    ""Mild Up"": 0.25,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.25,
+    ""Strong Up"": 0.1
+  },
+  ""action"": ""hold""
+}"
+s_109825,test,remove_bad_news,less_negative,-0.8999999999999999,-0.8999999999999999,0.0,False,True,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.45,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.45,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""short""
+}"
+s_109825,test,remove_good_news,less_positive,-0.8999999999999999,-0.8999999999999999,0.0,False,True,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.45,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.45,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""short""
+}"
+s_109825,test,neutralize_overbought_oversold,toward_neutral,-0.8999999999999999,-0.8999999999999999,0.0,False,True,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.45,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.45,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""short""
+}"
+s_109825,test,high_vol_to_normal_vol,lower_extreme,-0.8999999999999999,-0.8999999999999999,0.0,False,True,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.45,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.45,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""short""
+}"
+s_109826,test,remove_bad_news,less_negative,0.7,0.7,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}"
+s_109826,test,remove_good_news,less_positive,0.7,0.7,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}"
+s_109826,test,neutralize_overbought_oversold,toward_neutral,0.7,0.7,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}"
+s_109826,test,high_vol_to_normal_vol,lower_extreme,0.7,0.7,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}"
+s_109827,test,remove_bad_news,less_negative,0.0,-1.7,-1.7,False,False,invalid,short,False,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.00,
+    ""Strong Up"": 0.00
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.75,
+    ""Mild Down"": 0.20,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.0,
+    ""Strong Up"": 0.0
+  },
+  ""action"": ""short""
+}"
+s_109827,test,remove_good_news,less_positive,0.0,-1.7,-1.7,False,False,invalid,short,False,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.00,
+    ""Strong Up"": 0.00
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.75,
+    ""Mild Down"": 0.20,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.0,
+    ""Strong Up"": 0.0
+  },
+  ""action"": ""short""
+}"
+s_109827,test,neutralize_overbought_oversold,toward_neutral,0.0,-1.7,-1.7,False,False,invalid,short,False,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.00,
+    ""Strong Up"": 0.00
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.75,
+    ""Mild Down"": 0.20,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.0,
+    ""Strong Up"": 0.0
+  },
+  ""action"": ""short""
+}"
+s_109827,test,high_vol_to_normal_vol,lower_extreme,0.0,-1.7,-1.7,False,False,invalid,short,False,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.00,
+    ""Strong Up"": 0.00
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.75,
+    ""Mild Down"": 0.20,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.0,
+    ""Strong Up"": 0.0
+  },
+  ""action"": ""short""
+}"
+s_109828,test,remove_bad_news,less_negative,-1.48,-1.2,0.28,True,False,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.55,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.1,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""short""
+}"
+s_109828,test,remove_good_news,less_positive,-1.48,-1.48,0.0,False,True,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}"
+s_109828,test,neutralize_overbought_oversold,toward_neutral,-1.48,-1.7,-0.21999999999999997,False,False,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.75,
+    ""Mild Down"": 0.20,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.0,
+    ""Strong Up"": 0.0
+  },
+  ""action"": ""short""
+}"
+s_109828,test,high_vol_to_normal_vol,lower_extreme,-1.48,-1.48,0.0,False,True,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}"
+s_109829,test,remove_bad_news,less_negative,0.0,-1.48,-1.48,False,False,invalid,short,False,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}"
+s_109829,test,remove_good_news,less_positive,0.0,-1.48,-1.48,False,False,invalid,short,False,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}"
+s_109829,test,neutralize_overbought_oversold,toward_neutral,0.0,-1.48,-1.48,False,False,invalid,short,False,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}"
+s_109829,test,high_vol_to_normal_vol,lower_extreme,0.0,0.0,0.0,False,True,invalid,invalid,False,False,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}"
+s_109830,test,remove_bad_news,less_negative,-0.2999999999999999,-0.2999999999999999,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.35,
+    ""Neutral"": 0.25,
+    ""Mild Up"": 0.15,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.35,
+    ""Neutral"": 0.25,
+    ""Mild Up"": 0.15,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""hold""
+}"
+s_109830,test,remove_good_news,less_positive,-0.2999999999999999,-0.2999999999999999,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.35,
+    ""Neutral"": 0.25,
+    ""Mild Up"": 0.15,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.35,
+    ""Neutral"": 0.25,
+    ""Mild Up"": 0.15,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""hold""
+}"
+s_109830,test,neutralize_overbought_oversold,toward_neutral,-0.2999999999999999,-0.2999999999999999,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.35,
+    ""Neutral"": 0.25,
+    ""Mild Up"": 0.15,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.35,
+    ""Neutral"": 0.25,
+    ""Mild Up"": 0.15,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""hold""
+}"
+s_109830,test,high_vol_to_normal_vol,lower_extreme,-0.2999999999999999,-0.55,-0.25000000000000017,False,False,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.35,
+    ""Neutral"": 0.25,
+    ""Mild Up"": 0.15,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.25,
+    ""Mild Down"": 0.35,
+    ""Neutral"": 0.20,
+    ""Mild Up"": 0.10,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""hold""
+}"
+s_109831,test,remove_bad_news,less_negative,-1.55,-1.55,0.0,False,True,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.10,
+    ""Mild Up"": 0.0,
+    ""Strong Up"": 0.0
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.10,
+    ""Mild Up"": 0.0,
+    ""Strong Up"": 0.0
+  },
+  ""action"": ""short""
+}"
+s_109831,test,remove_good_news,less_positive,-1.55,-1.55,0.0,False,True,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.10,
+    ""Mild Up"": 0.0,
+    ""Strong Up"": 0.0
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.10,
+    ""Mild Up"": 0.0,
+    ""Strong Up"": 0.0
+  },
+  ""action"": ""short""
+}"
+s_109831,test,neutralize_overbought_oversold,toward_neutral,-1.55,-1.55,0.0,False,True,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.10,
+    ""Mild Up"": 0.0,
+    ""Strong Up"": 0.0
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.10,
+    ""Mild Up"": 0.0,
+    ""Strong Up"": 0.0
+  },
+  ""action"": ""short""
+}"
+s_109831,test,high_vol_to_normal_vol,lower_extreme,-1.55,-0.6499999999999999,0.9000000000000001,True,False,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.10,
+    ""Mild Up"": 0.0,
+    ""Strong Up"": 0.0
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.35,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.20,
+    ""Mild Up"": 0.10,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""short""
+}"
+s_109832,test,remove_bad_news,less_negative,-0.3499999999999999,-0.3499999999999999,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.35,
+    ""Neutral"": 0.30,
+    ""Mild Up"": 0.10,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.35,
+    ""Neutral"": 0.30,
+    ""Mild Up"": 0.10,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""hold""
+}"
+s_109832,test,remove_good_news,less_positive,-0.3499999999999999,-0.3499999999999999,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.35,
+    ""Neutral"": 0.30,
+    ""Mild Up"": 0.10,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.35,
+    ""Neutral"": 0.30,
+    ""Mild Up"": 0.10,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""hold""
+}"
+s_109832,test,neutralize_overbought_oversold,toward_neutral,-0.3499999999999999,-0.3499999999999999,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.35,
+    ""Neutral"": 0.30,
+    ""Mild Up"": 0.10,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.35,
+    ""Neutral"": 0.30,
+    ""Mild Up"": 0.10,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""hold""
+}"
+s_109832,test,high_vol_to_normal_vol,lower_extreme,-0.3499999999999999,0.7,1.0499999999999998,False,False,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.35,
+    ""Neutral"": 0.30,
+    ""Mild Up"": 0.10,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}"
+s_109833,test,remove_bad_news,less_negative,0.3,0.3,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.45,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.45,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}"
+s_109833,test,remove_good_news,less_positive,0.3,0.3,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.45,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.45,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}"
+s_109833,test,neutralize_overbought_oversold,toward_neutral,0.3,0.3,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.45,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.45,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}"
+s_109833,test,high_vol_to_normal_vol,lower_extreme,0.3,0.7,0.39999999999999997,False,False,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.45,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}"
+s_109834,test,remove_bad_news,less_negative,0.3,0.3,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.45,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.45,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}"
+s_109834,test,remove_good_news,less_positive,0.3,0.3,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.45,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.45,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}"
+s_109834,test,neutralize_overbought_oversold,toward_neutral,0.3,0.3,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.45,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.45,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}"
+s_109834,test,high_vol_to_normal_vol,lower_extreme,0.3,0.0,-0.3,True,False,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.45,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 1.0,
+    ""Mild Up"": 0.0,
+    ""Strong Up"": 0.0
+  },
+  ""action"": ""hold""
+}"
+s_109835,test,remove_bad_news,less_negative,1.01,1.01,0.0,False,True,long,long,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.33,
+    ""Mild Up"": 0.33,
+    ""Strong Up"": 0.34
+  },
+  ""action"": ""long""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.33,
+    ""Mild Up"": 0.33,
+    ""Strong Up"": 0.34
+  },
+  ""action"": ""long""
+}"
+s_109835,test,remove_good_news,less_positive,1.01,0.8999999999999999,-0.1100000000000001,True,False,long,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.33,
+    ""Mild Up"": 0.33,
+    ""Strong Up"": 0.34
+  },
+  ""action"": ""long""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.4,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.3
+  },
+  ""action"": ""hold""
+}"
+s_109835,test,neutralize_overbought_oversold,toward_neutral,1.01,1.01,0.0,False,True,long,long,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.33,
+    ""Mild Up"": 0.33,
+    ""Strong Up"": 0.34
+  },
+  ""action"": ""long""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.33,
+    ""Mild Up"": 0.33,
+    ""Strong Up"": 0.34
+  },
+  ""action"": ""long""
+}"
+s_109835,test,high_vol_to_normal_vol,lower_extreme,1.01,1.2,0.18999999999999995,False,False,long,long,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.33,
+    ""Mild Up"": 0.33,
+    ""Strong Up"": 0.34
+  },
+  ""action"": ""long""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.1,
+    ""Mild Up"": 0.6,
+    ""Strong Up"": 0.3
+  },
+  ""action"": ""long""
+}"
+s_109836,test,remove_bad_news,less_negative,1.15,1.25,0.10000000000000009,True,False,long,long,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.55,
+    ""Strong Up"": 0.30
+  },
+  ""action"": ""long""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.45,
+    ""Strong Up"": 0.40
+  },
+  ""action"": ""long""
+}"
+s_109836,test,remove_good_news,less_positive,1.15,0.75,-0.3999999999999999,True,False,long,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.55,
+    ""Strong Up"": 0.30
+  },
+  ""action"": ""long""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.45,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.20
+  },
+  ""action"": ""hold""
+}"
+s_109836,test,neutralize_overbought_oversold,toward_neutral,1.15,1.15,0.0,False,True,long,long,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.55,
+    ""Strong Up"": 0.30
+  },
+  ""action"": ""long""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.55,
+    ""Strong Up"": 0.30
+  },
+  ""action"": ""long""
+}"
+s_109836,test,high_vol_to_normal_vol,lower_extreme,1.15,1.15,0.0,False,True,long,long,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.55,
+    ""Strong Up"": 0.30
+  },
+  ""action"": ""long""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.55,
+    ""Strong Up"": 0.30
+  },
+  ""action"": ""long""
+}"
+s_109837,test,remove_bad_news,less_negative,1.25,1.25,0.0,False,True,long,long,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.45,
+    ""Strong Up"": 0.40
+  },
+  ""action"": ""long""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.45,
+    ""Strong Up"": 0.40
+  },
+  ""action"": ""long""
+}"
+s_109837,test,remove_good_news,less_positive,1.25,1.15,-0.10000000000000009,True,False,long,long,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.45,
+    ""Strong Up"": 0.40
+  },
+  ""action"": ""long""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.55,
+    ""Strong Up"": 0.30
+  },
+  ""action"": ""long""
+}"
+s_109837,test,neutralize_overbought_oversold,toward_neutral,1.25,1.25,0.0,False,True,long,long,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.45,
+    ""Strong Up"": 0.40
+  },
+  ""action"": ""long""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.45,
+    ""Strong Up"": 0.40
+  },
+  ""action"": ""long""
+}"
+s_109837,test,high_vol_to_normal_vol,lower_extreme,1.25,1.15,-0.10000000000000009,True,False,long,long,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.45,
+    ""Strong Up"": 0.40
+  },
+  ""action"": ""long""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.55,
+    ""Strong Up"": 0.30
+  },
+  ""action"": ""long""
+}"
+s_109838,test,remove_bad_news,less_negative,0.95,0.95,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.35,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.30
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.35,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.30
+  },
+  ""action"": ""hold""
+}"
+s_109838,test,remove_good_news,less_positive,0.95,0.95,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.35,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.30
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.35,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.30
+  },
+  ""action"": ""hold""
+}"
+s_109838,test,neutralize_overbought_oversold,toward_neutral,0.95,0.95,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.35,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.30
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.35,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.30
+  },
+  ""action"": ""hold""
+}"
+s_109838,test,high_vol_to_normal_vol,lower_extreme,0.95,0.3,-0.6499999999999999,True,False,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.35,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.30
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.45,
+    ""Mild Up"": 0.35,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""hold""
+}"
+s_109839,test,remove_bad_news,less_negative,0.7,0.7,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}"
+s_109839,test,remove_good_news,less_positive,0.7,0.7,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}"
+s_109839,test,neutralize_overbought_oversold,toward_neutral,0.7,0.7,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}"
+s_109839,test,high_vol_to_normal_vol,lower_extreme,0.7,0.7,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.5,
+    ""Mild Up"": 0.3,
+    ""Strong Up"": 0.2
+  },
+  ""action"": ""hold""
+}"
+s_109840,test,remove_bad_news,less_negative,1.25,0.8500000000000001,-0.3999999999999999,False,False,long,long,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.45,
+    ""Strong Up"": 0.40
+  },
+  ""action"": ""long""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.35,
+    ""Mild Up"": 0.45,
+    ""Strong Up"": 0.20
+  },
+  ""action"": ""long""
+}"
+s_109840,test,remove_good_news,less_positive,1.25,0.8500000000000001,-0.3999999999999999,True,False,long,long,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.45,
+    ""Strong Up"": 0.40
+  },
+  ""action"": ""long""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.35,
+    ""Mild Up"": 0.45,
+    ""Strong Up"": 0.20
+  },
+  ""action"": ""long""
+}"
+s_109840,test,neutralize_overbought_oversold,toward_neutral,1.25,1.25,0.0,False,True,long,long,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.45,
+    ""Strong Up"": 0.40
+  },
+  ""action"": ""long""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.45,
+    ""Strong Up"": 0.40
+  },
+  ""action"": ""long""
+}"
+s_109840,test,high_vol_to_normal_vol,lower_extreme,1.25,1.25,0.0,False,True,long,long,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.45,
+    ""Strong Up"": 0.40
+  },
+  ""action"": ""long""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.45,
+    ""Strong Up"": 0.40
+  },
+  ""action"": ""long""
+}"
+s_109841,test,remove_bad_news,less_negative,-0.1999999999999999,-0.1999999999999999,0.0,False,True,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.35,
+    ""Neutral"": 0.20,
+    ""Mild Up"": 0.15,
+    ""Strong Up"": 0.15
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.35,
+    ""Neutral"": 0.20,
+    ""Mild Up"": 0.15,
+    ""Strong Up"": 0.15
+  },
+  ""action"": ""short""
+}"
+s_109841,test,remove_good_news,less_positive,-0.1999999999999999,-0.5999999999999999,-0.39999999999999997,True,False,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.35,
+    ""Neutral"": 0.20,
+    ""Mild Up"": 0.15,
+    ""Strong Up"": 0.15
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.35,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.15,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""short""
+}"
+s_109841,test,neutralize_overbought_oversold,toward_neutral,-0.1999999999999999,-1.7,-1.5,False,False,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.35,
+    ""Neutral"": 0.20,
+    ""Mild Up"": 0.15,
+    ""Strong Up"": 0.15
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.75,
+    ""Mild Down"": 0.20,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.0,
+    ""Strong Up"": 0.0
+  },
+  ""action"": ""short""
+}"
+s_109841,test,high_vol_to_normal_vol,lower_extreme,-0.1999999999999999,-0.25,-0.0500000000000001,False,False,short,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.35,
+    ""Neutral"": 0.20,
+    ""Mild Up"": 0.15,
+    ""Strong Up"": 0.15
+  },
+  ""action"": ""short""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.25,
+    ""Mild Down"": 0.15,
+    ""Neutral"": 0.3,
+    ""Mild Up"": 0.2,
+    ""Strong Up"": 0.1
+  },
+  ""action"": ""short""
+}"
+s_109842,test,remove_bad_news,less_negative,-0.2,-0.2,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.35,
+    ""Mild Up"": 0.15,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.35,
+    ""Mild Up"": 0.15,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""hold""
+}"
+s_109842,test,remove_good_news,less_positive,-0.2,-0.2,0.0,False,True,hold,hold,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.35,
+    ""Mild Up"": 0.15,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.35,
+    ""Mild Up"": 0.15,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""hold""
+}"
+s_109842,test,neutralize_overbought_oversold,toward_neutral,-0.2,1.2,1.4,False,False,hold,long,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.35,
+    ""Mild Up"": 0.15,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.1,
+    ""Mild Up"": 0.6,
+    ""Strong Up"": 0.3
+  },
+  ""action"": ""long""
+}"
+s_109842,test,high_vol_to_normal_vol,lower_extreme,-0.2,-1.48,-1.28,False,False,hold,short,True,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.15,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.35,
+    ""Mild Up"": 0.15,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.65,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.05,
+    ""Mild Up"": 0.03,
+    ""Strong Up"": 0.02
+  },
+  ""action"": ""short""
+}"
+s_109843,test,remove_bad_news,less_negative,0.0,0.0,0.0,False,True,invalid,invalid,False,False,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.0,
+    ""Mild Up"": 0.0,
+    ""Strong Up"": 0.0
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.0,
+    ""Mild Up"": 0.0,
+    ""Strong Up"": 0.0
+  },
+  ""action"": ""hold""
+}"
+s_109843,test,remove_good_news,less_positive,0.0,-0.5999999999999999,-0.5999999999999999,False,False,invalid,short,False,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.0,
+    ""Mild Up"": 0.0,
+    ""Strong Up"": 0.0
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.35,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.15,
+    ""Mild Up"": 0.15,
+    ""Strong Up"": 0.10
+  },
+  ""action"": ""short""
+}"
+s_109843,test,neutralize_overbought_oversold,toward_neutral,0.0,-1.2,-1.2,False,False,invalid,short,False,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.0,
+    ""Mild Up"": 0.0,
+    ""Strong Up"": 0.0
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.55,
+    ""Mild Down"": 0.25,
+    ""Neutral"": 0.1,
+    ""Mild Up"": 0.05,
+    ""Strong Up"": 0.05
+  },
+  ""action"": ""short""
+}"
+s_109843,test,high_vol_to_normal_vol,lower_extreme,0.0,0.0,0.0,False,True,invalid,hold,False,True,"{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 0.0,
+    ""Mild Up"": 0.0,
+    ""Strong Up"": 0.0
+  },
+  ""action"": ""hold""
+}","{
+  ""forecast_distribution"": {
+    ""Strong Down"": 0.0,
+    ""Mild Down"": 0.0,
+    ""Neutral"": 1.0,
+    ""Mild Up"": 0.0,
+    ""Strong Up"": 0.0
+  },
+  ""action"": ""hold""
+}"

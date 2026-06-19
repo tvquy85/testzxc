@@ -1,0 +1,55 @@
+{
+  "producer_step": "13_FLOW_REWARD_EVAL_VS_PROXY",
+  "run_id": null,
+  "created_at": "2026-06-19T19:26:20+00:00",
+  "artifacts": [
+    {
+      "path": "data/reward/flow_v2_train_dataset_stage1.pt",
+      "row_count": null,
+      "sha256": "a10d74cb40b4dd99a311c1f70004eaed7a5256f563b0147e593d0c4410308732",
+      "timestamp": "2026-06-19T19:26:20+00:00",
+      "producer_step": "13_FLOW_REWARD_EVAL_VS_PROXY",
+      "run_id": null
+    },
+    {
+      "path": "checkpoints/flow_reward_v2_stage1/model.pt",
+      "row_count": null,
+      "sha256": "58e7a27cb0ef0819bca20a6daed72e9b98034bfac83cb0aa091f729bbcfe65db",
+      "timestamp": "2026-06-19T19:26:20+00:00",
+      "producer_step": "13_FLOW_REWARD_EVAL_VS_PROXY",
+      "run_id": null
+    },
+    {
+      "path": "data/rationales/parsed/train_candidates_stage1_strict.parquet",
+      "row_count": 12500,
+      "sha256": "5457f7c0e2aa6b277cbcf1bcbfafcdbdd99657f86fd40e37c4639facbdccea7d",
+      "timestamp": "2026-06-19T19:26:20+00:00",
+      "producer_step": "13_FLOW_REWARD_EVAL_VS_PROXY",
+      "run_id": null
+    },
+    {
+      "path": "data/labels/labels_h1_abnormal.parquet",
+      "row_count": 156098,
+      "sha256": "e4f8039de102d3e97ded1fade0b86e090c42164d37e937ef43dff8bd6177e837",
+      "timestamp": "2026-06-19T19:26:20+00:00",
+      "producer_step": "13_FLOW_REWARD_EVAL_VS_PROXY",
+      "run_id": null
+    },
+    {
+      "path": "outputs/metrics/flow_vs_proxy_eval_stage1.json",
+      "row_count": 1,
+      "sha256": "fc9196544552d467ebb080146cf93f274f3921b4a03832c5d35bcbe9c23b009d",
+      "timestamp": "2026-06-19T19:26:20+00:00",
+      "producer_step": "13_FLOW_REWARD_EVAL_VS_PROXY",
+      "run_id": null
+    },
+    {
+      "path": "outputs/tables/flow_vs_proxy_eval_stage1.csv",
+      "row_count": 4,
+      "sha256": "9d3ce8ed3b90c9acba6c366f5841a54028fa4886d57fb4f18bec2332dce82b90",
+      "timestamp": "2026-06-19T19:26:20+00:00",
+      "producer_step": "13_FLOW_REWARD_EVAL_VS_PROXY",
+      "run_id": null
+    }
+  ]
+}

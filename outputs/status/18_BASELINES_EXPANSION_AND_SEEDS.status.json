@@ -1,0 +1,44 @@
+{
+  "step": "18_BASELINES_EXPANSION_AND_SEEDS",
+  "status": "PASS",
+  "inputs_checked": [
+    "configs/baselines.yaml",
+    "data/labels/labels_h1_abnormal.parquet",
+    "data/indicators/technical_features_h1_v2.parquet",
+    "data/indicators/finbert_features_h1.parquet"
+  ],
+  "outputs_created": [
+    "outputs/tables/baseline_suite_by_seed.csv",
+    "outputs/tables/baseline_suite_aggregate.csv",
+    "outputs/predictions/baseline_suite_predictions.parquet",
+    "outputs/metrics/baseline_suite_summary.json",
+    "outputs/manifests/18_BASELINES_EXPANSION_AND_SEEDS.manifest.json",
+    "outputs/status/18_BASELINES_EXPANSION_AND_SEEDS.status.json"
+  ],
+  "metrics": {
+    "baseline_count": 12,
+    "required_minimum": [
+      "B1_FinBERT_LR",
+      "B2_Technical_LightGBM",
+      "B3_News_Technical_Late_Fusion",
+      "B4_DLinear"
+    ],
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "required_minimum_pass": true,
+    "multi_seed_missing": true,
+    "run_counts": {
+      "NOT_RUN": 24,
+      "PASS": 12
+    },
+    "prediction_rows": 95574,
+    "max_train_rows": 30000,
+    "max_test_rows": 10000,
+    "dlinear_epochs": 3
+  },
+  "failures": [],
+  "next_step_allowed": true
+}

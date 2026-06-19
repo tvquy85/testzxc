@@ -1,0 +1,47 @@
+{
+  "news_schema": {
+    "original_columns": [
+      "Unnamed: 0",
+      "Date",
+      "Article_title",
+      "Stock_symbol",
+      "Url",
+      "Publisher",
+      "Author",
+      "Article",
+      "Lsa_summary",
+      "Luhn_summary",
+      "Textrank_summary",
+      "Lexrank_summary"
+    ],
+    "mapping": {
+      "Article_title": "headline",
+      "Stock_symbol": "ticker",
+      "Date": "timestamp_utc",
+      "Article": "body",
+      "Publisher": "source",
+      "Url": "url",
+      "Author": "author"
+    }
+  },
+  "price_schema": {
+    "original_columns": [
+      "date",
+      "volume",
+      "open",
+      "high",
+      "low",
+      "close",
+      "adj close"
+    ],
+    "mapping": {
+      "date": "date",
+      "volume": "volume",
+      "open": "open",
+      "high": "high",
+      "low": "low",
+      "close": "close",
+      "adj close": "adj_close"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "rows": 1000,
+  "split": "test",
+  "checkpoint_used": "checkpoints\\aligned\\qwen3_4b\\dpo_v2",
+  "checkpoint_source": "primary",
+  "parse_ok_rate": 0.98,
+  "schema_ok_rate": 0.973,
+  "fallback_used": false,
+  "temperature": 0.0,
+  "do_sample": false,
+  "attn_implementation": "flash_attention_2",
+  "schema_ok_rows": 973,
+  "parse_ok_rows": 980,
+  "action_distribution": {
+    "hold": 523,
+    "long": 312,
+    "short": 138,
+    "invalid": 27
+  },
+  "selected_rows": 1000,
+  "selected_trading_days": 40,
+  "selected_start_date": "2023-01-03",
+  "selected_end_date": "2023-03-01",
+  "max_days": 40,
+  "max_rows_per_day": 25
+}

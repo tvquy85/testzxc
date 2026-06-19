@@ -1,0 +1,23 @@
+{
+  "producer_step": "07_TECH_EVENT_TOKENS_V2",
+  "run_id": null,
+  "created_at": "2026-06-19T06:40:45+00:00",
+  "artifacts": [
+    {
+      "path": "data/indicators/technical_event_tokens_h1_v2.parquet",
+      "row_count": 156098,
+      "sha256": "2cd387c94811397f790a4b2e166b021715a87df3fe54d7627cbb8a94d96fcc78",
+      "timestamp": "2026-06-19T06:40:45+00:00",
+      "producer_step": "07_TECH_EVENT_TOKENS_V2",
+      "run_id": null
+    },
+    {
+      "path": "outputs/manifests/technical_token_rules.json",
+      "row_count": 1,
+      "sha256": "48617e4dcf0f4df0eb85df900d7faf19353951afd255c06e0368889c8982252c",
+      "timestamp": "2026-06-19T06:40:45+00:00",
+      "producer_step": "07_TECH_EVENT_TOKENS_V2",
+      "run_id": null
+    }
+  ]
+}

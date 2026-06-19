@@ -1,0 +1,2 @@
+method,inferability_acc,technical_grounding,news_entailment,contradiction_rate,json_valid_rate
+DeepSeek-R1-Distill-1.5B (RWSFT+DPO),0,0,0,0,0

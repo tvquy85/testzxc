@@ -1,0 +1,172 @@
+{
+  "features": [
+    {
+      "name": "ret_1d",
+      "lookback": 1,
+      "kind": "price_only",
+      "leakage_note": "pct_change uses current and prior close only"
+    },
+    {
+      "name": "ret_5d",
+      "lookback": 5,
+      "kind": "price_only",
+      "leakage_note": "pct_change uses current and prior close only"
+    },
+    {
+      "name": "ret_20d",
+      "lookback": 20,
+      "kind": "price_only",
+      "leakage_note": "pct_change uses current and prior close only"
+    },
+    {
+      "name": "volatility_10d",
+      "lookback": 10,
+      "kind": "price_only",
+      "leakage_note": "rolling window includes rows <= feature date"
+    },
+    {
+      "name": "volatility_20d",
+      "lookback": 20,
+      "kind": "price_only",
+      "leakage_note": "rolling window includes rows <= feature date"
+    },
+    {
+      "name": "RSI_14",
+      "lookback": 14,
+      "kind": "price_only",
+      "leakage_note": "rolling gains/losses use historical deltas"
+    },
+    {
+      "name": "MACD",
+      "lookback": 26,
+      "kind": "price_only",
+      "leakage_note": "EMA uses current and past prices only"
+    },
+    {
+      "name": "MACD_signal",
+      "lookback": 35,
+      "kind": "price_only",
+      "leakage_note": "EMA over MACD uses current and past values only"
+    },
+    {
+      "name": "MACD_hist",
+      "lookback": 35,
+      "kind": "price_only",
+      "leakage_note": "derived from MACD and signal at feature date"
+    },
+    {
+      "name": "SMA_5",
+      "lookback": 5,
+      "kind": "price_only",
+      "leakage_note": "rolling window uses historical prices"
+    },
+    {
+      "name": "SMA_20",
+      "lookback": 20,
+      "kind": "price_only",
+      "leakage_note": "rolling window uses historical prices"
+    },
+    {
+      "name": "SMA_60",
+      "lookback": 60,
+      "kind": "price_only",
+      "leakage_note": "rolling window uses historical prices"
+    },
+    {
+      "name": "price_vs_SMA20",
+      "lookback": 20,
+      "kind": "price_only",
+      "leakage_note": "current close vs trailing SMA"
+    },
+    {
+      "name": "price_vs_SMA60",
+      "lookback": 60,
+      "kind": "price_only",
+      "leakage_note": "current close vs trailing SMA"
+    },
+    {
+      "name": "Bollinger_width_20",
+      "lookback": 20,
+      "kind": "price_only",
+      "leakage_note": "trailing mean/std only"
+    },
+    {
+      "name": "Bollinger_position_20",
+      "lookback": 20,
+      "kind": "price_only",
+      "leakage_note": "trailing bands only"
+    },
+    {
+      "name": "ATR_14",
+      "lookback": 14,
+      "kind": "price_only",
+      "leakage_note": "true range uses current high/low and previous close"
+    },
+    {
+      "name": "volume_zscore_20",
+      "lookback": 20,
+      "kind": "price_only",
+      "leakage_note": "trailing volume mean/std only"
+    },
+    {
+      "name": "gap_pct_last_day",
+      "lookback": 1,
+      "kind": "price_only",
+      "leakage_note": "open vs previous close at feature date"
+    },
+    {
+      "name": "relative_strength_vs_market_5d",
+      "lookback": 5,
+      "kind": "market_relative",
+      "leakage_note": "stock trailing return minus market trailing return"
+    },
+    {
+      "name": "relative_strength_vs_market_20d",
+      "lookback": 20,
+      "kind": "market_relative",
+      "leakage_note": "stock trailing return minus market trailing return"
+    },
+    {
+      "name": "regime_label",
+      "lookback": 252,
+      "kind": "market_relative",
+      "leakage_note": "market volatility percentile from trailing window"
+    }
+  ],
+  "sample_rows": 156098,
+  "feature_rows": 156098,
+  "warmup_missingness": {
+    "sample_id": 0.0,
+    "price_vs_SMA20": 0.0,
+    "relative_strength_vs_market_20d": 0.0,
+    "relative_strength_vs_market_5d": 0.0,
+    "market_vol_20d_rank": 0.0,
+    "market_vol_20d": 0.0,
+    "market_ret_20d": 0.0,
+    "market_ret_5d": 0.0,
+    "market_ret_1d": 0.0,
+    "gap_pct_last_day": 0.0,
+    "volume_zscore_20": 0.0,
+    "ATR_14": 0.0,
+    "Bollinger_position_20": 0.0,
+    "Bollinger_width_20": 0.0,
+    "price_vs_SMA60": 0.0,
+    "SMA_60": 0.0,
+    "ticker": 0.0,
+    "SMA_20": 0.0,
+    "SMA_5": 0.0,
+    "MACD_hist": 0.0,
+    "MACD_signal": 0.0,
+    "MACD": 0.0,
+    "RSI_14": 0.0,
+    "volatility_20d": 0.0,
+    "volatility_10d": 0.0,
+    "ret_20d": 0.0,
+    "ret_5d": 0.0,
+    "ret_1d": 0.0,
+    "window_end_date": 0.0,
+    "event_date": 0.0,
+    "regime_label": 0.0
+  },
+  "row_count_note": "Rows may be fewer than samples if warmup/history is unavailable."
+}

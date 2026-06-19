@@ -1,0 +1,12 @@
+{
+  "step": "02_DATA_DOWNLOAD_AND_LOCAL_CHECKS",
+  "status": "PASS",
+  "news_file_candidates": [
+    "nasdaq_exteral_data.csv"
+  ],
+  "price_file_candidates": [
+    "full_history.zip"
+  ],
+  "needs_download": false,
+  "notes": "FNSPID cache found locally. Previews generated successfully."
+}

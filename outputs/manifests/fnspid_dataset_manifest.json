@@ -1,0 +1,83 @@
+{
+  "step": "03_DATA_SCALE_AND_SPLIT_LOCK",
+  "raw_scan": {
+    "exists": true,
+    "root": "E:/huggingface/datasets/fnspid_official",
+    "file_count": 6,
+    "total_bytes": 23822505645,
+    "suffix_counts": {
+      "<none>": 1,
+      ".tag": 1,
+      ".metadata": 2,
+      ".csv": 1,
+      ".zip": 1
+    },
+    "news_file_count": 2,
+    "price_file_count": 2,
+    "sample_files": [
+      {
+        "path": "E:/huggingface/datasets/fnspid_official/.cache/huggingface/download/Stock_news/nasdaq_exteral_data.csv.metadata",
+        "size_bytes": 128,
+        "sha256": "d37584c18659bd051de9f8f84240fd462cb8f41ac65bbacb57bcc1c761d8afc7"
+      },
+      {
+        "path": "E:/huggingface/datasets/fnspid_official/Stock_news/nasdaq_exteral_data.csv",
+        "size_bytes": 23232979597,
+        "sha256": null,
+        "columns": [
+          "Unnamed: 0",
+          "Date",
+          "Article_title",
+          "Stock_symbol",
+          "Url",
+          "Publisher",
+          "Author",
+          "Article",
+          "Lsa_summary",
+          "Luhn_summary",
+          "Textrank_summary",
+          "Lexrank_summary"
+        ]
+      },
+      {
+        "path": "E:/huggingface/datasets/fnspid_official/.cache/huggingface/download/Stock_price/full_history.zip.metadata",
+        "size_bytes": 128,
+        "sha256": "481f13a73b6ffee027da282a931edbbece9daa3484778029753404c1a381b0f9"
+      },
+      {
+        "path": "E:/huggingface/datasets/fnspid_official/Stock_price/full_history.zip",
+        "size_bytes": 589525596,
+        "sha256": null,
+        "zip_member_count": 15388,
+        "zip_sample_members": [
+          "full_history/",
+          "__MACOSX/._full_history",
+          "full_history/RIV.csv",
+          "__MACOSX/full_history/._RIV.csv",
+          "full_history/ANTE.csv",
+          "__MACOSX/full_history/._ANTE.csv",
+          "full_history/CSCO.csv",
+          "__MACOSX/full_history/._CSCO.csv",
+          "full_history/PRI.csv",
+          "__MACOSX/full_history/._PRI.csv"
+        ]
+      }
+    ]
+  },
+  "processed_cache_scan": {
+    "exists": true,
+    "root": "E:/huggingface/datasets/fnspid_official_cache",
+    "news_thin_rows": 5744672,
+    "price_ticker_files": 7693,
+    "price_rows_from_metadata": 29677465,
+    "date_min": null,
+    "date_max": null
+  },
+  "metrics": {
+    "ticker_count": 36,
+    "aligned_candidate_rows": 156098,
+    "mvp_gate": true,
+    "aaai_target_gate": false
+  },
+  "download_instructions": null
+}

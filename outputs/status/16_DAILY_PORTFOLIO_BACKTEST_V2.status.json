@@ -1,0 +1,31 @@
+{
+  "step": "16_DAILY_PORTFOLIO_BACKTEST_V2",
+  "status": "PASS",
+  "inputs_checked": [
+    "outputs/predictions/test_predictions_qwen3_dpo_flash_medium.parquet",
+    "data/labels/labels_h1_abnormal.parquet"
+  ],
+  "outputs_created": [
+    "outputs/metrics/backtest_daily_portfolio_v2.json",
+    "outputs/tables/backtest_daily_returns_v2.csv",
+    "outputs/manifests/16_DAILY_PORTFOLIO_BACKTEST_V2.manifest.json",
+    "outputs/status/16_DAILY_PORTFOLIO_BACKTEST_V2.status.json"
+  ],
+  "metrics": {
+    "num_trading_days": 33,
+    "sharpe_daily_annualized": -10.95975619185449,
+    "avg_positions_per_day": 7.6120404757027496,
+    "avg_turnover_per_day": 6.8828808150513305,
+    "total_turnover": 227.1350668966939,
+    "mean_daily_return": -0.002809105416937875,
+    "nonzero_daily_return_rate": 1.0,
+    "coverage": 1.0,
+    "cost_bps": 5.0,
+    "slippage_bps": 0.0,
+    "short_borrow_bps": 0.0,
+    "schema_ok_rate_required": 0.8,
+    "min_trading_days_required": 20
+  },
+  "failures": [],
+  "next_step_allowed": true
+}

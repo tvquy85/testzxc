@@ -1,0 +1,23 @@
+{
+  "producer_step": "03_DATA_SCALE_AND_SPLIT_LOCK",
+  "run_id": null,
+  "created_at": "2026-06-19T06:35:39+00:00",
+  "artifacts": [
+    {
+      "path": "data/processed/split_membership.parquet",
+      "row_count": 156098,
+      "sha256": "04815f8010cd3cc9ca660a0e10303b954df20811f892f6d60b1bbdd7594f6382",
+      "timestamp": "2026-06-19T06:35:39+00:00",
+      "producer_step": "03_DATA_SCALE_AND_SPLIT_LOCK",
+      "run_id": null
+    },
+    {
+      "path": "outputs/manifests/split_manifest.json",
+      "row_count": 1,
+      "sha256": "12e112530032ad69d684606a57bfc1369572d12c7649c0b8e53176e2e4684c10",
+      "timestamp": "2026-06-19T06:35:39+00:00",
+      "producer_step": "03_DATA_SCALE_AND_SPLIT_LOCK",
+      "run_id": null
+    }
+  ]
+}

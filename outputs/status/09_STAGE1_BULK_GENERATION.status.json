@@ -1,0 +1,32 @@
+{
+  "step": "09_RATIONALE_GENERATION_SCALEUP_TRAIN_ONLY",
+  "status": "PASS",
+  "inputs_checked": [
+    "data/labels/labels_h1_abnormal.parquet",
+    "data/processed/split_membership.parquet",
+    "data/indicators/technical_event_tokens_h1_v2.parquet",
+    "prompts/rationale_generation_prompt_qwen3_fast_json.txt",
+    "configs/default_paths.yaml"
+  ],
+  "outputs_created": [
+    "data/rationales/raw/train_qwen3_4b_stage1_bulk.jsonl",
+    "data/rationales/parsed/train_qwen3_4b_stage1_bulk.parquet",
+    "outputs/manifests/09_STAGE1_BULK_GENERATION.manifest.json",
+    "outputs/status/09_STAGE1_BULK_GENERATION.status.json"
+  ],
+  "metrics": {
+    "row_count": 5000,
+    "expected_row_count": 5000,
+    "generated_this_run": 676,
+    "unique_sample_count": 5000,
+    "parse_ok_rate": 0.9958,
+    "schema_ok_rate": 0.979,
+    "avg_output_tokens_est": 215.1806,
+    "run_id": "stage_1_small_scale_a70d8930",
+    "stage": "stage_1_small_scale",
+    "backend": "transformers",
+    "elapsed_seconds": 1631.116
+  },
+  "failures": [],
+  "next_step_allowed": true
+}

@@ -1,0 +1,21 @@
+{
+  "step": "06_TECHNICAL_FEATURES_V2",
+  "status": "PASS",
+  "inputs_checked": [
+    "data/labels/labels_h1_abnormal.parquet",
+    "data/processed/prices_mvp.parquet"
+  ],
+  "outputs_created": [
+    "data/indicators/technical_features_h1_v2.parquet",
+    "outputs/manifests/technical_feature_manifest.json",
+    "outputs/manifests/06_TECHNICAL_FEATURES_V2.manifest.json",
+    "outputs/status/06_TECHNICAL_FEATURES_V2.status.json"
+  ],
+  "metrics": {
+    "sample_rows": 156098,
+    "feature_rows": 156098,
+    "max_missing_rate": 0.0
+  },
+  "failures": [],
+  "next_step_allowed": true
+}

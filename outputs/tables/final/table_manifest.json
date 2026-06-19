@@ -1,0 +1,190 @@
+{
+  "table_1_prediction_main.csv": {
+    "output": {
+      "path": "outputs/tables/final/table_1_prediction_main.csv",
+      "row_count": 273,
+      "sha256": "edffd2c1fff5e2ce22b6e94ff10446317954828be6894985669215c0f2fca437",
+      "timestamp": "2026-06-19T19:26:30+00:00",
+      "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+      "run_id": null
+    },
+    "sources": [
+      {
+        "path": "outputs/metrics/test_predictions_qwen3_dpo_flash_medium.json",
+        "row_count": 1,
+        "sha256": "9b4fe6c20c1d6fbacb3b9a5b61bf88d6c916c3df8309104d77af3f3b6d23991e",
+        "timestamp": "2026-06-19T19:26:30+00:00",
+        "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+        "run_id": null
+      },
+      {
+        "path": "outputs/tables/baseline_suite_aggregate.csv",
+        "row_count": 4,
+        "sha256": "c8dfc4dad19fddc561b490716ca8874ca8aa9d93ed6515fcef1ba69c4e1e2b58",
+        "timestamp": "2026-06-19T19:26:30+00:00",
+        "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+        "run_id": null
+      },
+      {
+        "path": "outputs/tables/prediction_bootstrap_comparisons.csv",
+        "row_count": 12,
+        "sha256": "c2e6291068c1f0b82d427998a269cc07b4f90e71eb77c805bc278914faff6b1c",
+        "timestamp": "2026-06-19T19:26:30+00:00",
+        "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+        "run_id": null
+      }
+    ],
+    "row_count": 273,
+    "evidence_row_count": 273
+  },
+  "table_2_explanation_quality.csv": {
+    "output": {
+      "path": "outputs/tables/final/table_2_explanation_quality.csv",
+      "row_count": 32,
+      "sha256": "da70996a8e478aca15f2c6f3f41d32929ab2531972276f2def98595528f288f9",
+      "timestamp": "2026-06-19T19:26:30+00:00",
+      "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+      "run_id": null
+    },
+    "sources": [
+      {
+        "path": "outputs/metrics/claim_grounding_summary_stage1.json",
+        "row_count": 1,
+        "sha256": "4b3361501aa1232e70f6b5a6fd2e1f204c87b063b9a46771d761bde4395c66f5",
+        "timestamp": "2026-06-19T19:26:30+00:00",
+        "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+        "run_id": null
+      },
+      {
+        "path": "outputs/metrics/flow_reward_v2_train_metrics_stage1.json",
+        "row_count": 1,
+        "sha256": "3cfd718de1232e9d815d2424693a97089831fe499e11d4f88b72072a593405d9",
+        "timestamp": "2026-06-19T19:26:30+00:00",
+        "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+        "run_id": null
+      },
+      {
+        "path": "outputs/metrics/flow_vs_proxy_eval_stage1.json",
+        "row_count": 1,
+        "sha256": "fc9196544552d467ebb080146cf93f274f3921b4a03832c5d35bcbe9c23b009d",
+        "timestamp": "2026-06-19T19:26:30+00:00",
+        "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+        "run_id": null
+      },
+      {
+        "path": "outputs/metrics/inferability_judge_stability_stage1.json",
+        "row_count": 1,
+        "sha256": "dede0bfc0c4a7fda676aa0a1ca18af68f3fc9313afb79423229c2fc6dd9af540",
+        "timestamp": "2026-06-19T19:26:30+00:00",
+        "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+        "run_id": null
+      }
+    ],
+    "row_count": 32,
+    "evidence_row_count": 32
+  },
+  "table_3_daily_portfolio_backtest.csv": {
+    "output": {
+      "path": "outputs/tables/final/table_3_daily_portfolio_backtest.csv",
+      "row_count": 181,
+      "sha256": "f12a8de3332ad110e5ed5731b0912f50a93a9ea99a325892230409e2e389e0cd",
+      "timestamp": "2026-06-19T19:26:30+00:00",
+      "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+      "run_id": null
+    },
+    "sources": [
+      {
+        "path": "outputs/metrics/backtest_daily_portfolio_v2.json",
+        "row_count": 1,
+        "sha256": "4aef0ddb24ca40c612d146cb22a35a7e67f355dc263ca3de4ab6f873388a38a5",
+        "timestamp": "2026-06-19T19:26:30+00:00",
+        "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+        "run_id": null
+      },
+      {
+        "path": "outputs/tables/backtest_block_bootstrap_comparisons.csv",
+        "row_count": 12,
+        "sha256": "e48872fa9729a37584c97354d8776c6023a477f9dc4fa46d69fd86ea72f1620e",
+        "timestamp": "2026-06-19T19:26:30+00:00",
+        "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+        "run_id": null
+      }
+    ],
+    "row_count": 181,
+    "evidence_row_count": 181
+  },
+  "table_4_counterfactual_directional.csv": {
+    "output": {
+      "path": "outputs/tables/final/table_4_counterfactual_directional.csv",
+      "row_count": 13,
+      "sha256": "cabcd4ce705d40d4a533e707bf06932593ba24d20b371ed37b684dd41d82ab1d",
+      "timestamp": "2026-06-19T19:26:30+00:00",
+      "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+      "run_id": null
+    },
+    "sources": [
+      {
+        "path": "outputs/metrics/counterfactual_directional_v2.json",
+        "row_count": 1,
+        "sha256": "f87784c53233255a1aa893ea655209641b9e59780ec711b2216d7ead18f9c539",
+        "timestamp": "2026-06-19T19:26:30+00:00",
+        "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+        "run_id": null
+      }
+    ],
+    "row_count": 13,
+    "evidence_row_count": 13
+  },
+  "table_5_ablation.csv": {
+    "output": {
+      "path": "outputs/tables/final/table_5_ablation.csv",
+      "row_count": 9,
+      "sha256": "1342bc6f510f968ac692258e4e32d64974feeecdbc39931d2afdd4e99c9c5bdd",
+      "timestamp": "2026-06-19T19:26:30+00:00",
+      "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+      "run_id": null
+    },
+    "sources": [
+      {
+        "path": "outputs/tables/ablation_suite_results.csv",
+        "row_count": 9,
+        "sha256": "895c6235086b5e368529c59169c7d1c3c75bee815256d97573ff4c80cbe90c53",
+        "timestamp": "2026-06-19T19:26:30+00:00",
+        "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+        "run_id": null
+      }
+    ],
+    "row_count": 9,
+    "evidence_row_count": 0
+  },
+  "table_6_scale_and_compute.csv": {
+    "output": {
+      "path": "outputs/tables/final/table_6_scale_and_compute.csv",
+      "row_count": 38,
+      "sha256": "0a9ffa844839bfc2a2d749e4aa192621a98401f1442825a16b10404174f43579",
+      "timestamp": "2026-06-19T19:26:30+00:00",
+      "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+      "run_id": null
+    },
+    "sources": [
+      {
+        "path": "outputs/audit/repro_env_report.json",
+        "row_count": 1,
+        "sha256": "c00bb4fc03c13e6f1c6796128b28abff480d5ea02c8b5f3dc704899ede8c53aa",
+        "timestamp": "2026-06-19T19:26:30+00:00",
+        "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+        "run_id": null
+      },
+      {
+        "path": "outputs/manifests/fnspid_dataset_manifest.json",
+        "row_count": 1,
+        "sha256": "452c142df05be308329480164b2f4a8b6321686d717a38d4486c06cef51da758",
+        "timestamp": "2026-06-19T19:26:30+00:00",
+        "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+        "run_id": null
+      }
+    ],
+    "row_count": 38,
+    "evidence_row_count": 38
+  }
+}

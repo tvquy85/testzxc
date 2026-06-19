@@ -1,0 +1,9 @@
+{
+  "step": "10_FLOW_REWARD_MODEL_LITE",
+  "status": "PASS",
+  "checkpoint": "outputs/checkpoints/flow_reward_lite_h1.pt",
+  "validation_mse": 1.0144418478012085,
+  "naive_baseline_mse": 1.271496295928955,
+  "scored_rows": 1200,
+  "notes": "Trained 4-layer 512-dim MLP Rectified Flow to predict velocity of judge probabilities. Target leakage prevented by explicitly removing true labels from the conditioning vector."
+}

@@ -1,0 +1,24 @@
+{
+  "step": "13_FLOW_REWARD_EVAL_VS_PROXY",
+  "status": "PASS",
+  "inputs_checked": [
+    "data/reward/flow_v2_train_dataset_stage1.pt",
+    "checkpoints/flow_reward_v2_stage1",
+    "data/rationales/parsed/train_candidates_stage1_strict.parquet",
+    "data/labels/labels_h1_abnormal.parquet"
+  ],
+  "outputs_created": [
+    "outputs/metrics/flow_vs_proxy_eval_stage1.json",
+    "outputs/tables/flow_vs_proxy_eval_stage1.csv",
+    "outputs/manifests/13_FLOW_REWARD_EVAL_VS_PROXY.manifest.json",
+    "outputs/status/13_FLOW_REWARD_EVAL_VS_PROXY.status.json"
+  ],
+  "metrics": {
+    "rows": 12500,
+    "eval_rows": 2480,
+    "method_count": 4,
+    "claim_improvement": false
+  },
+  "failures": [],
+  "next_step_allowed": true
+}

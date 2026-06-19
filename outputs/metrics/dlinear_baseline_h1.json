@@ -1,0 +1,7 @@
+{
+  "model": "DLinear_Tabular",
+  "test_accuracy": 0.464944382915202,
+  "test_macro_f1": 0.1296143215602237,
+  "test_mcc": 0.021141297060937057,
+  "test_brier": 0.6673294767307878
+}

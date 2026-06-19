@@ -1,0 +1,31 @@
+{
+  "step": "17_COUNTERFACTUAL_DIRECTIONAL_EVAL_V2",
+  "status": "PASS",
+  "inputs_checked": [
+    "data/processed/counterfactual_tasks_v2.jsonl",
+    "checkpoints/aligned/qwen3_4b/dpo_v2"
+  ],
+  "outputs_created": [
+    "outputs/metrics/counterfactual_directional_v2.json",
+    "outputs/tables/counterfactual_directional_examples.csv",
+    "outputs/manifests/17_COUNTERFACTUAL_DIRECTIONAL_EVAL_V2.manifest.json",
+    "outputs/status/17_COUNTERFACTUAL_DIRECTIONAL_EVAL_V2.status.json"
+  ],
+  "metrics": {
+    "num_tasks": 500,
+    "num_generations": 1000,
+    "mean_delta": -0.036140000000000026,
+    "pass_rate": 0.16,
+    "wrong_direction_rate": 0.144,
+    "no_change_rate": 0.696,
+    "parse_ok_rate": 0.999,
+    "schema_ok_rate": 0.969,
+    "temperature": 0.0,
+    "do_sample": false,
+    "evaluator": "llm_forecast_counterfactual",
+    "attn_implementation": "flash_attention_2",
+    "checkpoint_used": "checkpoints/aligned/qwen3_4b/dpo_v2"
+  },
+  "failures": [],
+  "next_step_allowed": true
+}

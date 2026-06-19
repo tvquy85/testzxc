@@ -1,0 +1,9 @@
+{
+  "model": "Combined_LightGBM",
+  "test_accuracy": 0.440999624201428,
+  "test_macro_f1": 0.184254488049932,
+  "test_mcc": 0.037036978529001785,
+  "test_brier": 0.6948301538665922,
+  "majority_accuracy": 0.4633596392333709,
+  "majority_macro_f1": 0.12665639445300464
+}

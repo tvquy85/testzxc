@@ -1,0 +1,30 @@
+{
+  "step": "PREDICTION_SMOKE_V2",
+  "status": "PASS",
+  "inputs_checked": [
+    "data/labels/labels_h1_abnormal.parquet",
+    "data/indicators/technical_event_tokens_h1_v2.parquet",
+    "prompts/rationale_generation_prompt_qwen3_fast_json.txt",
+    "checkpoints/aligned/qwen3_4b/dpo_v2"
+  ],
+  "outputs_created": [
+    "outputs/predictions/flash_attn_prediction_smoke.parquet",
+    "outputs/metrics/flash_attn_prediction_smoke.json",
+    "outputs/manifests/FLASH_ATTN_PREDICTION_SMOKE.manifest.json",
+    "outputs/status/FLASH_ATTN_PREDICTION_SMOKE.status.json"
+  ],
+  "metrics": {
+    "rows": 1,
+    "split": "test",
+    "checkpoint_used": "checkpoints\\aligned\\qwen3_4b\\dpo_v2",
+    "checkpoint_source": "primary",
+    "parse_ok_rate": 0.0,
+    "schema_ok_rate": 0.0,
+    "fallback_used": false,
+    "temperature": 0.0,
+    "do_sample": false,
+    "attn_implementation": "flash_attention_2"
+  },
+  "failures": [],
+  "next_step_allowed": true
+}

@@ -1,0 +1,22 @@
+{
+  "step": "13_ABLATIONS_AND_PAPER_TABLES",
+  "status": "PASS",
+  "tables_created": [
+    "table_1_prediction_main.csv",
+    "table_2_explanation_quality.csv",
+    "table_3_backtest.csv",
+    "table_4_ablation.csv"
+  ],
+  "figures_created": [
+    "flow_vs_proxy_calibration.png"
+  ],
+  "ablations_completed": [
+    "A1"
+  ],
+  "ablations_not_run": {
+    "A3": "Requires full DPO retraining which violates \"Do not launch long retraining\" rule.",
+    "A4": "Requires full DPO retraining.",
+    "A5": "Requires full DPO retraining."
+  },
+  "notes": "Used DeepSeek-Base as a powerful ablation baseline representing No-Alignment."
+}

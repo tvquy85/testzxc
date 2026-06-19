@@ -1,0 +1,23 @@
+{
+  "producer_step": "06_TECHNICAL_FEATURES_V2",
+  "run_id": null,
+  "created_at": "2026-06-19T06:39:50+00:00",
+  "artifacts": [
+    {
+      "path": "data/indicators/technical_features_h1_v2.parquet",
+      "row_count": 156098,
+      "sha256": "f0893dae8d590d90b800a12d82843774e14d58163d2c867fc069cbdba2b112b9",
+      "timestamp": "2026-06-19T06:39:50+00:00",
+      "producer_step": "06_TECHNICAL_FEATURES_V2",
+      "run_id": null
+    },
+    {
+      "path": "outputs/manifests/technical_feature_manifest.json",
+      "row_count": 1,
+      "sha256": "d2f7e9ba833daf4ad5725b9ff0f1d17397e1f78ab7cebd742259cad6b0fc6c48",
+      "timestamp": "2026-06-19T06:39:51+00:00",
+      "producer_step": "06_TECHNICAL_FEATURES_V2",
+      "run_id": null
+    }
+  ]
+}

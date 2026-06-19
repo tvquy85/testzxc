@@ -1,0 +1,26 @@
+{
+  "step": "15_ALIGNMENT_TRAINING_REPRODUCIBLE",
+  "status": "FAIL",
+  "inputs_checked": [
+    "data/alignment/rwsft_train_v2.jsonl"
+  ],
+  "outputs_created": [
+    "checkpoints\\aligned\\qwen3_4b\\rwsft_v2_deeplob_probe\\trainer_config.json",
+    "outputs/manifests/15_ALIGNMENT_TRAINING_DEEPLOB_ENV_CHECK.manifest.json",
+    "outputs/status/15_ALIGNMENT_TRAINING_DEEPLOB_ENV_CHECK.status.json"
+  ],
+  "metrics": {
+    "missing_modules": [
+      "torch",
+      "transformers",
+      "peft",
+      "trl",
+      "bitsandbytes"
+    ],
+    "max_steps": 10
+  },
+  "failures": [
+    "missing training modules: ['torch', 'transformers', 'peft', 'trl', 'bitsandbytes']"
+  ],
+  "next_step_allowed": false
+}

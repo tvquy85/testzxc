@@ -1,0 +1,63 @@
+{
+  "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+  "run_id": null,
+  "created_at": "2026-06-19T19:26:30+00:00",
+  "artifacts": [
+    {
+      "path": "outputs/tables/final/table_1_prediction_main.csv",
+      "row_count": 273,
+      "sha256": "edffd2c1fff5e2ce22b6e94ff10446317954828be6894985669215c0f2fca437",
+      "timestamp": "2026-06-19T19:26:30+00:00",
+      "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+      "run_id": null
+    },
+    {
+      "path": "outputs/tables/final/table_2_explanation_quality.csv",
+      "row_count": 32,
+      "sha256": "da70996a8e478aca15f2c6f3f41d32929ab2531972276f2def98595528f288f9",
+      "timestamp": "2026-06-19T19:26:30+00:00",
+      "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+      "run_id": null
+    },
+    {
+      "path": "outputs/tables/final/table_3_daily_portfolio_backtest.csv",
+      "row_count": 181,
+      "sha256": "f12a8de3332ad110e5ed5731b0912f50a93a9ea99a325892230409e2e389e0cd",
+      "timestamp": "2026-06-19T19:26:30+00:00",
+      "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+      "run_id": null
+    },
+    {
+      "path": "outputs/tables/final/table_4_counterfactual_directional.csv",
+      "row_count": 13,
+      "sha256": "cabcd4ce705d40d4a533e707bf06932593ba24d20b371ed37b684dd41d82ab1d",
+      "timestamp": "2026-06-19T19:26:30+00:00",
+      "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+      "run_id": null
+    },
+    {
+      "path": "outputs/tables/final/table_5_ablation.csv",
+      "row_count": 9,
+      "sha256": "1342bc6f510f968ac692258e4e32d64974feeecdbc39931d2afdd4e99c9c5bdd",
+      "timestamp": "2026-06-19T19:26:30+00:00",
+      "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+      "run_id": null
+    },
+    {
+      "path": "outputs/tables/final/table_6_scale_and_compute.csv",
+      "row_count": 38,
+      "sha256": "0a9ffa844839bfc2a2d749e4aa192621a98401f1442825a16b10404174f43579",
+      "timestamp": "2026-06-19T19:26:30+00:00",
+      "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+      "run_id": null
+    },
+    {
+      "path": "outputs/tables/final/table_manifest.json",
+      "row_count": 1,
+      "sha256": "b8cb1c1cf3c03388797e5b02ba18f228b44783325d5c8c65f34f1dc8c689933e",
+      "timestamp": "2026-06-19T19:26:30+00:00",
+      "producer_step": "20_PAPER_TABLES_NO_DUMMY_GATES",
+      "run_id": null
+    }
+  ]
+}

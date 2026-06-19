@@ -1,0 +1,34 @@
+{
+  "step": "11_CLAIM_LEVEL_GROUNDING_JUDGES",
+  "status": "PASS",
+  "inputs_checked": [
+    "data/rationales/parsed/train_candidates_stage1_strict.parquet",
+    "data/labels/labels_h1_abnormal.parquet",
+    "data/indicators/technical_event_tokens_h1_v2.parquet"
+  ],
+  "outputs_created": [
+    "data/judges/claim_grounding_scores_stage1.parquet",
+    "outputs/metrics/claim_grounding_summary_stage1.json",
+    "outputs/manifests/11_CLAIM_LEVEL_GROUNDING_JUDGES.manifest.json",
+    "outputs/status/11_CLAIM_LEVEL_GROUNDING_JUDGES.status.json"
+  ],
+  "metrics": {
+    "rows": 85084,
+    "claim_type_counts": {
+      "technical_claim": 24439,
+      "news_claim": 23304,
+      "regime_claim": 12447,
+      "forecast_claim": 12447,
+      "risk_claim": 12447
+    },
+    "status_counts": {
+      "not_applicable": 37341,
+      "unverified": 28128,
+      "supported": 19615
+    },
+    "technical_contradiction_examples_saved": false,
+    "news_contradiction_examples_saved": false
+  },
+  "failures": [],
+  "next_step_allowed": true
+}

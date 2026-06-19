@@ -1,0 +1,5 @@
+method,rank_correlation_with_realized_utility,calibration_error,top_k_rationale_quality,preference_pair_accuracy,variance_by_regime,status
+proxy_average_reward,,,,,,PENDING_REAL_EVAL
+single_best_judge_reward,,,,,,PENDING_REAL_EVAL
+flow_reward_v1,,,,,,PENDING_REAL_EVAL
+flow_reward_v2,,,,,,PENDING_REAL_EVAL

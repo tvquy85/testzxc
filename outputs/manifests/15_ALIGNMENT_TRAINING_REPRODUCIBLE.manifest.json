@@ -1,0 +1,47 @@
+{
+  "producer_step": "15_ALIGNMENT_TRAINING_REPRODUCIBLE",
+  "run_id": null,
+  "created_at": "2026-06-19T16:24:38+00:00",
+  "artifacts": [
+    {
+      "path": "checkpoints/aligned/qwen3_4b/dpo_v2/trainer_config.json",
+      "row_count": 1,
+      "sha256": "7490626bf4c1eb67ee5fa5c2eea968367d0729d6c0e670f4232776be7d497f8a",
+      "timestamp": "2026-06-19T16:24:38+00:00",
+      "producer_step": "15_ALIGNMENT_TRAINING_REPRODUCIBLE",
+      "run_id": null
+    },
+    {
+      "path": "checkpoints/aligned/qwen3_4b/dpo_v2/adapter_config.json",
+      "row_count": 1,
+      "sha256": "6abadcf92f9b5720ee08eb1b5e50573343768890964459f88078bf8e039c3266",
+      "timestamp": "2026-06-19T16:24:38+00:00",
+      "producer_step": "15_ALIGNMENT_TRAINING_REPRODUCIBLE",
+      "run_id": null
+    },
+    {
+      "path": "checkpoints/aligned/qwen3_4b/dpo_v2/adapter_model.safetensors",
+      "row_count": null,
+      "sha256": "6dc6e64f34d0299349ee4d5e9534c30d45e47878970c6c33fac2f116ce8eca50",
+      "timestamp": "2026-06-19T16:24:38+00:00",
+      "producer_step": "15_ALIGNMENT_TRAINING_REPRODUCIBLE",
+      "run_id": null
+    },
+    {
+      "path": "checkpoints/aligned/qwen3_4b/rwsft_v2/adapter_config.json",
+      "row_count": 1,
+      "sha256": "4d439561fb132bc8ff3fc4e1181ae52098134e4e811f127846a7fd2e0537dae6",
+      "timestamp": "2026-06-19T16:24:38+00:00",
+      "producer_step": "15_ALIGNMENT_TRAINING_REPRODUCIBLE",
+      "run_id": null
+    },
+    {
+      "path": "checkpoints/aligned/qwen3_4b/rwsft_v2/adapter_model.safetensors",
+      "row_count": null,
+      "sha256": "134b399f76338bdbbbbb7bdee2045f98f66d3a66b6f91dda8ae8943eba284375",
+      "timestamp": "2026-06-19T16:24:38+00:00",
+      "producer_step": "15_ALIGNMENT_TRAINING_REPRODUCIBLE",
+      "run_id": null
+    }
+  ]
+}

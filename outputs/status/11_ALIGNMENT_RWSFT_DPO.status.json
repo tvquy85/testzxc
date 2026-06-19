@@ -1,0 +1,9 @@
+{
+  "step": "11_ALIGNMENT_RWSFT_DPO",
+  "status": "PASS",
+  "num_rwsft_samples": 800,
+  "num_dpo_pairs": 685,
+  "rwsft_model": "outputs/checkpoints/rwsft_qwen_h1_dryrun",
+  "dpo_model": "outputs/checkpoints/dpo_qwen_h1_dryrun",
+  "notes": "Completed successfully. Using standard bfloat16 instead of QLoRA 4-bit due to Windows BitsAndBytes compatibility. Models fit safely within VRAM."
+}

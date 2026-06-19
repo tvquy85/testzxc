@@ -1,0 +1,25 @@
+{
+  "judge_inventory": {
+    "llama3_judge": {
+      "path": "E:\\huggingface\\hub\\models--meta-llama--Meta-Llama-3-8B-Instruct\\snapshots\\5f0b02c75b57c5855da9ae460ce51323ea669d8a",
+      "status": "available"
+    },
+    "qwen3_judge": {
+      "path": "E:\\huggingface\\models\\Qwen3-4B-Instruct-2507",
+      "status": "available"
+    },
+    "qwen25_judge": {
+      "path": "E:\\huggingface\\hub\\models--Qwen--Qwen2.5-3B-Instruct\\snapshots\\aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "status": "available"
+    },
+    "deepseek_reasoning_judge": {
+      "path": "E:\\huggingface\\hub\\models--deepseek-ai--DeepSeek-R1-Distill-Qwen-1.5B\\snapshots\\ad9f0ae0864d7fbcd1cd905e3c6c5b069cc8b562",
+      "status": "available"
+    }
+  },
+  "rows": 400,
+  "parse_ok_rate": 1.0,
+  "label_order_consistency": 1.0,
+  "entropy_mean": 1.341761640675346,
+  "mean_probability_true_label": 0.221
+}

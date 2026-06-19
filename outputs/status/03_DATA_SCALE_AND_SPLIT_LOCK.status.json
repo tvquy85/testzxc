@@ -1,0 +1,40 @@
+{
+  "step": "03_DATA_SCALE_AND_SPLIT_LOCK",
+  "status": "PASS",
+  "inputs_checked": [
+    "data/labels/aligned_samples_h1.parquet"
+  ],
+  "outputs_created": [
+    "data/processed/split_membership.parquet",
+    "outputs/manifests/split_manifest.json",
+    "outputs/manifests/03_DATA_SCALE_AND_SPLIT_LOCK.manifest.json",
+    "outputs/status/03_DATA_SCALE_AND_SPLIT_LOCK.status.json"
+  ],
+  "metrics": {
+    "rows": 156098,
+    "split_counts": {
+      "train": 80415,
+      "test": 46279,
+      "val": 29404
+    },
+    "ranges": {
+      "test": {
+        "rows": 46279,
+        "date_min": "2023-01-03",
+        "date_max": "2023-12-27"
+      },
+      "train": {
+        "rows": 80415,
+        "date_min": "2018-03-29",
+        "date_max": "2021-12-31"
+      },
+      "val": {
+        "rows": 29404,
+        "date_min": "2022-01-03",
+        "date_max": "2022-12-30"
+      }
+    }
+  },
+  "failures": [],
+  "next_step_allowed": true
+}

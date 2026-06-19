@@ -1,0 +1,11 @@
+{
+  "row_count": 12500,
+  "unique_sample_count": 7336,
+  "raw_input_count": 2,
+  "parse_ok_rate": 0.99576,
+  "schema_ok_rate": 0.98352,
+  "avg_output_tokens_est": 219.47248,
+  "duplicate_key_count": 0,
+  "explicit_leak_pattern_count": 0,
+  "stage": "stage_1_small_scale"
+}

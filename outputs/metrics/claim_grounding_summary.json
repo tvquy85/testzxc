@@ -1,0 +1,17 @@
+{
+  "rows": 326,
+  "claim_type_counts": {
+    "technical_claim": 95,
+    "news_claim": 81,
+    "regime_claim": 50,
+    "forecast_claim": 50,
+    "risk_claim": 50
+  },
+  "status_counts": {
+    "not_applicable": 150,
+    "unverified": 112,
+    "supported": 64
+  },
+  "technical_contradiction_examples_saved": false,
+  "news_contradiction_examples_saved": false
+}

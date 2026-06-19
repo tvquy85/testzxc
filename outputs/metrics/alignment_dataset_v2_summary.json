@@ -1,0 +1,10 @@
+{
+  "rwsft_examples": 7336,
+  "rwsft_mvp_gate": true,
+  "dpo_pairs": 3362,
+  "dpo_unique_samples": 1565,
+  "dpo_mvp_gate": true,
+  "reward_gap_min": 0.02,
+  "ranking_source": "alignment_proxy_from_step10_11_flow_targets",
+  "scored_rows": 12500
+}

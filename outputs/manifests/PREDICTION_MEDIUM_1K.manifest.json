@@ -1,0 +1,23 @@
+{
+  "producer_step": "PREDICTION_SMOKE_V2",
+  "run_id": null,
+  "created_at": "2026-06-19T17:36:04+00:00",
+  "artifacts": [
+    {
+      "path": "outputs/predictions/test_predictions_qwen3_dpo_flash_medium_1k.parquet",
+      "row_count": 1000,
+      "sha256": "e50dd9fef5d1e78dbd1f5c5baf407ff6091518b37dfccdcc39aaec54ed0ffd62",
+      "timestamp": "2026-06-19T17:36:04+00:00",
+      "producer_step": "PREDICTION_SMOKE_V2",
+      "run_id": null
+    },
+    {
+      "path": "outputs/metrics/test_predictions_qwen3_dpo_flash_medium_1k.json",
+      "row_count": 1,
+      "sha256": "4aedbc7ef721873e19fabb5249daaa176782b4b4324c59660b9c4ff10a02f05f",
+      "timestamp": "2026-06-19T17:36:04+00:00",
+      "producer_step": "PREDICTION_SMOKE_V2",
+      "run_id": null
+    }
+  ]
+}

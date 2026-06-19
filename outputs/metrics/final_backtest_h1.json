@@ -1,0 +1,9 @@
+{
+  "total_trades": 90,
+  "long_trades": 86,
+  "short_trades": 4,
+  "total_return": 0.32087919898933515,
+  "sharpe_ratio": 4.013601389545599,
+  "max_drawdown": -0.22681191449509142,
+  "win_rate": 0.43333333333333335
+}

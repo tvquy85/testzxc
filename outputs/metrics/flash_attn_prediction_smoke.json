@@ -1,0 +1,12 @@
+{
+  "rows": 1,
+  "split": "test",
+  "checkpoint_used": "checkpoints\\aligned\\qwen3_4b\\dpo_v2",
+  "checkpoint_source": "primary",
+  "parse_ok_rate": 0.0,
+  "schema_ok_rate": 0.0,
+  "fallback_used": false,
+  "temperature": 0.0,
+  "do_sample": false,
+  "attn_implementation": "flash_attention_2"
+}

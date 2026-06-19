@@ -1,0 +1,23 @@
+{
+  "producer_step": "05_LABELS_ABNORMAL_RETURN_AND_BALANCE",
+  "run_id": null,
+  "created_at": "2026-06-19T06:38:21+00:00",
+  "artifacts": [
+    {
+      "path": "outputs/metrics/label_distribution_h1.json",
+      "row_count": 1,
+      "sha256": "a4ff6cf691020d6e8c20d0fb4ba0da14d5969ab969fd6602ebf74ed7c8832069",
+      "timestamp": "2026-06-19T06:38:21+00:00",
+      "producer_step": "05_LABELS_ABNORMAL_RETURN_AND_BALANCE",
+      "run_id": null
+    },
+    {
+      "path": "outputs/tables/label_distribution_by_split.csv",
+      "row_count": 15,
+      "sha256": "961d55f4ddb2c1d789d3bedde77a1563693273d5f08c1f601cb6ba02a81318d4",
+      "timestamp": "2026-06-19T06:38:21+00:00",
+      "producer_step": "05_LABELS_ABNORMAL_RETURN_AND_BALANCE",
+      "run_id": null
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "step": "03_FNSPID_SCHEMA_AND_SAMPLE_BUILD",
+  "status": "PASS",
+  "news_rows": 170961,
+  "price_rows": 47109,
+  "ticker_count": 36,
+  "date_min": "2018-01-02",
+  "date_max": "2023-12-28",
+  "warnings": []
+}

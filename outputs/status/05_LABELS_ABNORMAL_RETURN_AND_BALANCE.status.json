@@ -1,0 +1,20 @@
+{
+  "step": "05_LABELS_ABNORMAL_RETURN_AND_BALANCE",
+  "status": "PASS",
+  "inputs_checked": [
+    "data/labels/labels_h1_abnormal.parquet",
+    "data/indicators/technical_features_h1.parquet"
+  ],
+  "outputs_created": [
+    "outputs/metrics/label_distribution_h1.json",
+    "outputs/tables/label_distribution_by_split.csv",
+    "outputs/manifests/05_LABELS_ABNORMAL_RETURN_AND_BALANCE.manifest.json",
+    "outputs/status/05_LABELS_ABNORMAL_RETURN_AND_BALANCE.status.json"
+  ],
+  "metrics": {
+    "rows": 156098,
+    "class_count": 5
+  },
+  "failures": [],
+  "next_step_allowed": true
+}

@@ -1,0 +1,31 @@
+{
+  "producer_step": "12_FLOW_REWARD_MULTITARGET_V2",
+  "run_id": null,
+  "created_at": "2026-06-19T15:48:33+00:00",
+  "artifacts": [
+    {
+      "path": "data/reward/flow_v2_train_dataset_stage1.pt",
+      "row_count": null,
+      "sha256": "a10d74cb40b4dd99a311c1f70004eaed7a5256f563b0147e593d0c4410308732",
+      "timestamp": "2026-06-19T15:48:33+00:00",
+      "producer_step": "12_FLOW_REWARD_MULTITARGET_V2",
+      "run_id": null
+    },
+    {
+      "path": "outputs/metrics/flow_reward_v2_train_metrics_stage1.json",
+      "row_count": 1,
+      "sha256": "3cfd718de1232e9d815d2424693a97089831fe499e11d4f88b72072a593405d9",
+      "timestamp": "2026-06-19T15:48:33+00:00",
+      "producer_step": "12_FLOW_REWARD_MULTITARGET_V2",
+      "run_id": null
+    },
+    {
+      "path": "checkpoints/flow_reward_v2_stage1/model.pt",
+      "row_count": null,
+      "sha256": "58e7a27cb0ef0819bca20a6daed72e9b98034bfac83cb0aa091f729bbcfe65db",
+      "timestamp": "2026-06-19T15:48:33+00:00",
+      "producer_step": "12_FLOW_REWARD_MULTITARGET_V2",
+      "run_id": null
+    }
+  ]
+}

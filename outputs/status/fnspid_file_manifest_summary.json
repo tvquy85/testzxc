@@ -1,0 +1,8 @@
+{
+  "total_files": 2,
+  "roles": {
+    "news": 1,
+    "price": 1
+  },
+  "needs_download": false
+}

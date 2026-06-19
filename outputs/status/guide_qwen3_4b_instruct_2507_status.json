@@ -1,0 +1,40 @@
+{
+  "task": "GuideQwen3-4B-Instruct-2507",
+  "status": "PASS",
+  "files_created": [
+    "configs/rationale_generation_qwen3_fast.yaml",
+    "prompts/rationale_generation_prompt_qwen3_fast_json.txt",
+    "src/llm/validate_raw_rationales.py",
+    "data/rationales/debug/qwen3_4b_200.jsonl",
+    "data/rationales/debug/qwen3_4b_200.parquet",
+    "outputs/validation/qwen3_4b_200_validation.json"
+  ],
+  "files_modified": [
+    "configs/default_paths.yaml",
+    "configs/local_paths.yaml",
+    "configs/local_paths.template.yaml",
+    "GuideQwen3-4B-Instruct-2507.md",
+    "00_README_EXECUTION_ORDER.md",
+    "08_GENERATE_RATIONALES_LOCAL_LLM.md",
+    "11_ALIGNMENT_RWSFT_DPO.md",
+    "codex_upgrade_md/09_RATIONALE_GENERATION_SCALEUP_TRAIN_ONLY.md",
+    "codex_upgrade_md/15_ALIGNMENT_TRAINING_REPRODUCIBLE.md",
+    "paper/stories/prompt_and_scoring_innovations.md",
+    "src/llm/generate_rationales.py",
+    "src/llm/parse_and_validate_rationale.py",
+    "src/judges/inferability_judge_v2.py",
+    "src/judges/extract_rationale_claims.py",
+    "tests/test_rationale_schema_strict.py"
+  ],
+  "smoke_test_command": "/mnt/d/LOBProj/LOBExp/.venv/Scripts/python.exe src/llm/generate_rationales.py --backend transformers --input data/labels/labels_h1_abnormal.parquet --splits data/processed/split_membership.parquet --tokens data/indicators/technical_event_tokens_h1_v2.parquet --prompt prompts/rationale_generation_prompt_qwen3_fast_json.txt --config configs/default_paths.yaml --model-key main_explanation_llm --hf-home E:/huggingface --split train --limit 200 --num-candidates 1 --max-new-tokens 256 --temperature 0.30 --top-p 0.85 --top-k 40 --repetition-penalty 1.05 --batch-size 4 --sort-by-length --save-every 50 --strict-raw-output --overwrite --output data/rationales/debug/qwen3_4b_200.jsonl --parsed-output data/rationales/debug/qwen3_4b_200.parquet --stage stage_0_sanity_check",
+  "smoke_test_output": "row_count=200, parse_ok_rate=1.0, raw_schema_ok_rate=0.985, invalid_json_rate=0.0, explicit_label_leak_rate=0.0, avg_output_tokens_est=215.135, elapsed_seconds=538.888",
+  "validation_summary_path": "outputs/validation/qwen3_4b_200_validation.json",
+  "blocking_errors": [],
+  "notes": [
+    "Qwen3-4B-Instruct-2507 remains the primary rationale generator.",
+    "No unavailable fallback generator is referenced in project routing.",
+    "DeepSeek-R1-Distill-Qwen-1.5B is not configured as a primary generator.",
+    "The original rationale prompt remains in place; the new fast prompt is a Qwen3 stage-0 variant for bounded JSON-only decoding.",
+    "Technical token context is normalized before prompting so schema values use positive/negative/neutral and weak/medium/strong."
+  ]
+}

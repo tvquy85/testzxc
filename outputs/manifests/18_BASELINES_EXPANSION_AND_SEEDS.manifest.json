@@ -1,0 +1,39 @@
+{
+  "producer_step": "18_BASELINES_EXPANSION_AND_SEEDS",
+  "run_id": null,
+  "created_at": "2026-06-19T19:22:06+00:00",
+  "artifacts": [
+    {
+      "path": "outputs/tables/baseline_suite_by_seed.csv",
+      "row_count": 36,
+      "sha256": "93be15109c46f5c5bf245b0996bc46f984eaec8368e4072338575544e3bce06d",
+      "timestamp": "2026-06-19T19:22:06+00:00",
+      "producer_step": "18_BASELINES_EXPANSION_AND_SEEDS",
+      "run_id": null
+    },
+    {
+      "path": "outputs/tables/baseline_suite_aggregate.csv",
+      "row_count": 4,
+      "sha256": "c8dfc4dad19fddc561b490716ca8874ca8aa9d93ed6515fcef1ba69c4e1e2b58",
+      "timestamp": "2026-06-19T19:22:06+00:00",
+      "producer_step": "18_BASELINES_EXPANSION_AND_SEEDS",
+      "run_id": null
+    },
+    {
+      "path": "outputs/predictions/baseline_suite_predictions.parquet",
+      "row_count": 95574,
+      "sha256": "db33f9acb5ada4e1aaac2f49c45010292470731d6394d1e1d002fac985fa60e8",
+      "timestamp": "2026-06-19T19:22:06+00:00",
+      "producer_step": "18_BASELINES_EXPANSION_AND_SEEDS",
+      "run_id": null
+    },
+    {
+      "path": "outputs/metrics/baseline_suite_summary.json",
+      "row_count": 1,
+      "sha256": "53e8982d84d39c0853e973e2cc3f179caa2cf8ce3ef70efb84081d1f0466c37f",
+      "timestamp": "2026-06-19T19:22:06+00:00",
+      "producer_step": "18_BASELINES_EXPANSION_AND_SEEDS",
+      "run_id": null
+    }
+  ]
+}

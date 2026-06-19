@@ -1,0 +1,27 @@
+{
+  "step": "19_ABLATION_AND_STATISTICAL_TESTS",
+  "status": "PASS",
+  "inputs_checked": [
+    "outputs/predictions/test_predictions_qwen3_dpo_flash_medium.parquet",
+    "outputs/predictions/baseline_suite_predictions.parquet",
+    "data/labels/labels_h1_abnormal.parquet",
+    "outputs/tables/backtest_daily_returns_v2.csv",
+    "outputs/tables/ablation_suite_results.csv"
+  ],
+  "outputs_created": [
+    "outputs/metrics/statistical_tests.json",
+    "outputs/tables/prediction_bootstrap_comparisons.csv",
+    "outputs/tables/backtest_block_bootstrap_comparisons.csv",
+    "outputs/manifests/19_ABLATION_AND_STATISTICAL_TESTS.manifest.json",
+    "outputs/status/19_ABLATION_AND_STATISTICAL_TESTS.status.json"
+  ],
+  "metrics": {
+    "prediction_bootstrap_comparisons": 12,
+    "backtest_block_bootstrap_comparisons": 12,
+    "bootstrap_samples": 500,
+    "block_length": 5,
+    "ablation_not_used_as_evidence": true
+  },
+  "failures": [],
+  "next_step_allowed": true
+}

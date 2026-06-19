@@ -1,0 +1,5 @@
+{"sample_id":"s_33076","candidate_id":0,"split":"train","model_name":"llama3_judge","prompt_variant":"normal_label_order","parse_ok":true,"true_label":"neutral","inferability_true_label_prob":0.15,"entropy":1.3705151743}
+{"sample_id":"s_33076","candidate_id":0,"split":"train","model_name":"llama3_judge","prompt_variant":"reversed_label_order","parse_ok":true,"true_label":"neutral","inferability_true_label_prob":0.15,"entropy":1.3705151743}
+{"sample_id":"s_33076","candidate_id":0,"split":"train","model_name":"qwen3_judge","prompt_variant":"normal_label_order","parse_ok":true,"true_label":"neutral","inferability_true_label_prob":0.15,"entropy":1.3705151743}
+{"sample_id":"s_33076","candidate_id":0,"split":"train","model_name":"qwen3_judge","prompt_variant":"reversed_label_order","parse_ok":true,"true_label":"neutral","inferability_true_label_prob":0.15,"entropy":1.3705151743}
+{"sample_id":"s_33076","candidate_id":0,"split":"train","model_name":"qwen25_judge","prompt_variant":"normal_label_order","parse_ok":true,"true_label":"neutral","inferability_true_label_prob":0.15,"entropy":1.3705151743}

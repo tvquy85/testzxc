@@ -1,0 +1,13 @@
+{
+  "step": "09_PROXY_JUDGES_AND_GROUNDING",
+  "status": "PASS",
+  "scored_rows": 1200,
+  "unique_samples": 400,
+  "valid_score_rate": 1.0,
+  "mean_overall_proxy_score": 0.16418701807571004,
+  "models_used": [
+    "e:/huggingface/hub/models--cross-encoder--nli-deberta-v3-small/snapshots/fa2804872c3b4bd748f38c0185cc85775361e735",
+    "e:/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a"
+  ],
+  "notes": "Judges applied."
+}

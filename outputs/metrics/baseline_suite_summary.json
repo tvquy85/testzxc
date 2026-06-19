@@ -1,0 +1,24 @@
+{
+  "baseline_count": 12,
+  "required_minimum": [
+    "B1_FinBERT_LR",
+    "B2_Technical_LightGBM",
+    "B3_News_Technical_Late_Fusion",
+    "B4_DLinear"
+  ],
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "required_minimum_pass": true,
+  "multi_seed_missing": true,
+  "run_counts": {
+    "NOT_RUN": 24,
+    "PASS": 12
+  },
+  "prediction_rows": 95574,
+  "max_train_rows": 30000,
+  "max_test_rows": 10000,
+  "dlinear_epochs": 3
+}

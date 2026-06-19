@@ -1,0 +1,20 @@
+{
+  "schema": [
+    "token",
+    "value",
+    "direction_prior",
+    "strength",
+    "evidence_column",
+    "rule"
+  ],
+  "missing_token_policy": "No-token samples are not perfect grounding; downstream judges must handle not_applicable separately.",
+  "supported_families": [
+    "RSI",
+    "MACD",
+    "SMA20",
+    "Bollinger",
+    "volume",
+    "market_relative_strength",
+    "volatility_regime"
+  ]
+}

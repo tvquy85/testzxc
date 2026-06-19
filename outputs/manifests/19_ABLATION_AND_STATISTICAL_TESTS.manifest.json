@@ -1,0 +1,31 @@
+{
+  "producer_step": "19_ABLATION_AND_STATISTICAL_TESTS",
+  "run_id": null,
+  "created_at": "2026-06-19T19:22:55+00:00",
+  "artifacts": [
+    {
+      "path": "outputs/metrics/statistical_tests.json",
+      "row_count": 1,
+      "sha256": "2cec8dc25f987739f511144365453fa1d22d1bb85321af15902be3f3b0b7dc7f",
+      "timestamp": "2026-06-19T19:22:55+00:00",
+      "producer_step": "19_ABLATION_AND_STATISTICAL_TESTS",
+      "run_id": null
+    },
+    {
+      "path": "outputs/tables/prediction_bootstrap_comparisons.csv",
+      "row_count": 12,
+      "sha256": "c2e6291068c1f0b82d427998a269cc07b4f90e71eb77c805bc278914faff6b1c",
+      "timestamp": "2026-06-19T19:22:55+00:00",
+      "producer_step": "19_ABLATION_AND_STATISTICAL_TESTS",
+      "run_id": null
+    },
+    {
+      "path": "outputs/tables/backtest_block_bootstrap_comparisons.csv",
+      "row_count": 12,
+      "sha256": "e48872fa9729a37584c97354d8776c6023a477f9dc4fa46d69fd86ea72f1620e",
+      "timestamp": "2026-06-19T19:22:55+00:00",
+      "producer_step": "19_ABLATION_AND_STATISTICAL_TESTS",
+      "run_id": null
+    }
+  ]
+}

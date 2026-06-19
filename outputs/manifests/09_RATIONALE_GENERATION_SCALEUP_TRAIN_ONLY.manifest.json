@@ -1,0 +1,39 @@
+{
+  "producer_step": "09_RATIONALE_GENERATION_SCALEUP_TRAIN_ONLY",
+  "run_id": null,
+  "created_at": "2026-06-19T15:46:26+00:00",
+  "artifacts": [
+    {
+      "path": "data/rationales/raw/train_qwen3_4b_stage1_bulk.jsonl",
+      "row_count": 5000,
+      "sha256": "feae6f7f4bcc4adaff61259b6b6a2de735925a7fe2bb6dbb0bb6f1c7b7cac48c",
+      "timestamp": "2026-06-19T15:46:26+00:00",
+      "producer_step": "09_RATIONALE_GENERATION_SCALEUP_TRAIN_ONLY",
+      "run_id": null
+    },
+    {
+      "path": "data/rationales/raw/train_qwen3_4b_stage1_conflict_3cand.jsonl",
+      "row_count": 7500,
+      "sha256": "c901ee7418666b2a344b672a5619b2402fa29cce6f07c25e86c8d3874faa427b",
+      "timestamp": "2026-06-19T15:46:26+00:00",
+      "producer_step": "09_RATIONALE_GENERATION_SCALEUP_TRAIN_ONLY",
+      "run_id": null
+    },
+    {
+      "path": "data/rationales/parsed/train_candidates_stage1_strict.parquet",
+      "row_count": 12500,
+      "sha256": "5457f7c0e2aa6b277cbcf1bcbfafcdbdd99657f86fd40e37c4639facbdccea7d",
+      "timestamp": "2026-06-19T15:46:26+00:00",
+      "producer_step": "09_RATIONALE_GENERATION_SCALEUP_TRAIN_ONLY",
+      "run_id": null
+    },
+    {
+      "path": "outputs/metrics/stage1_rationale_generation_summary.json",
+      "row_count": 1,
+      "sha256": "d77609df0f0632f1c89a51760ef88802565e7079b2b357ed9aec769a4498cd3d",
+      "timestamp": "2026-06-19T15:46:26+00:00",
+      "producer_step": "09_RATIONALE_GENERATION_SCALEUP_TRAIN_ONLY",
+      "run_id": null
+    }
+  ]
+}

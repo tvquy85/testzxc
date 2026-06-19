@@ -1,0 +1,10 @@
+ablation,status,macro_f1,daily_sharpe
+A0_Full_FIRE_Fin,NOT_RUN,,
+A1_No_Technical_Indicators,NOT_RUN,,
+A2_No_News,NOT_RUN,,
+A3_No_Technical_Event_Tokens,NOT_RUN,,
+A4_No_Flow_Reward,NOT_RUN,,
+A5_No_Grounding_Reward,NOT_RUN,,
+A6_No_Regime_Noise,NOT_RUN,,
+A7_SFT_Only,NOT_RUN,,
+A8_No_Counterfactual_Pairs,NOT_RUN,,

@@ -1,0 +1,7 @@
+{
+  "model": "FinBERT_LR",
+  "test_accuracy": 0.4633596392333709,
+  "test_macro_f1": 0.12665639445300464,
+  "test_mcc": 0.0,
+  "test_brier": 0.6727114919116823
+}

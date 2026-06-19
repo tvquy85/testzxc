@@ -1,0 +1,23 @@
+{
+  "producer_step": "11_CLAIM_LEVEL_GROUNDING_JUDGES",
+  "run_id": null,
+  "created_at": "2026-06-19T15:47:32+00:00",
+  "artifacts": [
+    {
+      "path": "data/judges/claim_grounding_scores_stage1.parquet",
+      "row_count": 85084,
+      "sha256": "4bc8c6233d87a70fe97f596df0c566d0c4dc24766e4e4aa857d6311e8baec1d6",
+      "timestamp": "2026-06-19T15:47:32+00:00",
+      "producer_step": "11_CLAIM_LEVEL_GROUNDING_JUDGES",
+      "run_id": null
+    },
+    {
+      "path": "outputs/metrics/claim_grounding_summary_stage1.json",
+      "row_count": 1,
+      "sha256": "4b3361501aa1232e70f6b5a6fd2e1f204c87b063b9a46771d761bde4395c66f5",
+      "timestamp": "2026-06-19T15:47:32+00:00",
+      "producer_step": "11_CLAIM_LEVEL_GROUNDING_JUDGES",
+      "run_id": null
+    }
+  ]
+}
