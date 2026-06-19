@@ -186,7 +186,10 @@ Dưới góc độ của một Senior Reviewer tại hội nghị Top-tier (AAAI
 Để qua ải AAAI, bài báo **KHÔNG PHẢI** là bài báo Ứng dụng Dự đoán Chứng khoán. Bài báo này giới thiệu một **Khung Alignment hoàn toàn mới cho các môi trường tín hiệu nhiễu cực đại**. Chứng khoán chỉ là môi trường (sandbox) khắt khe nhất để chứng minh tính đúng đắn của thuật toán. Nếu Flow Reward chạy tốt ở đây, tính tổng quát (Generalization) của nó hoàn toàn có thể áp dụng cho Y tế, Robot hay Xe tự lái.
 
 ## 7. Góc nhìn Chuyên gia: So sánh Phương pháp luận với SOTA
-Để thấy rõ độ "sâu" của FIRE-Fin, hãy đặt nó lên bàn cân với hai nghiên cứu tiêu biểu gần đây: bài báo **SEP (WWW '24)** chuyên về Chứng khoán và bài báo **Flow-Matching Rewards (ICLR '26)** chuyên về XAI Alignment.
+Để thấy rõ độ "sâu" của FIRE-Fin, hãy đặt nó lên bàn cân với 3 nghiên cứu tiêu biểu gần đây (cũng chính là 3 paper tham khảo cốt lõi của dự án):
+- **SEP (WWW '24)**: Tham khảo tại thư mục `sep/`.
+- **Flow-Matching Rewards (ICLR '26)**: Tham khảo tại thư mục `policy/`.
+- **PEN (AAAI '23)**.
 
 ### 7.1. So sánh với SEP Framework (WWW '24)
 *Bài báo: Learning to Generate Explainable Stock Predictions using Self-Reflective LLMs*
