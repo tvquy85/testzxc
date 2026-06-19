@@ -1,0 +1,18 @@
+{
+  "model": "qwen3_4b",
+  "model_path": "E:/huggingface/models/Qwen3-4B-Instruct-2507",
+  "train": "data/alignment/rwsft_train_v2.jsonl",
+  "dataset_sha256": "4dcc72bebddc753268a95219154b15654aacf37aad126adcfa2e46443c215852",
+  "max_steps": 10,
+  "batch_size": 1,
+  "max_seq_length": 768,
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05
+  },
+  "load_in_4bit": true,
+  "extra_site_packages": [
+    "C:/Python/Python311/Lib/site-packages"
+  ]
+}

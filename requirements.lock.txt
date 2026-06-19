@@ -1,0 +1,19 @@
+# Generated from the active verification interpreter.
+# Missing packages are intentionally commented instead of guessed.
+torch==2.5.1+cu121
+transformers==5.8.0
+accelerate==1.13.0
+pandas==2.1.1
+pyarrow==21.0.0
+numpy==1.26.4
+scikit-learn==1.7.2
+lightgbm==4.6.0
+matplotlib==3.8.0
+seaborn==0.13.2
+tqdm==4.66.1
+pyyaml==6.0.1
+pytest==9.0.3
+# MISSING: peft (ModuleNotFoundError: No module named 'peft')
+# MISSING: trl (ModuleNotFoundError: No module named 'trl')
+# MISSING: bitsandbytes (ModuleNotFoundError: No module named 'bitsandbytes')
+# MISSING: sentence-transformers (ModuleNotFoundError: No module named 'sentence_transformers')

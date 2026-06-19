@@ -11,12 +11,18 @@ def render_context(row):
     regime = row.get("regime_label", "normal_vol")
     
     # technical tokens
-    tokens = row.get("technical_event_tokens", "[]")
+    tokens = row.get("technical_event_tokens_json", row.get("technical_event_tokens", "[]"))
     if isinstance(tokens, str):
         try:
             tokens_list = json.loads(tokens)
-            tech_text = "\n".join(tokens_list)
-        except:
+            if tokens_list and isinstance(tokens_list[0], dict):
+                tech_text = "\n".join(
+                    f"[{item.get('token')}: value={item.get('value')}, direction={item.get('direction_prior')}, strength={item.get('strength')}, rule={item.get('rule')}]"
+                    for item in tokens_list
+                )
+            else:
+                tech_text = "\n".join(str(item) for item in tokens_list)
+        except Exception:
             tech_text = tokens
     elif isinstance(tokens, list):
         tech_text = "\n".join(tokens)

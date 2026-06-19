@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, model_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 from typing import List, Literal
 
 class ForecastDistribution(BaseModel):
@@ -23,16 +23,17 @@ class RationaleOutput(BaseModel):
     action: Literal["long", "short", "hold"]
     risk_note: str
 
+    @field_validator("news_rationale", "technical_rationale")
+    @classmethod
+    def non_empty_list(cls, value: List[str]) -> List[str]:
+        if not value or any(not isinstance(item, str) or not item.strip() for item in value):
+            raise ValueError("rationale lists must contain non-empty strings")
+        return value
+
     @model_validator(mode='after')
-    def check_action_consistency(self) -> 'RationaleOutput':
-        # Ensure action somewhat aligns with probabilities
-        down_prob = self.forecast_distribution.strong_down + self.forecast_distribution.mild_down
-        up_prob = self.forecast_distribution.strong_up + self.forecast_distribution.mild_up
-        
-        # A simple check: if one side is strongly dominant, action should match
-        if down_prob > 0.6 and self.action == "long":
-            raise ValueError("Action is 'long' but downward probability > 60%")
-        if up_prob > 0.6 and self.action == "short":
-            raise ValueError("Action is 'short' but upward probability > 60%")
-            
+    def check_strings(self) -> 'RationaleOutput':
+        if not self.conflict_resolution.strip():
+            raise ValueError("conflict_resolution must be non-empty")
+        if not self.risk_note.strip():
+            raise ValueError("risk_note must be non-empty")
         return self

@@ -1,0 +1,4 @@
+seeds: [11, 22, 33]
+required_minimum: [B1_FinBERT_LR, B2_Technical_LightGBM, B3_News_Technical_Late_Fusion, B4_DLinear]
+gpu_heavy_one_seed_allowed_for_mvp: true
+

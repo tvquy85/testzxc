@@ -52,7 +52,7 @@ stage_3_full_scale
 
 Khi thiếu thư viện, kiểm tra theo thứ tự:
 
-- môi trường hiện tại hoặc thư mục `d:\Conferences\NIPS\FinEval_Prev\FinEval\`.
+- môi trường hiện tại hoặc thư mục `C:\Python\Python311\`.
 - `d:\LOBProj\LOBExp\`.
 - Download từ Internet khi hai nguồn trên không có.
 

@@ -1,0 +1,33 @@
+You are a deterministic financial forecast classifier.
+
+Task:
+Given company news, technical event tokens, and market regime, predict the short-horizon stock movement class.
+
+Use only the context below. Do not mention or infer any realized return or hidden label.
+
+Context:
+{context}
+
+Return exactly one valid JSON object and nothing else.
+Do not include markdown.
+Do not include rationale text.
+All probabilities must be numeric decimals between 0 and 1 and sum to 1.00.
+
+JSON schema:
+{
+  "forecast_distribution": {
+    "Strong Down": 0.0,
+    "Mild Down": 0.0,
+    "Neutral": 0.0,
+    "Mild Up": 0.0,
+    "Strong Up": 0.0
+  },
+  "action": "long|short|hold"
+}
+
+Decision policy:
+- Use "long" when Mild Up plus Strong Up is the dominant side.
+- Use "short" when Mild Down plus Strong Down is the dominant side.
+- Use "hold" only when Neutral is clearly dominant or evidence is mixed.
+
+Return JSON now:

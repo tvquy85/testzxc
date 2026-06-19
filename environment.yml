@@ -1,0 +1,29 @@
+name: firefin-aaai
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pandas
+  - numpy
+  - pyarrow
+  - scikit-learn
+  - scipy
+  - matplotlib
+  - seaborn
+  - tqdm
+  - pyyaml
+  - pytest
+  - lightgbm
+  - pytorch
+  - pytorch-cuda=12.1
+  - pip
+  - pip:
+      - transformers
+      - accelerate
+      - peft
+      - trl
+      - bitsandbytes
+      - sentence-transformers
+

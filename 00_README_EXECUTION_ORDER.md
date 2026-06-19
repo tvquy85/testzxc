@@ -78,7 +78,7 @@ firefin/
 
 - Use time-based split only; never random split across dates.
 - Avoid leakage: no future price, post-event headline, or “shares surged/plunged after...” text unless the timestamp proves it was known before prediction.
-- Main local LLM for generation: prefer `Qwen2.5-3B-Instruct-cf-finflow` if available; otherwise `Qwen3-4B-Instruct-2507`.
+- Main local LLM for generation: prefer `Qwen3-4B-Instruct-2507`.
 - Judge models: `Qwen3-4B-Instruct-2507`, `DeepSeek-R1-Distill-Qwen-1.5B`, FinGPT LoRA model if loadable.
 - Grounding model: `cross-encoder--nli-deberta-v3-small`.
 - Sentiment baseline: `ProsusAI--finbert`.

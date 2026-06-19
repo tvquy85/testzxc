@@ -1,0 +1,23 @@
+project_root: .
+hf_home: $HF_HOME
+data_root: data
+output_root: outputs
+model_root: $HF_HOME/hub
+direct_model_root: $HF_HOME/models
+models:
+  main_explanation_llm: $HF_HOME/models/Qwen3-4B-Instruct-2507
+  finance_judge_llm: $HF_HOME/hub/models--FinGPT--fingpt-forecaster_dow30_llama2-7b_lora
+  reasoning_judge_llm: $HF_HOME/hub/models--deepseek-ai--DeepSeek-R1-Distill-Qwen-1.5B
+  nli_judge: $HF_HOME/hub/models--cross-encoder--nli-deberta-v3-small
+  qwen3_judge: $HF_HOME/models/Qwen3-4B-Instruct-2507
+  qwen25_judge: $HF_HOME/hub/models--Qwen--Qwen2.5-3B-Instruct
+  llama3_judge: $HF_HOME/hub/models--meta-llama--Meta-Llama-3-8B-Instruct
+  deepseek_reasoning_judge: $HF_HOME/hub/models--deepseek-ai--DeepSeek-R1-Distill-Qwen-1.5B
+  finbert: $HF_HOME/hub/models--ProsusAI--finbert
+  nli_cross_encoder: $HF_HOME/hub/models--cross-encoder--nli-deberta-v3-small
+  moment_small: $HF_HOME/hub/models--AutonLab--MOMENT-1-small
+  chronos_bolt_small: $HF_HOME/hub/models--amazon--chronos-bolt-small
+  ttm_r2: $HF_HOME/hub/models--ibm-granite--granite-timeseries-ttm-r2
+datasets:
+  fnspid_cache: $HF_HOME/datasets/fnspid_official
+  fnspid_cache_processed: $HF_HOME/datasets/fnspid_official_cache

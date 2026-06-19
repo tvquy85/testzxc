@@ -1,15 +1,24 @@
-project_root: ./
-hf_home: e:/huggingface
+project_root: .
+hf_home: $HF_HOME
+data_root: data
+output_root: outputs
+model_root: $HF_HOME/hub
+direct_model_root: $HF_HOME/models
 models:
-  main_explanation_llm: e:/huggingface/hub/models--unsloth--Llama-3.2-3B-Instruct/snapshots/20d1d5004aa572f273ac3da5845ff9bce7d3cce5
-  llama3_judge: e:/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a
-  qwen3_judge: e:/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306
-  deepseek_reasoning_judge: e:/huggingface/hub/models--deepseek-ai--DeepSeek-R1-Distill-Qwen-1.5B/snapshots/ad9f0ae0864d7fbcd1cd905e3c6c5b069cc8b562
-  fingpt_forecaster: e:/huggingface/hub/models--FinGPT--fingpt-forecaster_dow30_llama2-7b_lora
-  finbert: e:/huggingface/hub/models--ProsusAI--finbert
-  nli_cross_encoder: e:/huggingface/hub/models--cross-encoder--nli-deberta-v3-small/snapshots/fa2804872c3b4bd748f38c0185cc85775361e735
-  moment_small: e:/huggingface/hub/models--AutonLab--MOMENT-1-small
-  chronos_bolt_small: e:/huggingface/hub/models--amazon--chronos-bolt-small
-  ttm_r2: e:/huggingface/hub/models--ibm-granite--granite-timeseries-ttm-r2
+  main_explanation_llm: $HF_HOME/models/Qwen3-4B-Instruct-2507
+  finance_judge_llm: $HF_HOME/hub/models--FinGPT--fingpt-forecaster_dow30_llama2-7b_lora
+  reasoning_judge_llm: $HF_HOME/hub/models--deepseek-ai--DeepSeek-R1-Distill-Qwen-1.5B
+  nli_judge: $HF_HOME/hub/models--cross-encoder--nli-deberta-v3-small
+  llama3_judge: $HF_HOME/hub/models--meta-llama--Meta-Llama-3-8B-Instruct
+  qwen3_judge: $HF_HOME/models/Qwen3-4B-Instruct-2507
+  qwen25_judge: $HF_HOME/hub/models--Qwen--Qwen2.5-3B-Instruct
+  deepseek_reasoning_judge: $HF_HOME/hub/models--deepseek-ai--DeepSeek-R1-Distill-Qwen-1.5B
+  fingpt_forecaster: $HF_HOME/hub/models--FinGPT--fingpt-forecaster_dow30_llama2-7b_lora
+  finbert: $HF_HOME/hub/models--ProsusAI--finbert
+  nli_cross_encoder: $HF_HOME/hub/models--cross-encoder--nli-deberta-v3-small
+  moment_small: $HF_HOME/hub/models--AutonLab--MOMENT-1-small
+  chronos_bolt_small: $HF_HOME/hub/models--amazon--chronos-bolt-small
+  ttm_r2: $HF_HOME/hub/models--ibm-granite--granite-timeseries-ttm-r2
 datasets:
-  fnspid_cache: e:/huggingface/datasets/fnspid_official
+  fnspid_cache: $HF_HOME/datasets/fnspid_official
+  fnspid_cache_processed: $HF_HOME/datasets/fnspid_official_cache

@@ -14,3 +14,5 @@ Là chuyên gia ML, NLP, XAI hàng đầu thế giới trong thiết kế
 Là chuyên gia ML hàng đầu thế giới trong thiết kế mô hình máy học, hãy investigate kĩ dựa vào các nguồn uy tín
 
 Là chuyên gia ML hàng đầu thế giới trong thiết kế mô hình máy học, hãy investigate kĩ dựa vào các nguồn uy tín nâng cấp src\exp\GatedContext_v2 thành mô hình độc lập, mô hình mới này phải có novelty, đúng paint point tài chính, có selling point mạnh độc lập chứ không chỉ là incremental cải tiến từ stockmixer gốc(đã publish). Nếu chỉ là incremental thì khó đạt rank top tier,  vẫn giữ tính chất mô hình gọn nhẹ là điểm mạnh nhưng vẫn giải quyết được các vấn đề trong paint point tài chính, từ đó tạo ra contribution đủ lớn để tạo paper nộp AAAI, hãy nghiên cứu các tài liệu uy tín hàng đầu để chọn giải pháp tối ưu nhất. Bỏ qua các mô hình đã thất bại như MoKAE  hoặc tương tự. Hãy lên kế hoạch rõ ràng trước khi thực thi
+
+Dựa vào kết quả và phân tích trước lên plan bước kế tiếp

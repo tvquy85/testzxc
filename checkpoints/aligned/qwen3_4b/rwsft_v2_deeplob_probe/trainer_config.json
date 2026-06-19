@@ -1,0 +1,11 @@
+{
+  "model": "qwen3_4b",
+  "train": "data/alignment/rwsft_train_v2.jsonl",
+  "dataset_sha256": "4dcc72bebddc753268a95219154b15654aacf37aad126adcfa2e46443c215852",
+  "max_steps": 10,
+  "lora": {
+    "r": 16,
+    "alpha": 32
+  },
+  "load_in_4bit": true
+}

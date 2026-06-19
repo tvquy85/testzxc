@@ -1,0 +1,43 @@
+rationale_generation:
+  generator_model_key: main_explanation_llm
+  generator_model_name: Qwen3-4B-Instruct-2507
+  backend: transformers
+  dtype: float16
+  max_model_len: 4096
+  max_input_tokens: 3072
+
+  bulk:
+    limit: 20000
+    num_candidates: 1
+    max_new_tokens: 256
+    temperature: 0.40
+    top_p: 0.85
+    top_k: 40
+    repetition_penalty: 1.05
+    batch_size: 4
+    sort_by_length: true
+    save_every: 100
+    resume: true
+    output: data/rationales/raw/train_qwen3_4b_bulk_h1.jsonl
+
+  conflict:
+    input: data/splits/train_conflict_subset_h1.parquet
+    limit: 5000
+    num_candidates: 3
+    max_new_tokens: 320
+    temperature: 0.55
+    top_p: 0.90
+    top_k: 50
+    repetition_penalty: 1.05
+    batch_size: 4
+    sort_by_length: true
+    save_every: 50
+    resume: true
+    output: data/rationales/raw/train_qwen3_4b_conflict_3cand_h1.jsonl
+
+  validation_gates:
+    raw_parse_ok_rate_min: 0.85
+    raw_schema_ok_rate_min: 0.80
+    avg_output_tokens_max: 280
+    invalid_json_rate_max: 0.15
+    explicit_label_leak_rate_max: 0.03

@@ -1,0 +1,11 @@
+ablations:
+  - A0_Full_FIRE_Fin
+  - A1_No_Technical_Indicators
+  - A2_No_News
+  - A3_No_Technical_Event_Tokens
+  - A4_No_Flow_Reward
+  - A5_No_Grounding_Reward
+  - A6_No_Regime_Noise
+  - A7_SFT_Only
+  - A8_No_Counterfactual_Pairs
+

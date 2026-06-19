@@ -38,15 +38,14 @@ def main():
     parser.add_argument("--config", type=str, default="configs/local_paths.yaml")
     args = parser.parse_args()
 
-    # Known search paths based on instructions and AGENTS.md
+    # Known search paths based on config/env. Keep machine-specific paths out of
+    # source; set HF_HOME before running this script.
     search_roots = [
-        "e:/huggingface",
         os.environ.get("HF_HOME", "") + "/hub",
+        os.environ.get("HF_HOME", ""),
         "~/.cache/huggingface/hub",
         "./models",
-        "../models",
-        "D:/models",
-        "E:/models"
+        "../models"
     ]
     search_roots = [r for r in search_roots if r]
 

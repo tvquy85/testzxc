@@ -31,9 +31,8 @@ outputs/status/11_ALIGNMENT_RWSFT_DPO.status.json
 
 ## Model priority
 
-1. `Qwen2.5-3B-Instruct-cf-finflow`
-2. `Qwen3-4B-Instruct-2507`
-3. `Qwen2.5-3B-Instruct`
+1. `Qwen3-4B-Instruct-2507`
+2. `Qwen2.5-3B-Instruct`
 
 Use QLoRA 4-bit.
 

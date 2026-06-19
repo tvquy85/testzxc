@@ -7,6 +7,7 @@ import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from tqdm import tqdm
 from src.eval.classification_metrics import compute_metrics
+from src.utils.config import load_config
 from sklearn.linear_model import LogisticRegression
 
 def chunk_texts(texts, tokenizer, max_length=512):
@@ -22,14 +23,11 @@ def main():
     parser.add_argument("--output", type=str, default="outputs/metrics/finbert_baseline_h1.json")
     args = parser.parse_args()
 
-    import yaml
-    with open(args.config, 'r') as f:
-        config = yaml.safe_load(f)
-    
-    # HuggingFace will find it in cache if HF_HOME is set correctly
-    os.environ["HF_HOME"] = "e:/huggingface"
-    # Fallback to local snapshot directly
-    model_path = "e:/huggingface/hub/models--ProsusAI--finbert/snapshots/4556d13015211d73dccd3fdd39d39232506f3e43"
+    config = load_config(args.config)
+    hf_home = config.get("hf_home")
+    if hf_home and "$" not in str(hf_home):
+        os.environ.setdefault("HF_HOME", str(hf_home))
+    model_path = config.get("models", {}).get("finbert")
 
     df = pd.read_parquet(args.samples)
     split_df = pd.read_parquet(args.split)

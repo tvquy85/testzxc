@@ -1,0 +1,20 @@
+{
+  "model": "qwen3_4b",
+  "model_path": "E:/huggingface/models/Qwen3-4B-Instruct-2507",
+  "train": "data/alignment/dpo_pairs_train_v2.jsonl",
+  "dataset_sha256": "f87ea8afa3eab29eb77cb9a029a63b9a8f5eb0d0b071db8fd09d9512461f9239",
+  "rwsft_checkpoint": "checkpoints/aligned/qwen3_4b/rwsft_v2",
+  "max_steps": 10,
+  "batch_size": 1,
+  "max_seq_length": 768,
+  "beta": 0.1,
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05
+  },
+  "load_in_4bit": true,
+  "extra_site_packages": [
+    "C:/Python/Python311/Lib/site-packages"
+  ]
+}

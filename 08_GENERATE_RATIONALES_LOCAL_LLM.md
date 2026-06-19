@@ -19,10 +19,9 @@ configs/local_paths.yaml
 ## Preferred model
 Use this priority order:
 
-1. `Qwen2.5-3B-Instruct-cf-finflow` if present.
-2. `Qwen3-4B-Instruct-2507` if present.
-3. `Qwen2.5-3B-Instruct` if present.
-4. `Phi-3.5-mini-instruct` fallback.
+1. `Qwen3-4B-Instruct-2507` if present.
+2. `Qwen2.5-3B-Instruct` if present.
+3. `Phi-3.5-mini-instruct` fallback.
 
 Load 4-bit if VRAM requires it.
 
