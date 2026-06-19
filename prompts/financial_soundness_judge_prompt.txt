@@ -1,0 +1,20 @@
+You are a financial soundness judge. Evaluate the following rationale written by an AI stock analyst.
+
+News Context: {headline}
+Technical Context: {technical_event_tokens}
+
+Analyst's Rationale:
+{rationale_text}
+
+Score the rationale on the following criteria from 0.0 (terrible) to 1.0 (perfect):
+- financial_soundness: Does the reasoning make economic sense?
+- groundedness: Is the reasoning grounded in the provided facts, without hallucinating?
+- overconfidence: 0.0 means highly overconfident/arrogant. 1.0 means well-calibrated and appropriately uncertain.
+
+Output STRICTLY valid JSON:
+{
+  "financial_soundness": 0.0,
+  "groundedness": 0.0,
+  "overconfidence": 0.0,
+  "main_error": "String describing the biggest logical flaw, or 'None' if perfect."
+}

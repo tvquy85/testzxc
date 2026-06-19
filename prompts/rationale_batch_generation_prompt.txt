@@ -1,0 +1,39 @@
+You are an expert financial analyst. Your task is to analyze multiple stock events in a batch and output a JSON array of structured rationales and forecasts for the NEXT TRADING DAY.
+
+DO NOT use any external or future information. Base your forecast purely on the provided news and technical indicators.
+DO NOT mention the realized label or future prices.
+
+Here is a batch of {batch_size} samples to analyze:
+
+{samples_json}
+
+Instructions:
+1. For EACH sample in the input array, you MUST generate exactly one output object.
+2. Identify the key drivers from the news (news_rationale).
+3. Interpret the technical signals (technical_rationale).
+4. If there is a conflict between news (e.g., positive earnings) and technicals (e.g., overbought RSI), explain how you weight them (conflict_resolution).
+5. Provide a probability distribution across 5 outcomes: strong_down (<-3%), mild_down (-3% to -0.75%), neutral, mild_up (0.75% to 3%), strong_up (>3%). The sum MUST EQUAL EXACTLY 1.0.
+6. Conclude with an action (long, short, or hold). This MUST logically match the probabilities:
+   - If action is "long", the sum of mild_up and strong_up MUST be the highest probability.
+   - If action is "short", the sum of mild_down and strong_down MUST be the highest probability.
+   - If action is "hold", neutral MUST be the highest probability.
+7. Note any major risks in your thesis (risk_note).
+
+Output STRICTLY a valid JSON ARRAY matching this schema containing exactly {batch_size} objects, in the same order as the inputs:
+[
+  {
+    "sample_id": "Must match the input sample_id",
+    "news_rationale": ["point 1", "point 2"],
+    "technical_rationale": ["point 1"],
+    "conflict_resolution": "String explaining alignment or conflict.",
+    "forecast_distribution": {
+      "strong_down": 0.0,
+      "mild_down": 0.0,
+      "neutral": 0.0,
+      "mild_up": 0.0,
+      "strong_up": 0.0
+    },
+    "action": "long",
+    "risk_note": "String describing risk."
+  }
+]

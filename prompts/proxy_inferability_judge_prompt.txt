@@ -1,0 +1,22 @@
+You are a proxy inferability judge. Your task is to read a financial rationale produced by another analyst and infer what the analyst's forecast direction is.
+
+You have access to the news context and the rationale text.
+Context:
+Headline: {headline}
+Technical Tokens: {technical_event_tokens}
+
+Analyst's Rationale:
+{rationale_text}
+
+Based ONLY on reading the rationale above, what is the inferred 5-class forecast? 
+Distribute 100% probability across these 5 classes. 
+Output STRICTLY valid JSON:
+{
+  "inferred_distribution": {
+    "strong_down": 0.0,
+    "mild_down": 0.0,
+    "neutral": 0.0,
+    "mild_up": 0.0,
+    "strong_up": 0.0
+  }
+}

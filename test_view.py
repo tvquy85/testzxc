@@ -1,0 +1,16 @@
+import pandas as pd
+df = pd.read_parquet('data/judge_outputs/judge_scores_h1_test.parquet')
+rats = pd.read_json('data/rationales/candidate_rationales_h1.jsonl', lines=True)
+df = df.merge(rats, on=['sample_id', 'candidate_id'])
+samples = df.sample(n=3, random_state=42)
+for idx, row in samples.iterrows():
+    print(f'--- SAMPLE {row["sample_id"]} CANDIDATE {row["candidate_id"]} ---')
+    print(f'Headline: {row.get("headline", "N/A")}')
+    print(f'Rationale: {row.get("rationales_text", "N/A")[:400]}...')
+    print(f'True Label: {row["label_5"]}')
+    print(f'Infer Pred: {row["infer_pred_label"]} (Prob True: {row["infer_prob_true_label"]:.2f})')
+    print(f'Dist: SD:{row["infer_p_strong_down"]:.2f} MD:{row["infer_p_mild_down"]:.2f} N:{row["infer_p_neutral"]:.2f} MU:{row["infer_p_mild_up"]:.2f} SU:{row["infer_p_strong_up"]:.2f}')
+    print(f'Fin Soundness: {row["financial_soundness_score"]:.2f}')
+    print(f'NLI Entail: {row["news_entailment_rate"]:.2f} | Tech Ground: {row["technical_grounding_score"]:.2f}')
+    print(f'Utility: {row["utility_score"]:.2f} | Overall Proxy: {row["overall_proxy_score"]:.4f}')
+    print()

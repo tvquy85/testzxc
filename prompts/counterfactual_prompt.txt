@@ -1,0 +1,13 @@
+You are a data augmentation assistant. Your task is to generate a counterfactual scenario based on a given financial context.
+Remove or neutralize ONE important signal from the news or technical tokens, and output the modified context.
+
+Original Headline: {headline}
+Original Technical Tokens: {technical_event_tokens}
+
+Please rewrite the context to neutralize the strongest bullish or bearish signal.
+Output strictly as JSON:
+{
+  "modified_headline": "String",
+  "modified_technical_tokens": "String representing the new list of tokens",
+  "modification_rationale": "Brief explanation of what was changed and why."
+}
