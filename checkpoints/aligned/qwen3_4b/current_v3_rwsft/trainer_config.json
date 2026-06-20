@@ -1,0 +1,17 @@
+{
+  "model": "qwen3_4b",
+  "model_path": "E:\\huggingface/models/Qwen3-4B-Instruct-2507",
+  "train": "data/alignment/rwsft_current_v3_fixed.jsonl",
+  "dataset_sha256": "d19ed429a3a0cdf428fc5b1a770899008c252f9e553a77497d91bd3ad88624ab",
+  "max_steps": 300,
+  "batch_size": 1,
+  "max_seq_length": 768,
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05
+  },
+  "load_in_4bit": true,
+  "attn_implementation": "flash_attention_2",
+  "extra_site_packages": []
+}

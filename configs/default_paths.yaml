@@ -8,6 +8,7 @@ models:
   main_explanation_llm: $HF_HOME/models/Qwen3-4B-Instruct-2507
   finance_judge_llm: $HF_HOME/hub/models--FinGPT--fingpt-forecaster_dow30_llama2-7b_lora
   reasoning_judge_llm: $HF_HOME/hub/models--deepseek-ai--DeepSeek-R1-Distill-Qwen-1.5B
+  nli_judge_model_id: cross-encoder/nli-deberta-v3-small
   nli_judge: $HF_HOME/hub/models--cross-encoder--nli-deberta-v3-small
   qwen3_judge: $HF_HOME/models/Qwen3-4B-Instruct-2507
   qwen25_judge: $HF_HOME/hub/models--Qwen--Qwen2.5-3B-Instruct

@@ -121,6 +121,8 @@ def generate_raw_outputs(tokenizer: Any, model: Any, prompts: list[str], args: a
 
 
 def prediction_quality_failures(out: Any, args: argparse.Namespace, checkpoint_used: str | None, checkpoint_source: str | None) -> list[str]:
+    import pandas as pd
+
     failures: list[str] = []
     if len(out) == 0:
         failures.append("prediction output is empty")
@@ -141,8 +143,13 @@ def prediction_quality_failures(out: Any, args: argparse.Namespace, checkpoint_u
         failures.append("all schema-valid actions are hold")
     if checkpoint_source != "primary" and not args.allow_fallback:
         failures.append(f"prediction checkpoint source is not primary: {checkpoint_source}")
-    if checkpoint_used and "dpo_v2" not in str(checkpoint_used).replace("\\", "/") and not args.allow_non_dpo_checkpoint:
+    normalized_checkpoint = str(checkpoint_used).replace("\\", "/").lower() if checkpoint_used else ""
+    if checkpoint_used and "dpo" not in normalized_checkpoint and not args.allow_non_dpo_checkpoint:
         failures.append(f"prediction checkpoint is not dpo_v2: {checkpoint_used}")
+    if "event_date" in out.columns and getattr(args, "min_trading_days", 0):
+        trading_days = int(pd.to_datetime(out["event_date"]).dt.date.nunique())
+        if trading_days < args.min_trading_days:
+            failures.append(f"selected trading days {trading_days} < {args.min_trading_days}")
     return failures
 
 
@@ -153,7 +160,7 @@ def select_prediction_rows(samples: Any, tokens: Any, args: argparse.Namespace) 
         raise ValueError("samples must contain split")
     df = samples[samples["split"] == args.split].copy()
     if not tokens.empty:
-        keep = [col for col in ["sample_id", "regime_label", "technical_event_tokens_json"] if col in tokens.columns]
+        keep = [col for col in ["sample_id", "regime_label", "technical_event_tokens_json"] if col in tokens.columns and (col == "sample_id" or col not in df.columns)]
         if keep:
             df = df.merge(tokens[keep], on="sample_id", how="left")
     df["event_date"] = pd.to_datetime(df["event_date"])
@@ -173,6 +180,21 @@ def select_prediction_rows(samples: Any, tokens: Any, args: argparse.Namespace) 
     return df.drop(columns=["_event_day"], errors="ignore")
 
 
+def apply_ablation_to_row(row: Any, mode: str) -> Any:
+    if mode == "full":
+        return row
+    row = row.copy()
+    if mode in {"no_news_body", "no_news"}:
+        for col in ["headline", "body", "aggregated_headlines", "aggregated_body"]:
+            if col in row:
+                row[col] = ""
+    if mode in {"no_technical_tokens", "no_technical"}:
+        for col in ["technical_event_tokens_json", "technical_event_tokens"]:
+            if col in row:
+                row[col] = "[]"
+    return row
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--samples", default="data/labels/labels_h1_abnormal.parquet")
@@ -189,12 +211,14 @@ def main() -> int:
     parser.add_argument("--end-date", default=None)
     parser.add_argument("--max-days", type=int, default=None)
     parser.add_argument("--max-rows-per-day", type=int, default=None)
+    parser.add_argument("--min-trading-days", type=int, default=0)
     parser.add_argument("--batch-size", type=int, default=4)
     parser.add_argument("--max-input-tokens", type=int, default=1024)
     parser.add_argument("--max-new-tokens", type=int, default=128)
     parser.add_argument("--progress-every", type=int, default=10)
     parser.add_argument("--body-chars", type=int, default=1200)
     parser.add_argument("--token-chars", type=int, default=1200)
+    parser.add_argument("--ablation-mode", default="full", choices=["full", "no_news_body", "no_news", "no_technical_tokens", "no_technical"])
     parser.add_argument("--min-parse-ok-rate", type=float, default=0.80)
     parser.add_argument("--min-schema-ok-rate", type=float, default=0.80)
     parser.add_argument("--allow-fallback", action="store_true")
@@ -241,11 +265,11 @@ def main() -> int:
         prompts = [
             render_forecast_prompt(
                 prompt_template,
-                format_forecast_context(row, body_chars=args.body_chars, token_chars=args.token_chars),
+                format_forecast_context(apply_ablation_to_row(row, args.ablation_mode), body_chars=args.body_chars, token_chars=args.token_chars),
             )
             for _, row in df.iterrows()
         ]
-        run_id = f"test_prediction_smoke_{checkpoint_source}_{len(df)}"
+        run_id = f"test_prediction_smoke_{checkpoint_source}_{args.ablation_mode}_{len(df)}"
         raw_outputs = generate_raw_outputs(tokenizer, model, prompts, args)
         for offset, raw_text in enumerate(raw_outputs):
             dist, action, pred_label, parse_ok, schema_ok, parse_errors = parse_prediction(raw_text)
@@ -254,6 +278,8 @@ def main() -> int:
                 {
                     "sample_id": source_row["sample_id"],
                     "split": source_row["split"],
+                    "ticker": source_row.get("ticker"),
+                    "event_date": str(source_row.get("event_date")),
                     "pred_label": pred_label,
                     "action": action,
                     "p_strong_down": dist["strong_down"],
@@ -296,6 +322,7 @@ def main() -> int:
         "selected_end_date": str(df["event_date"].max().date()) if len(df) and "event_date" in df.columns else None,
         "max_days": args.max_days,
         "max_rows_per_day": args.max_rows_per_day,
+        "ablation_mode": args.ablation_mode,
     }
     failures.extend(prediction_quality_failures(out, args, checkpoint_used, checkpoint_source))
     write_json(args.metrics, metrics)

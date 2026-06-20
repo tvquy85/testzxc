@@ -1,0 +1,207 @@
+{
+  "source": "data/reward/flow_v3_dataset.pt",
+  "rows_total": 500,
+  "target_names": [
+    "independent_true_label_prob",
+    "inferability_certainty",
+    "debias_stability_score",
+    "news_grounding_score",
+    "technical_grounding_score",
+    "utility_proxy",
+    "calibration_proxy"
+  ],
+  "metadata": {
+    "debias": {
+      "debias_used": false,
+      "debias_reason": "debias_consistency_below_gate",
+      "argmax_consistency_mean": 0.4044734389561976
+    },
+    "embedding_backend": "hash_blake2b_64"
+  },
+  "samples": [
+    {
+      "sample_id": "b3ec49c170977f40205614cce63d7501b4003a29e53efa7cd384125752ef8ca5",
+      "candidate_id": 0,
+      "split": "train",
+      "target": {
+        "independent_true_label_prob": 0.05000000074505806,
+        "inferability_certainty": 0.2192317694425583,
+        "debias_stability_score": 1.0,
+        "news_grounding_score": 0.0,
+        "technical_grounding_score": 1.0,
+        "utility_proxy": -0.015241914428770542,
+        "calibration_proxy": -1.0
+      },
+      "mask": {
+        "independent_true_label_prob": 1.0,
+        "inferability_certainty": 1.0,
+        "debias_stability_score": 1.0,
+        "news_grounding_score": 1.0,
+        "technical_grounding_score": 1.0,
+        "utility_proxy": 1.0,
+        "calibration_proxy": 1.0
+      }
+    },
+    {
+      "sample_id": "d678de1a5bbb5f43af457bea282d737634d5ebeeeb08d449df52eb36047f11cf",
+      "candidate_id": 0,
+      "split": "train",
+      "target": {
+        "independent_true_label_prob": 0.05000000074505806,
+        "inferability_certainty": 0.2192317694425583,
+        "debias_stability_score": 1.0,
+        "news_grounding_score": 0.0,
+        "technical_grounding_score": 1.0,
+        "utility_proxy": -0.02032066322863102,
+        "calibration_proxy": -1.0
+      },
+      "mask": {
+        "independent_true_label_prob": 1.0,
+        "inferability_certainty": 1.0,
+        "debias_stability_score": 1.0,
+        "news_grounding_score": 1.0,
+        "technical_grounding_score": 1.0,
+        "utility_proxy": 1.0,
+        "calibration_proxy": 1.0
+      }
+    },
+    {
+      "sample_id": "db26d72c25ee53d813cb842ea9bbdba624f33d1e6608ae342dfddafd8f65910f",
+      "candidate_id": 0,
+      "split": "train",
+      "target": {
+        "independent_true_label_prob": 0.3499999940395355,
+        "inferability_certainty": 0.2192317694425583,
+        "debias_stability_score": 1.0,
+        "news_grounding_score": 0.0,
+        "technical_grounding_score": 1.0,
+        "utility_proxy": 0.009564636275172234,
+        "calibration_proxy": 1.0
+      },
+      "mask": {
+        "independent_true_label_prob": 1.0,
+        "inferability_certainty": 1.0,
+        "debias_stability_score": 1.0,
+        "news_grounding_score": 1.0,
+        "technical_grounding_score": 1.0,
+        "utility_proxy": 1.0,
+        "calibration_proxy": 1.0
+      }
+    },
+    {
+      "sample_id": "5844271119a48d8b21b28bcd8d06a9cedf1ff8add74adad12203abc13fac0920",
+      "candidate_id": 0,
+      "split": "train",
+      "target": {
+        "independent_true_label_prob": 0.30000001192092896,
+        "inferability_certainty": 0.07502266019582748,
+        "debias_stability_score": 1.0,
+        "news_grounding_score": 0.0,
+        "technical_grounding_score": 1.0,
+        "utility_proxy": -0.0,
+        "calibration_proxy": 1.0
+      },
+      "mask": {
+        "independent_true_label_prob": 1.0,
+        "inferability_certainty": 1.0,
+        "debias_stability_score": 1.0,
+        "news_grounding_score": 1.0,
+        "technical_grounding_score": 1.0,
+        "utility_proxy": 1.0,
+        "calibration_proxy": 1.0
+      }
+    },
+    {
+      "sample_id": "4ba9da96f809b979f28ed54c92597de35e44555f86ada4aeeb1b6dc50f386a2d",
+      "candidate_id": 0,
+      "split": "train",
+      "target": {
+        "independent_true_label_prob": 0.44999998807907104,
+        "inferability_certainty": 0.2192317694425583,
+        "debias_stability_score": 1.0,
+        "news_grounding_score": 0.0,
+        "technical_grounding_score": 1.0,
+        "utility_proxy": 0.029246322810649872,
+        "calibration_proxy": 1.0
+      },
+      "mask": {
+        "independent_true_label_prob": 1.0,
+        "inferability_certainty": 1.0,
+        "debias_stability_score": 1.0,
+        "news_grounding_score": 1.0,
+        "technical_grounding_score": 1.0,
+        "utility_proxy": 1.0,
+        "calibration_proxy": 1.0
+      }
+    },
+    {
+      "sample_id": "86eb517c8455700a84931d3e9a88068bbc164aa5133deb37926908ae1be9517d",
+      "candidate_id": 0,
+      "split": "train",
+      "target": {
+        "independent_true_label_prob": 0.10000000149011612,
+        "inferability_certainty": 0.2192317694425583,
+        "debias_stability_score": 1.0,
+        "news_grounding_score": 0.0,
+        "technical_grounding_score": 1.0,
+        "utility_proxy": -0.0048069399781525135,
+        "calibration_proxy": -1.0
+      },
+      "mask": {
+        "independent_true_label_prob": 1.0,
+        "inferability_certainty": 1.0,
+        "debias_stability_score": 1.0,
+        "news_grounding_score": 1.0,
+        "technical_grounding_score": 1.0,
+        "utility_proxy": 1.0,
+        "calibration_proxy": 1.0
+      }
+    },
+    {
+      "sample_id": "34abe2651af592bea6291373c933a114f1ec6869a55a0a68f54f810b1c0a4df6",
+      "candidate_id": 0,
+      "split": "train",
+      "target": {
+        "independent_true_label_prob": 0.3499999940395355,
+        "inferability_certainty": 0.2192317694425583,
+        "debias_stability_score": 1.0,
+        "news_grounding_score": 0.0,
+        "technical_grounding_score": 1.0,
+        "utility_proxy": 0.006957118399441242,
+        "calibration_proxy": 1.0
+      },
+      "mask": {
+        "independent_true_label_prob": 1.0,
+        "inferability_certainty": 1.0,
+        "debias_stability_score": 1.0,
+        "news_grounding_score": 1.0,
+        "technical_grounding_score": 1.0,
+        "utility_proxy": 1.0,
+        "calibration_proxy": 1.0
+      }
+    },
+    {
+      "sample_id": "3801156f6350e8f8127f23d7c15620e53513f5ab2ba6045ada0b13907eb20f93",
+      "candidate_id": 0,
+      "split": "train",
+      "target": {
+        "independent_true_label_prob": 0.10000000149011612,
+        "inferability_certainty": 0.2741052508354187,
+        "debias_stability_score": 1.0,
+        "news_grounding_score": 0.0,
+        "technical_grounding_score": 1.0,
+        "utility_proxy": -0.0,
+        "calibration_proxy": -1.0
+      },
+      "mask": {
+        "independent_true_label_prob": 1.0,
+        "inferability_certainty": 1.0,
+        "debias_stability_score": 1.0,
+        "news_grounding_score": 1.0,
+        "technical_grounding_score": 1.0,
+        "utility_proxy": 1.0,
+        "calibration_proxy": 1.0
+      }
+    }
+  ]
+}

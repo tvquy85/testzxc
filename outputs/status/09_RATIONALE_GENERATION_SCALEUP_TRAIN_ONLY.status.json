@@ -2,25 +2,31 @@
   "step": "09_RATIONALE_GENERATION_SCALEUP_TRAIN_ONLY",
   "status": "PASS",
   "inputs_checked": [
-    "data/rationales/raw/train_qwen3_4b_stage1_bulk.jsonl",
-    "data/rationales/raw/train_qwen3_4b_stage1_conflict_3cand.jsonl"
+    "data/processed/ticker_date_contexts_h1_v2_targets.parquet",
+    "none.parquet",
+    "data/indicators/technical_event_tokens_h1_v2.parquet",
+    "prompts/rationale_generation_prompt.txt",
+    "configs/default_paths.yaml"
   ],
   "outputs_created": [
-    "data/rationales/parsed/train_candidates_stage1_strict.parquet",
-    "outputs/metrics/stage1_rationale_generation_summary.json",
+    "data/rationales/raw/train_candidates.jsonl",
+    "outputs/predictions/stage_1_small_scale_test_predictions.parquet",
     "outputs/manifests/09_RATIONALE_GENERATION_SCALEUP_TRAIN_ONLY.manifest.json",
     "outputs/status/09_RATIONALE_GENERATION_SCALEUP_TRAIN_ONLY.status.json"
   ],
   "metrics": {
-    "row_count": 12500,
-    "unique_sample_count": 7336,
-    "raw_input_count": 2,
-    "parse_ok_rate": 0.99576,
-    "schema_ok_rate": 0.98352,
-    "avg_output_tokens_est": 219.47248,
-    "duplicate_key_count": 0,
-    "explicit_leak_pattern_count": 0,
-    "stage": "stage_1_small_scale"
+    "row_count": 400,
+    "expected_row_count": 400,
+    "generated_this_run": 400,
+    "unique_sample_count": 100,
+    "parse_ok_rate": 1.0,
+    "schema_ok_rate": 0.045,
+    "avg_output_tokens_est": 287.4075,
+    "run_id": "stage_1_small_scale_a47eabdf",
+    "stage": "stage_1_small_scale",
+    "backend": "transformers",
+    "attn_implementation": "flash_attention_2",
+    "elapsed_seconds": 1042.686
   },
   "failures": [],
   "next_step_allowed": true

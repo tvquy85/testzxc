@@ -1,0 +1,226 @@
+{
+  "claim_matrix": {
+    "prediction_pipeline_claim_allowed": false,
+    "flow_reward_claim_allowed": false,
+    "trading_alpha_claim_allowed": false,
+    "counterfactual_faithfulness_claim_allowed": true,
+    "reproducibility_claim_allowed": true,
+    "blocked_claims": [
+      {
+        "claim": "flow_reward_improvement",
+        "reason": "flow did not beat proxy on >=2 metrics"
+      },
+      {
+        "claim": "trading_alpha",
+        "reason": "backtest alpha gate not reached"
+      }
+    ],
+    "source_files": {
+      "prediction": {
+        "path": "outputs/metrics/current_v3_1_test_predictions.json",
+        "row_count": 1,
+        "sha256": "1c911e3b33fefdef8cfd14277c7f0aa2754fbba20209d07ac71fc7176c435a60",
+        "timestamp": "2026-06-20T23:12:27+00:00",
+        "producer_step": "17_PAPER_TABLES_NEGATIVE_RESULTS_GATES",
+        "run_id": null
+      },
+      "grounding": {
+        "path": "outputs/metrics/claim_grounding_v3_1_small.json",
+        "row_count": 1,
+        "sha256": "7f6a82f5a1a66ed1934def3567176a0f4cfbb1864b1b99d2f4741001ecb022a5",
+        "timestamp": "2026-06-20T23:12:27+00:00",
+        "producer_step": "17_PAPER_TABLES_NEGATIVE_RESULTS_GATES",
+        "run_id": null
+      },
+      "debias": {
+        "path": "outputs/metrics/judge_debias_v3_1_small.json",
+        "row_count": 1,
+        "sha256": "508303ddacf47edc1d4e8b72b43b5223e13d3656ca64410d7a92f65eb5934502",
+        "timestamp": "2026-06-20T23:12:27+00:00",
+        "producer_step": "17_PAPER_TABLES_NEGATIVE_RESULTS_GATES",
+        "run_id": null
+      },
+      "flow": {
+        "path": "outputs/metrics/flow_vs_proxy_v3_1_eval.json",
+        "row_count": 1,
+        "sha256": "d5a5787ed9bfee42153fa30a48efffe3c9cf2877a11894edbfed3c81ef7929cf",
+        "timestamp": "2026-06-20T23:12:27+00:00",
+        "producer_step": "17_PAPER_TABLES_NEGATIVE_RESULTS_GATES",
+        "run_id": null
+      },
+      "backtest": {
+        "path": "outputs/metrics/backtest_daily_portfolio_current_v3.json",
+        "row_count": 1,
+        "sha256": "af3df377299c94e04f1e7bbf00132850956df46aa38471460ab487446d475b41",
+        "timestamp": "2026-06-20T23:12:27+00:00",
+        "producer_step": "17_PAPER_TABLES_NEGATIVE_RESULTS_GATES",
+        "run_id": null
+      },
+      "counterfactual": {
+        "path": "outputs/metrics/counterfactual_directional_current_v3.json",
+        "row_count": 1,
+        "sha256": "a933cd70e0e930bbd76bc44f799d912e8abe164dd0fd4b4a92f964994879207e",
+        "timestamp": "2026-06-20T23:12:27+00:00",
+        "producer_step": "17_PAPER_TABLES_NEGATIVE_RESULTS_GATES",
+        "run_id": null
+      },
+      "ablation": {
+        "path": "outputs/tables/ablation_current_v3.csv",
+        "row_count": 5,
+        "sha256": "f1be17bf414dde906e5f40c6e2131a9c43b6a407e99771f344bdd1d4bdcf2ae1",
+        "timestamp": "2026-06-20T23:12:27+00:00",
+        "producer_step": "17_PAPER_TABLES_NEGATIVE_RESULTS_GATES",
+        "run_id": null
+      }
+    }
+  },
+  "science_gate": {
+    "pipeline_decision": "GO",
+    "claim_decision": "CLAIM_ALLOWED",
+    "allowed_claims": [
+      "counterfactual_faithfulness"
+    ],
+    "blocked_claims": [
+      {
+        "claim": "trading_alpha",
+        "reason": "backtest alpha gate not reached"
+      },
+      {
+        "claim": "flow_reward_improvement",
+        "reason": "flow did not beat proxy on >=2 metrics"
+      }
+    ],
+    "blocking_issues": [],
+    "warnings": [
+      "Paper tables include blocked claims; report negative results explicitly."
+    ],
+    "status_audit": {
+      "outputs/status/01_FREEZE_BASELINE_CURRENTDATA.status.json": {
+        "valid_contract": true,
+        "status": "PASS",
+        "next_step_allowed": true,
+        "failures": []
+      },
+      "outputs/status/02_CURRENT_DATA_QUALITY_AUDIT.status.json": {
+        "valid_contract": true,
+        "status": "PASS",
+        "next_step_allowed": true,
+        "failures": []
+      },
+      "outputs/status/03_ENTITY_EVENT_FILTER_CURRENT_DATA.status.json": {
+        "valid_contract": true,
+        "status": "PASS",
+        "next_step_allowed": true,
+        "failures": []
+      },
+      "outputs/status/04_TICKER_DATE_CONTEXT_AGGREGATION.status.json": {
+        "valid_contract": true,
+        "status": "PASS",
+        "next_step_allowed": true,
+        "failures": []
+      },
+      "outputs/status/05_LABEL_BACKTEST_TARGET_FIX_ABNORMAL_RETURN.status.json": {
+        "valid_contract": true,
+        "status": "PASS",
+        "next_step_allowed": true,
+        "failures": []
+      },
+      "outputs/status/06_RATIONALE_PROMPT_CLEAN_CONTEXT.status.json": {
+        "valid_contract": true,
+        "status": "PASS",
+        "next_step_allowed": true,
+        "failures": []
+      },
+      "outputs/status/07_INDEPENDENT_INFERABILITY_JUDGE.status.json": {
+        "valid_contract": true,
+        "status": "PASS",
+        "next_step_allowed": true,
+        "failures": []
+      },
+      "outputs/status/08_JUDGE_DEBIAS_LABEL_ORDER_RANDOMIZATION.status.json": {
+        "valid_contract": true,
+        "status": "PASS",
+        "next_step_allowed": true,
+        "failures": []
+      },
+      "outputs/status/09_CLAIM_EXTRACTION_GROUNDING_V2.status.json": {
+        "valid_contract": true,
+        "status": "PASS",
+        "next_step_allowed": true,
+        "failures": []
+      },
+      "outputs/status/10_FLOW_DATASET_V3_TARGETS_AND_EMBEDDINGS.status.json": {
+        "valid_contract": true,
+        "status": "PASS",
+        "next_step_allowed": true,
+        "failures": []
+      },
+      "outputs/status/11_FLOW_TRAIN_EVAL_FIX_VALID_SPLIT.status.json": {
+        "valid_contract": true,
+        "status": "PASS",
+        "next_step_allowed": true,
+        "failures": []
+      },
+      "outputs/status/12_RWSFT_DPO_REBUILD_FROM_INDEPENDENT_REWARDS.status.json": {
+        "valid_contract": true,
+        "status": "PASS",
+        "next_step_allowed": true,
+        "failures": []
+      },
+      "outputs/status/13_ALIGNMENT_REAL_RUN_CURRENT_DATA.status.json": {
+        "valid_contract": true,
+        "status": "PASS",
+        "next_step_allowed": true,
+        "failures": []
+      },
+      "outputs/status/14_DAILY_BACKTEST_ABNORMAL_AND_COSTS.status.json": {
+        "valid_contract": true,
+        "status": "PASS",
+        "next_step_allowed": true,
+        "failures": []
+      },
+      "outputs/status/15_COUNTERFACTUAL_DIRECTIONAL_FIX_CURRENT_DATA.status.json": {
+        "valid_contract": true,
+        "status": "PASS",
+        "next_step_allowed": true,
+        "failures": []
+      },
+      "outputs/status/16_MINIMUM_ABLATIONS_CURRENT_DATA.status.json": {
+        "valid_contract": true,
+        "status": "PASS",
+        "next_step_allowed": true,
+        "failures": []
+      },
+      "outputs/status/17_PAPER_TABLES_NEGATIVE_RESULTS_GATES.status.json": {
+        "valid_contract": true,
+        "status": "PASS",
+        "next_step_allowed": true,
+        "failures": []
+      }
+    },
+    "evidence_files": [
+      "outputs/status/01_FREEZE_BASELINE_CURRENTDATA.status.json",
+      "outputs/status/02_CURRENT_DATA_QUALITY_AUDIT.status.json",
+      "outputs/status/03_ENTITY_EVENT_FILTER_CURRENT_DATA.status.json",
+      "outputs/status/04_TICKER_DATE_CONTEXT_AGGREGATION.status.json",
+      "outputs/status/05_LABEL_BACKTEST_TARGET_FIX_ABNORMAL_RETURN.status.json",
+      "outputs/status/06_RATIONALE_PROMPT_CLEAN_CONTEXT.status.json",
+      "outputs/status/07_INDEPENDENT_INFERABILITY_JUDGE.status.json",
+      "outputs/status/08_JUDGE_DEBIAS_LABEL_ORDER_RANDOMIZATION.status.json",
+      "outputs/status/09_CLAIM_EXTRACTION_GROUNDING_V2.status.json",
+      "outputs/status/10_FLOW_DATASET_V3_TARGETS_AND_EMBEDDINGS.status.json",
+      "outputs/status/11_FLOW_TRAIN_EVAL_FIX_VALID_SPLIT.status.json",
+      "outputs/status/12_RWSFT_DPO_REBUILD_FROM_INDEPENDENT_REWARDS.status.json",
+      "outputs/status/13_ALIGNMENT_REAL_RUN_CURRENT_DATA.status.json",
+      "outputs/status/14_DAILY_BACKTEST_ABNORMAL_AND_COSTS.status.json",
+      "outputs/status/15_COUNTERFACTUAL_DIRECTIONAL_FIX_CURRENT_DATA.status.json",
+      "outputs/status/16_MINIMUM_ABLATIONS_CURRENT_DATA.status.json",
+      "outputs/status/17_PAPER_TABLES_NEGATIVE_RESULTS_GATES.status.json",
+      "outputs/metrics/current_v3_claim_matrix.json",
+      "outputs/metrics/backtest_daily_portfolio_current_v3.json",
+      "outputs/metrics/counterfactual_directional_current_v3.json",
+      "outputs/metrics/flow_vs_proxy_v3_1_eval.json"
+    ],
+    "recommendation": "Scale medium before making paper claims"
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "producer": "src/repro/export_codex_fix_samples.py",
+  "purpose": "Small samples for ChatGPT UI review of codex_fix_20062026 flow.",
+  "sample_files": [
+    {
+      "path": "review_samples/codex_fix_20062026/00_status_summary_01_18.json",
+      "row_count": 1,
+      "sha256": "89f611c98541818e3a950cb10bbf93c76afb1b4f3d99f3eb0e4bd943621e6128",
+      "timestamp": "2026-06-20T23:25:11+00:00",
+      "producer_step": "CODEX_FIX_20062026_REVIEW_SAMPLES",
+      "run_id": null
+    },
+    {
+      "path": "review_samples/codex_fix_20062026/01_source_code_index.md",
+      "row_count": null,
+      "sha256": "e50321ea3bd2b9ec0a178f1505bde1d94efe410097fd7e4fe6a4b20291044d50",
+      "timestamp": "2026-06-20T23:25:11+00:00",
+      "producer_step": "CODEX_FIX_20062026_REVIEW_SAMPLES",
+      "run_id": null
+    },
+    {
+      "path": "review_samples/codex_fix_20062026/06_rationale_generation_samples.jsonl",
+      "row_count": 8,
+      "sha256": "eed592eaf5cd01c32853eb35284e39104181c852a7e56276f7ae1c78ad36bfef",
+      "timestamp": "2026-06-20T23:25:11+00:00",
+      "producer_step": "CODEX_FIX_20062026_REVIEW_SAMPLES",
+      "run_id": null
+    },
+    {
+      "path": "review_samples/codex_fix_20062026/07_08_inferability_debias_samples.jsonl",
+      "row_count": 8,
+      "sha256": "7874121726cbb7fc0bb1e8c036a971a5f7b34e1c476e858754737f567dda1e21",
+      "timestamp": "2026-06-20T23:25:11+00:00",
+      "producer_step": "CODEX_FIX_20062026_REVIEW_SAMPLES",
+      "run_id": null
+    },
+    {
+      "path": "review_samples/codex_fix_20062026/09_claim_grounding_nli_samples.jsonl",
+      "row_count": 8,
+      "sha256": "d50d8c523121d4c81e52e84ab934a27304a7b8033049b806da2295d30b5b48ca",
+      "timestamp": "2026-06-20T23:25:11+00:00",
+      "producer_step": "CODEX_FIX_20062026_REVIEW_SAMPLES",
+      "run_id": null
+    },
+    {
+      "path": "review_samples/codex_fix_20062026/10_flow_dataset_target_samples.json",
+      "row_count": 1,
+      "sha256": "f1924fb8e1eeb758688cdef28ca6c9339beca80c3ff22a51789489ad70e3ccf9",
+      "timestamp": "2026-06-20T23:25:11+00:00",
+      "producer_step": "CODEX_FIX_20062026_REVIEW_SAMPLES",
+      "run_id": null
+    },
+    {
+      "path": "review_samples/codex_fix_20062026/12_dpo_alignment_pair_samples.jsonl",
+      "row_count": 8,
+      "sha256": "efaded4534b6e4489fc3ff573af03c9f8e24bc2dc6581af86370e35d12a1dbbb",
+      "timestamp": "2026-06-20T23:25:11+00:00",
+      "producer_step": "CODEX_FIX_20062026_REVIEW_SAMPLES",
+      "run_id": null
+    },
+    {
+      "path": "review_samples/codex_fix_20062026/12_rwsft_alignment_samples.jsonl",
+      "row_count": 8,
+      "sha256": "130ca8336300a3de0bdcfaae6b19727d475e5545e22ac2a0ddfc1882a4a94191",
+      "timestamp": "2026-06-20T23:25:11+00:00",
+      "producer_step": "CODEX_FIX_20062026_REVIEW_SAMPLES",
+      "run_id": null
+    },
+    {
+      "path": "review_samples/codex_fix_20062026/14_backtest_daily_returns_sample.csv",
+      "row_count": 20,
+      "sha256": "21af244e09bd4196e3adf9b89f1aaa22eb1f777273f241a11bcfea06c7a2e54c",
+      "timestamp": "2026-06-20T23:25:11+00:00",
+      "producer_step": "CODEX_FIX_20062026_REVIEW_SAMPLES",
+      "run_id": null
+    },
+    {
+      "path": "review_samples/codex_fix_20062026/14_prediction_forecast_samples.jsonl",
+      "row_count": 12,
+      "sha256": "b7c5d34f9a6f111b452e931ff29683e13192cd01a60390fea92b4561a605aa11",
+      "timestamp": "2026-06-20T23:25:11+00:00",
+      "producer_step": "CODEX_FIX_20062026_REVIEW_SAMPLES",
+      "run_id": null
+    },
+    {
+      "path": "review_samples/codex_fix_20062026/15_counterfactual_fail_examples.json",
+      "row_count": 1,
+      "sha256": "2018ead448648cd67ad07e0400cb8fc36bead252acaa9fc30d3b4d70310a28cc",
+      "timestamp": "2026-06-20T23:25:11+00:00",
+      "producer_step": "CODEX_FIX_20062026_REVIEW_SAMPLES",
+      "run_id": null
+    },
+    {
+      "path": "review_samples/codex_fix_20062026/15_counterfactual_task_samples.jsonl",
+      "row_count": 8,
+      "sha256": "33f478ce396082302719947c16c520f07c76b7db81608d938019d00b028fe1c1",
+      "timestamp": "2026-06-20T23:25:11+00:00",
+      "producer_step": "CODEX_FIX_20062026_REVIEW_SAMPLES",
+      "run_id": null
+    },
+    {
+      "path": "review_samples/codex_fix_20062026/16_ablation_results.csv",
+      "row_count": 5,
+      "sha256": "e071bd3433787ce8d945a19e21d66e8b43082d0b2ecad1ce4b9c94c76bf62510",
+      "timestamp": "2026-06-20T23:25:11+00:00",
+      "producer_step": "CODEX_FIX_20062026_REVIEW_SAMPLES",
+      "run_id": null
+    },
+    {
+      "path": "review_samples/codex_fix_20062026/17_table_ablation.csv",
+      "row_count": 5,
+      "sha256": "1fdbf6f0c9bf3519ca5d330bf0bc22e11df4af1e607ba45baa9045fd53406b6e",
+      "timestamp": "2026-06-20T23:25:11+00:00",
+      "producer_step": "CODEX_FIX_20062026_REVIEW_SAMPLES",
+      "run_id": null
+    },
+    {
+      "path": "review_samples/codex_fix_20062026/17_table_backtest.csv",
+      "row_count": 2,
+      "sha256": "f4155a4daba645c54bb11b0748eb20086a107ab7a0c36919898ee4af6950d8ef",
+      "timestamp": "2026-06-20T23:25:11+00:00",
+      "producer_step": "CODEX_FIX_20062026_REVIEW_SAMPLES",
+      "run_id": null
+    },
+    {
+      "path": "review_samples/codex_fix_20062026/17_table_explanation.csv",
+      "row_count": 1,
+      "sha256": "fd4b16f5d6680ddb555c1075e2988c598192fb54f60cfd4e08e1b57e2dc6b240",
+      "timestamp": "2026-06-20T23:25:11+00:00",
+      "producer_step": "CODEX_FIX_20062026_REVIEW_SAMPLES",
+      "run_id": null
+    },
+    {
+      "path": "review_samples/codex_fix_20062026/17_table_flow_reward.csv",
+      "row_count": 2,
+      "sha256": "69679efd34b90c3461e21b4dc1c0dafef3117b7ae2c91883d50db552c28b36ed",
+      "timestamp": "2026-06-20T23:25:11+00:00",
+      "producer_step": "CODEX_FIX_20062026_REVIEW_SAMPLES",
+      "run_id": null
+    },
+    {
+      "path": "review_samples/codex_fix_20062026/17_table_prediction.csv",
+      "row_count": 1,
+      "sha256": "af414104f37bb6ccea86aa450940ddfedd7449d12edfac6d87fa976c5ed2f8cd",
+      "timestamp": "2026-06-20T23:25:11+00:00",
+      "producer_step": "CODEX_FIX_20062026_REVIEW_SAMPLES",
+      "run_id": null
+    },
+    {
+      "path": "review_samples/codex_fix_20062026/18_claim_matrix_and_science_gate.json",
+      "row_count": 1,
+      "sha256": "0755dc19f13407593d360f717655a0ea0f8c151389e5ac019986d24a4c0c599f",
+      "timestamp": "2026-06-20T23:25:11+00:00",
+      "producer_step": "CODEX_FIX_20062026_REVIEW_SAMPLES",
+      "run_id": null
+    },
+    {
+      "path": "review_samples/codex_fix_20062026/metrics_snapshot_current_v3_1.json",
+      "row_count": 1,
+      "sha256": "fc7e9379b94b7144fb107c614be77b4356b74c1238b7bc875e4d1766b42e11ea",
+      "timestamp": "2026-06-20T23:25:11+00:00",
+      "producer_step": "CODEX_FIX_20062026_REVIEW_SAMPLES",
+      "run_id": null
+    },
+    {
+      "path": "review_samples/codex_fix_20062026/README.md",
+      "row_count": null,
+      "sha256": "dda333a52723dbeeeef847e54d698f5744727773b373f32cd1e912fe5b65a7ee",
+      "timestamp": "2026-06-20T23:25:11+00:00",
+      "producer_step": "CODEX_FIX_20062026_REVIEW_SAMPLES",
+      "run_id": null
+    }
+  ],
+  "source_map": {
+    "06_rationale_generation_samples.jsonl": "data/rationales/parsed/current_clean_train_qwen3_4b_v3_fixed.parquet",
+    "07_08_inferability_debias_samples.jsonl": "data/judges/independent_inferability_v3_1_debiased_small.parquet",
+    "09_claim_grounding_nli_samples.jsonl": "data/judges/claim_grounding_v3_1_small.parquet",
+    "10_flow_dataset_target_samples.json": "data/reward/flow_v3_dataset.pt",
+    "12_rwsft_alignment_samples.jsonl": "data/alignment/rwsft_current_v3_fixed.jsonl",
+    "12_dpo_alignment_pair_samples.jsonl": "data/alignment/dpo_current_v3_fixed.jsonl",
+    "14_prediction_forecast_samples.jsonl": "outputs/predictions/current_v3_1_test_predictions.parquet",
+    "14_backtest_daily_returns_sample.csv": "outputs/tables/backtest_daily_returns_current_v3.csv",
+    "15_counterfactual_task_samples.jsonl": "data/counterfactual/current_cf_tasks_v3_1_small.parquet",
+    "15_counterfactual_fail_examples.json": "outputs/data_samples/counterfactual_fail_examples_current_v3.json",
+    "16_ablation_results.csv": "outputs/tables/ablation_current_v3.csv",
+    "18_claim_matrix_and_science_gate.json": "outputs/metrics/current_v3_claim_matrix.json; outputs/repro/currentdata_science_gate_report_v2.json"
+  }
+}

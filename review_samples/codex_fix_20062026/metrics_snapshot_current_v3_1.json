@@ -1,0 +1,161 @@
+{
+  "outputs/metrics/claim_grounding_v3_1_small.json": {
+    "total_evaluated": 500,
+    "total_claims": 2500,
+    "supported_rate": 0.4,
+    "contradiction_rate": 0.0,
+    "unverified_rate": 0.0,
+    "not_applicable_rate": 0.6,
+    "row_status_counts": {
+      "supported": 500
+    },
+    "claim_status_counts": {
+      "supported": 1000,
+      "unverified": 0,
+      "contradiction": 0,
+      "not_applicable": 1500
+    },
+    "claim_type_counts": {
+      "news": 500,
+      "technical": 997,
+      "forecast": 500,
+      "risk": 500,
+      "regime": 3
+    },
+    "bad_examples_saved": 0,
+    "nli_backend": true,
+    "nli_loader": "transformers_model_id",
+    "nli_model_id": "cross-encoder/nli-deberta-v3-small",
+    "nli_hf_home": "E:/huggingface",
+    "nli_local_files_only": true,
+    "nli_failure": null,
+    "require_nli": true,
+    "allow_lexical_fallback": false,
+    "max_supported_rate": 0.98
+  },
+  "outputs/metrics/flow_v3_dataset_metrics.json": {
+    "rows": 500,
+    "target_dim": 7,
+    "cond_dim": 64,
+    "mask_coverage": 0.8571428656578064,
+    "target_names": [
+      "independent_true_label_prob",
+      "inferability_certainty",
+      "debias_stability_score",
+      "news_grounding_score",
+      "technical_grounding_score",
+      "utility_proxy",
+      "calibration_proxy"
+    ],
+    "debias": {
+      "debias_used": false,
+      "debias_reason": "debias_consistency_below_gate",
+      "argmax_consistency_mean": 0.4044734389561976
+    },
+    "embedding_backend": "hash_blake2b_64",
+    "split_distribution": {
+      "train": 500
+    }
+  },
+  "outputs/metrics/flow_vs_proxy_v3_1_eval.json": {
+    "rows": 500,
+    "eval_rows": 100,
+    "holdout_frac": 0.2,
+    "seed": 42,
+    "methods": {
+      "flow_reward_v3_1": {
+        "rank_correlation_with_realized_utility": 0.05648953904166842,
+        "preference_pair_accuracy": 0.0,
+        "top_decile_realized_utility": -0.0005696534644812346
+      },
+      "proxy_average_reward": {
+        "rank_correlation_with_realized_utility": 0.5514491292709657,
+        "preference_pair_accuracy": 0.0,
+        "top_decile_realized_utility": 0.023091085255146027
+      }
+    },
+    "metric_wins": {
+      "rank_correlation_with_realized_utility": false,
+      "preference_pair_accuracy": false,
+      "top_decile_realized_utility": false
+    },
+    "flow_claim_allowed": false
+  },
+  "outputs/metrics/current_v3_1_test_predictions.json": {
+    "rows": 500,
+    "split": "test",
+    "checkpoint_used": "checkpoints\\aligned\\qwen3_4b\\current_v3_dpo",
+    "checkpoint_source": "primary",
+    "parse_ok_rate": 1.0,
+    "schema_ok_rate": 0.984,
+    "fallback_used": false,
+    "temperature": 0.0,
+    "do_sample": false,
+    "attn_implementation": "flash_attention_2",
+    "schema_ok_rows": 492,
+    "parse_ok_rows": 500,
+    "action_distribution": {
+      "hold": 245,
+      "long": 164,
+      "short": 83,
+      "invalid": 8
+    },
+    "selected_rows": 500,
+    "selected_trading_days": 63,
+    "selected_start_date": "2023-01-03",
+    "selected_end_date": "2023-04-03",
+    "max_days": null,
+    "max_rows_per_day": 8,
+    "ablation_mode": "full"
+  },
+  "outputs/metrics/backtest_daily_portfolio_current_v3.json": {
+    "num_trading_days": 62,
+    "sharpe_daily_annualized": -1.346671701299499,
+    "sortino_daily_annualized": -2.3206229539585306,
+    "max_drawdown": 0.09187761120415726,
+    "avg_positions_per_day": 3.9838709677419355,
+    "avg_turnover_per_day": 2.193548387096774,
+    "total_turnover": 136.0,
+    "mean_daily_return": -0.0006471793200739779,
+    "coverage": 1.0,
+    "cost_bps": 5.0,
+    "slippage_bps": 2.0,
+    "short_borrow_bps": 1.0,
+    "return_column": "target_return",
+    "schema_ok_rate": 0.984,
+    "schema_ok_rate_required": 0.8,
+    "min_trading_days_required": 20,
+    "alpha_claim_allowed": false,
+    "pipeline_pass": true
+  },
+  "outputs/metrics/counterfactual_directional_current_v3.json": {
+    "num_tasks": 500,
+    "mean_delta": -0.04976514285714287,
+    "pass_rate": 0.422,
+    "wrong_direction_rate": 0.132,
+    "no_change_rate": 0.446,
+    "parse_ok_rate": 1.0,
+    "schema_ok_rate": 0.982,
+    "temperature": 0.0,
+    "attn_implementation": "flash_attention_2",
+    "checkpoint_used": "checkpoints/aligned/qwen3_4b/current_v3_dpo",
+    "pass_rate_neutralize_bullish_technical": 0.808,
+    "pass_rate_neutralize_bearish_technical": 0.52,
+    "pass_rate_remove_positive_news": 0.24,
+    "pass_rate_remove_negative_news": 0.12
+  },
+  "outputs/metrics/ablation_current_v3.json": {
+    "ablation_count": 5,
+    "required_ablation_count": 5,
+    "status_counts": {
+      "PASS": 5
+    },
+    "required_ablations": [
+      "Full_Current_V3",
+      "No_Technical_Tokens",
+      "No_News_Body",
+      "SFT_Only",
+      "No_Flow_Reward"
+    ]
+  }
+}

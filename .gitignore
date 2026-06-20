@@ -43,6 +43,10 @@ outputs/
 *.pth
 *.h5
 
+# Small review samples are intentionally GitHub-trackable.
+!review_samples/
+!review_samples/**
+
 # However, we want to track some config/status files in outputs/status/
 !outputs/status/
 outputs/status/*.txt

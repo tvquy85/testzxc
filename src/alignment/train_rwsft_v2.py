@@ -79,7 +79,11 @@ def resolve_model_path(model: str, model_path: str | None, config_path: str) -> 
     value = models.get(key)
     if not value:
         raise RuntimeError(f"Cannot resolve model alias: {model}")
-    return str(value)
+    hf_home = os.environ.get("HF_HOME")
+    resolved = str(value)
+    if hf_home:
+        resolved = resolved.replace("$HF_HOME", hf_home)
+    return resolved
 
 
 def load_jsonl_records(path: str, limit: int) -> list[dict[str, Any]]:

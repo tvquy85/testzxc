@@ -1,0 +1,2 @@
+component,total_evaluated,supported_rate,unverified_rate,not_applicable_rate,debias_argmax_consistency,debias_reward_source_allowed,claim_allowed,claim_block_reason,source_file
+grounding_v3_1,500,0.4,0.0,0.6,0.7195945945945946,True,False,"grounding/debias are quality gates, not final paper claims at small scale",outputs/metrics/claim_grounding_v3_1_small.json;outputs/metrics/judge_debias_v3_1_small.json

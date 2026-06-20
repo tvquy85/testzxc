@@ -50,3 +50,17 @@ During the pipeline design, several advanced ideas were considered but ultimatel
 - Prediction-level baseline artifacts are necessary for real paired inference. Aggregate baseline CSVs are not enough because paired bootstrap requires overlapping `sample_id` rows between FIRE-Fin and each baseline/seed.
 - Step19 now separates "not run" ablations from statistical evidence: A0-A8 remain `NOT_RUN` and are explicitly excluded from evidence, while prediction paired bootstrap and daily-return block bootstrap are real artifacts.
 - The medium result is an important negative-control story: mechanics are now finance-valid, but the medium Sharpe is negative and counterfactual no-change remains high. This prevents premature paper claims and points the next research effort toward forecast quality rather than table generation.
+
+## 2026-06-20 Current-Data V3.1 Small-Scale Repair Notes
+
+- Current-data forecast and counterfactual evaluation should use the compact forecast-only JSON interface, while rationale generation keeps the richer explanation schema. This reduced schema failures and made invalid rows explicit instead of silently neutral.
+- Label-order debias became usable after the reversed prompt was made canonical: output keys stay in `strong_down` to `strong_up` order even when the displayed evaluation order is reversed. On 300 small-scale rows, argmax consistency reached 0.720, so the debiased judge can be used as a reward source for this stage.
+- Grounding must preserve context-level technical tokens. Dropping `technical_event_tokens_json` and re-merging per-news tokens by `sample_id` erased evidence because ticker-date context IDs do not match raw news IDs. Keeping the context tokens changed grounding from all `not_applicable` to a real supported/not-applicable split.
+- Counterfactual tasks should only be created when the original sample has the signal being neutralized. Balanced applicable tasks improved pass rate from the previous 0.095/no-change 0.845 to pass rate 0.422/no-change 0.446 on 500 tasks.
+- Negative-result gates are part of the contribution: the strict science gate now allows counterfactual faithfulness but blocks trading alpha and flow-reward improvement until medium/full-scale evidence supports them.
+
+## 2026-06-21 Local NLI Grounding Loader Fix
+
+- The NLI grounding model should be loaded by model id `cross-encoder/nli-deberta-v3-small` with `HF_HOME=E:/huggingface` and `local_files_only=True`. Passing the internal cache directory `models--cross-encoder--nli-deberta-v3-small` directly to `AutoTokenizer` is brittle and can force fallback behavior.
+- Step09 now records whether grounding used the real transformers NLI backend. Lexical fallback must be explicit debug behavior, not silent PASS evidence.
+- On the 500-row current-data small run, the NLI-backed grounding gate passed with `nli_backend=true`, `supported_rate=0.400`, and `not_applicable_rate=0.600`. Rebuilding Flow V3 on the same small slice still did not beat the proxy average, so the flow-reward improvement claim remains blocked.

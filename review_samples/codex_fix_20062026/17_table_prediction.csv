@@ -1,0 +1,2 @@
+model,split,rows,schema_ok_rate,parse_ok_rate,trading_days,action_distribution,claim_allowed,claim_block_reason,source_file
+Current_V3_1_DPO,test,500,0.984,1.0,63,"{""hold"": 245, ""invalid"": 8, ""long"": 164, ""short"": 83}",False,small-scale pipeline validation only,outputs/metrics/current_v3_1_test_predictions.json

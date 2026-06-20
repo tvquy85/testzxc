@@ -6,9 +6,9 @@ def render_context(row):
     Returns a dict with context variables to format the prompt.
     """
     
-    headline = row.get("headline", "")
-    body = row.get("body", "")
-    regime = row.get("regime_label", "normal_vol")
+    headline = row.get("headline", row.get("aggregated_headlines", ""))
+    body = row.get("body", row.get("aggregated_body", ""))
+    regime = row.get("regime_label", row.get("market_regime", "normal_vol"))
     
     # technical tokens
     tokens = row.get("technical_event_tokens_json", row.get("technical_event_tokens", "[]"))

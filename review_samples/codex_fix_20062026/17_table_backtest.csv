@@ -1,0 +1,3 @@
+strategy,num_trading_days,sharpe_daily_annualized,sortino_daily_annualized,max_drawdown,mean_daily_return,claim_allowed,claim_block_reason,source_file,counterfactual_pass_rate,counterfactual_no_change_rate
+Current_V3_1_DPO_Daily_Portfolio,62.0,-1.346671701299499,-2.3206229539585306,0.0918776112041572,-0.0006471793200739,False,Sharpe/coverage/sample-size gate not sufficient for alpha claim,outputs/metrics/backtest_daily_portfolio_current_v3.json,,
+Current_V3_1_Counterfactual,,,,,,True,,outputs/metrics/counterfactual_directional_current_v3.json,0.422,0.446

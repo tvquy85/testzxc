@@ -1,0 +1,6 @@
+ablation,status,artifact,rows,merged_rows,schema_ok_rate,parse_ok_rate,non_hold_rate,directional_accuracy,mean_realized_utility,trading_days,action_distribution,rank_corr_without_flow,rank_corr_with_flow,preference_accuracy_without_flow,preference_accuracy_with_flow,flow_claim_allowed
+Full_Current_V3,PASS,outputs/predictions/current_v3_1_test_predictions.parquet,500,492.0,0.984,1.0,0.5020325203252033,0.3719512195121951,1.2564496617592253e-05,63.0,"{'hold': 245, 'long': 164, 'short': 83, 'invalid': 8}",,,,,
+No_Technical_Tokens,PASS,outputs/predictions/current_v3_1_ablation_no_technical.parquet,160,160.0,1.0,1.0,0.15625,0.4375,0.0002826221914082,40.0,"{'hold': 135, 'long': 13, 'short': 12}",,,,,
+No_News_Body,PASS,outputs/predictions/current_v3_1_ablation_no_news.parquet,160,158.0,0.9875,1.0,0.5379746835443038,0.379746835443038,-4.038811284606242e-05,40.0,"{'hold': 73, 'short': 46, 'long': 39, 'invalid': 2}",,,,,
+SFT_Only,PASS,outputs/predictions/current_v3_1_ablation_sft_only.parquet,160,148.0,0.925,1.0,0.7162162162162162,0.3986486486486486,0.0019620957700748,40.0,"{'long': 68, 'hold': 42, 'short': 38, 'invalid': 12}",,,,,
+No_Flow_Reward,PASS,outputs/metrics/flow_vs_proxy_v3_1_eval.json,100,,,,,,,,,0.5121064771465788,0.1131485890782105,0.0,0.0,False

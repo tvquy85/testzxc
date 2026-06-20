@@ -1,45 +1,45 @@
 {
   "producer_step": "15_ALIGNMENT_TRAINING_REPRODUCIBLE",
   "run_id": null,
-  "created_at": "2026-06-19T16:24:38+00:00",
+  "created_at": "2026-06-20T08:49:39+00:00",
   "artifacts": [
     {
-      "path": "checkpoints/aligned/qwen3_4b/dpo_v2/trainer_config.json",
+      "path": "checkpoints/aligned/qwen3_4b/current_v3_dpo/trainer_config.json",
       "row_count": 1,
-      "sha256": "7490626bf4c1eb67ee5fa5c2eea968367d0729d6c0e670f4232776be7d497f8a",
-      "timestamp": "2026-06-19T16:24:38+00:00",
+      "sha256": "53bbb557f44e9f14a2a785c87ee418d976b956a37cd66db83d69c50a42d55529",
+      "timestamp": "2026-06-20T08:49:39+00:00",
       "producer_step": "15_ALIGNMENT_TRAINING_REPRODUCIBLE",
       "run_id": null
     },
     {
-      "path": "checkpoints/aligned/qwen3_4b/dpo_v2/adapter_config.json",
+      "path": "checkpoints/aligned/qwen3_4b/current_v3_dpo/adapter_config.json",
       "row_count": 1,
-      "sha256": "6abadcf92f9b5720ee08eb1b5e50573343768890964459f88078bf8e039c3266",
-      "timestamp": "2026-06-19T16:24:38+00:00",
+      "sha256": "40c9f2b4b63b86a5dc63b1d407d7c2a4fe53c6329cd705f6f52e05492f97bee7",
+      "timestamp": "2026-06-20T08:49:39+00:00",
       "producer_step": "15_ALIGNMENT_TRAINING_REPRODUCIBLE",
       "run_id": null
     },
     {
-      "path": "checkpoints/aligned/qwen3_4b/dpo_v2/adapter_model.safetensors",
+      "path": "checkpoints/aligned/qwen3_4b/current_v3_dpo/adapter_model.safetensors",
       "row_count": null,
-      "sha256": "6dc6e64f34d0299349ee4d5e9534c30d45e47878970c6c33fac2f116ce8eca50",
-      "timestamp": "2026-06-19T16:24:38+00:00",
+      "sha256": "bab011756e75934a01877eea4deec92cf07d8e556b67db6b9870eda23e1804b9",
+      "timestamp": "2026-06-20T08:49:39+00:00",
       "producer_step": "15_ALIGNMENT_TRAINING_REPRODUCIBLE",
       "run_id": null
     },
     {
-      "path": "checkpoints/aligned/qwen3_4b/rwsft_v2/adapter_config.json",
+      "path": "checkpoints/aligned/qwen3_4b/current_v3_rwsft/adapter_config.json",
       "row_count": 1,
-      "sha256": "4d439561fb132bc8ff3fc4e1181ae52098134e4e811f127846a7fd2e0537dae6",
-      "timestamp": "2026-06-19T16:24:38+00:00",
+      "sha256": "250806308f1bee7fdb33c7af172db77d5bd50f991a04bd5cd3554817c2361b3d",
+      "timestamp": "2026-06-20T08:49:39+00:00",
       "producer_step": "15_ALIGNMENT_TRAINING_REPRODUCIBLE",
       "run_id": null
     },
     {
-      "path": "checkpoints/aligned/qwen3_4b/rwsft_v2/adapter_model.safetensors",
+      "path": "checkpoints/aligned/qwen3_4b/current_v3_rwsft/adapter_model.safetensors",
       "row_count": null,
-      "sha256": "134b399f76338bdbbbbb7bdee2045f98f66d3a66b6f91dda8ae8943eba284375",
-      "timestamp": "2026-06-19T16:24:38+00:00",
+      "sha256": "de4bd6afc7ce701eb1907cb2c8f3bf5c0fd7e5f0e57c09f9b639df3dd3c90eb8",
+      "timestamp": "2026-06-20T08:49:39+00:00",
       "producer_step": "15_ALIGNMENT_TRAINING_REPRODUCIBLE",
       "run_id": null
     }

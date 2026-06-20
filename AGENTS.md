@@ -10,6 +10,8 @@ Khi đề xuất bước tiếp theo, phải dựa trên phân tích trước đ
 
 Luôn ưu tiên giải pháp tổng quát, có thể tái sử dụng và mở rộng. Không xử lý theo kiểu ad hoc nếu chưa có lý do kỹ thuật rõ ràng.
 
+**QUAN TRỌNG:** Luôn ghi nhớ phải kiểm chứng (verify) chất lượng từng bước nhỏ hoàn chỉnh, chắc chắn thành công và đạt chuẩn thì mới qua bước mới. Không nhảy bước khi chưa xác nhận kết quả bước hiện tại.
+
 2. Điều tra và tìm giải pháp
 
 Khi gặp lỗi, kết quả yếu hoặc hiện tượng bất thường, phải xử lý với vai trò **chuyên gia ML hàng đầu**:

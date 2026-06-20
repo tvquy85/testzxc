@@ -430,10 +430,8 @@ def main() -> int:
     failures: list[str] = []
     raw_path = Path(args.raw_output)
 
-    if args.split != "train":
-        failures.append("generation split must be train")
     if rows.empty:
-        failures.append("no train rows selected for generation")
+        failures.append(f"no {args.split} rows selected for generation")
     if not model_path or (args.backend == "transformers" and not Path(model_path).exists()):
         failures.append(f"model path missing for {args.model_key or args.model}: {model_path}")
     if raw_path.exists() and raw_path.stat().st_size > 0 and not args.resume and not args.overwrite:
@@ -471,8 +469,8 @@ def main() -> int:
         failures.append("raw and parsed output row counts differ")
     if len(parsed_records) != len(items):
         failures.append(f"generated row count {len(parsed_records)} does not match expected {len(items)}")
-    if parsed_records and {r["split"] for r in parsed_records} != {"train"}:
-        failures.append("parsed output contains non-train split")
+    if parsed_records and {r["split"] for r in parsed_records} != {args.split}:
+        failures.append(f"parsed output contains non-{args.split} split")
     parse_ok_rate = sum(1 for r in parsed_records if r["parse_ok"]) / max(1, len(parsed_records))
     schema_ok_rate = sum(1 for r in parsed_records if r["schema_ok"]) / max(1, len(parsed_records))
     avg_output_tokens = sum(int(r.get("output_tokens_est", 0) or 0) for r in current_raw_rows) / max(1, len(current_raw_rows))
