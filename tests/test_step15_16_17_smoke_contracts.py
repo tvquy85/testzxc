@@ -171,7 +171,7 @@ def test_forecast_only_parser_accepts_valid_and_rejects_malformed():
                 "Mild Up": 0.25,
                 "Strong Up": 0.15,
             },
-            "action": "hold",
+            "action": "long",
         }
     )
     dist, action, pred_label, parse_ok, schema_ok, errors = parse_forecast_prediction(valid)
@@ -179,7 +179,7 @@ def test_forecast_only_parser_accepts_valid_and_rejects_malformed():
     assert schema_ok
     assert not errors
     assert abs(sum(dist.values()) - 1.0) < 1e-9
-    assert action == "hold"
+    assert action == "long"
     assert pred_label in {"strong_down", "mild_down", "neutral", "mild_up", "strong_up"}
 
     _, action, pred_label, parse_ok, schema_ok, errors = parse_forecast_prediction('{"forecast_distribution": {"Neutral": 1.0}}')
@@ -188,6 +188,34 @@ def test_forecast_only_parser_accepts_valid_and_rejects_malformed():
     assert action == "invalid"
     assert pred_label == "invalid"
     assert errors
+
+
+def test_forecast_only_parser_rejects_inconsistent_action():
+    inconsistent = json.dumps(
+        {
+            "forecast_distribution": {
+                "Strong Down": 0.3,
+                "Mild Down": 0.2,
+                "Neutral": 0.3,
+                "Mild Up": 0.1,
+                "Strong Up": 0.1,
+            },
+            "action": "hold",
+        }
+    )
+    _, action, pred_label, parse_ok, schema_ok, errors = parse_forecast_prediction(inconsistent, action_policy="strict")
+    assert parse_ok
+    assert not schema_ok
+    assert action == "invalid"
+    assert pred_label == "invalid"
+    assert any("action_distribution_inconsistent" in err for err in errors)
+
+    _, action, pred_label, parse_ok, schema_ok, errors = parse_forecast_prediction(inconsistent, action_policy="derive")
+    assert parse_ok
+    assert schema_ok
+    assert action == "short"
+    assert pred_label == "strong_down"
+    assert not errors
 
 
 def test_prediction_quality_gate_rejects_all_neutral_hold():

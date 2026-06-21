@@ -1,0 +1,17 @@
+ablation,status,ablation_type,rows,schema_ok_rate,non_hold_rate,macro_f1,accuracy,backtest_status,num_trading_days,sharpe_daily_annualized,mean_daily_return,total_turnover,counterfactual_pass_rate,claim_allowed,claim_block_reason
+Technical_Rule,PASS,medium_reference_baseline,290.0,,,0.2101004560087129,0.2137931034482758,,,,,,,False,medium_reference_not_final_claim
+Text_News_Heuristic,PASS,medium_reference_baseline,290.0,,,0.1857567498520617,0.2068965517241379,,,,,,,False,medium_reference_not_final_claim
+News_Technical_Heuristic,PASS,medium_reference_baseline,290.0,,,0.1382583578305729,0.1551724137931034,,,,,,,False,medium_reference_not_final_claim
+Neutral_Hold_Majority,PASS,medium_reference_baseline,290.0,,,0.0676217765042979,0.2034482758620689,,,,,,,False,medium_reference_not_final_claim
+Qwen_DPO_Medium,PASS,medium_reference_baseline,290.0,1.0,0.7896551724137931,0.1345689804834204,0.196551724137931,,,,,,,False,medium_reference_not_final_claim
+Qwen_RWSFT_Medium,PASS,medium_reference_baseline,299.0,1.0,0.7525083612040134,0.1531809962189709,0.217391304347826,,,,,,,False,medium_reference_not_final_claim
+PEN_Reference_Only,PASS,medium_reference_baseline,0.0,,,,,,,,,,,False,medium_reference_not_final_claim
+SEP_Reference_Only,PASS,medium_reference_baseline,0.0,,,,,,,,,,,False,medium_reference_not_final_claim
+Policy_Reference_Only,PASS,medium_reference_baseline,0.0,,,,,,,,,,,False,medium_reference_not_final_claim
+No_News_Evidence,PASS,medium_reference_ablation,290.0,,,0.2101004560087129,0.2137931034482758,,,,,,,False,technical-only reference removes news evidence
+No_Technical_Tokens,PASS,medium_reference_ablation,290.0,,,0.1857567498520617,0.2068965517241379,,,,,,,False,text-only reference removes technical tokens
+No_Flow_or_Proxy,PASS,medium_reference_ablation,290.0,,,0.1382583578305729,0.1551724137931034,,,,,,,False,heuristic proxy without learned flow reward
+RWSFT_Only_or_SFT_Reference,PASS,medium_reference_ablation,299.0,1.0,0.7525083612040134,0.1531809962189709,0.217391304347826,,,,,,,False,medium RWSFT adapter before DPO preference optimization
+Technical_Only,PASS,medium_reference_ablation,290.0,,,0.2101004560087129,0.2137931034482758,,,,,,,False,technical-token contribution reference
+Full_Medium_Clean_V4,PASS,official_medium_backtest,,0.9666666666666668,,,,PASS,146.0,-0.4370598809440603,-0.0007177384327807,207.0,0.3838383838383838,False,medium_claim_gate_restricted
+No_Flow_Reward,PASS,reward_selection_ablation,1500.0,,,,,,,,,,,False,flow_did_not_beat_proxy_2_of_3

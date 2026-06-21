@@ -1,0 +1,10 @@
+claim,claim_allowed,claim_block_reason,evidence
+medium_pipeline_reproducible,True,,required status contracts and files
+rationale_medium_quality,True,,outputs\metrics\05_generate_rationales_medium.json
+independent_judge_signal,True,,outputs\metrics\07_independent_judge_medium.json
+flow_reward_improvement,False,flow did not beat proxy on enough metrics,outputs\metrics\12_flow_vs_proxy_medium.json
+alignment_data_and_smoke_training,True,,outputs\metrics\13_alignment_dataset_medium.json + outputs\metrics\14_alignment_train_medium.json
+trading_alpha,False,requires >=60 trading days and positive alpha gate,outputs\metrics\16_backtest_track_breakdown_medium.json
+counterfactual_faithfulness,False,counterfactual pass/no-change gate not met,outputs\metrics\17_counterfactual_evidence_medium.json
+medium_ablations_present,True,,outputs\tables\medium_ablation_results.csv
+aaai_main_ready,False,medium-scale validation is not enough for main paper readiness,full-scale statistical validation

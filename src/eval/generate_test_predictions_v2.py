@@ -12,6 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from src.alignment.train_rwsft_v2 import append_extra_site_packages, resolve_attn_implementation, resolve_model_path
 from src.eval.forecast_prediction import (
     FORECAST_KEYS,
+    forecast_action_audit,
     format_forecast_context,
     parse_forecast_prediction,
     render_forecast_prompt,
@@ -61,8 +62,8 @@ def load_model(args: argparse.Namespace, model_path: str, checkpoint: str):
     return tokenizer, model
 
 
-def parse_prediction(raw_text: str) -> tuple[dict[str, float], str, str, bool, bool, list[str]]:
-    return parse_forecast_prediction(raw_text)
+def parse_prediction(raw_text: str, action_policy: str) -> tuple[dict[str, float], str, str, bool, bool, list[str]]:
+    return parse_forecast_prediction(raw_text, action_policy=action_policy)
 
 
 def model_device(model: Any) -> Any:
@@ -212,14 +213,15 @@ def apply_ablation_to_row(row: Any, mode: str) -> Any:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--samples", default="data/labels/labels_h1_abnormal.parquet")
+    parser.add_argument("--samples", "--contexts", dest="samples", default="data/labels/labels_h1_abnormal.parquet")
     parser.add_argument("--tokens", default="data/indicators/technical_event_tokens_h1_v2.parquet")
     parser.add_argument("--prompt", default="prompts/forecast_prediction_prompt_qwen3_json.txt")
     parser.add_argument("--config", default="configs/default_paths.yaml")
-    parser.add_argument("--model", default="qwen3_4b")
+    parser.add_argument("--model", "--model-key", dest="model", default="qwen3_4b")
     parser.add_argument("--model-path", default=None)
-    parser.add_argument("--checkpoint", default="checkpoints/aligned/qwen3_4b/dpo_v2")
+    parser.add_argument("--checkpoint", "--adapter", dest="checkpoint", default="checkpoints/aligned/qwen3_4b/dpo_v2")
     parser.add_argument("--fallback-checkpoint", default="checkpoints/aligned/qwen3_4b/rwsft_v2")
+    parser.add_argument("--schema-version", default="forecast_v1")
     parser.add_argument("--split", default="test")
     parser.add_argument("--limit", type=int, default=500)
     parser.add_argument("--start-date", default=None)
@@ -234,6 +236,8 @@ def main() -> int:
     parser.add_argument("--body-chars", type=int, default=1200)
     parser.add_argument("--token-chars", type=int, default=1200)
     parser.add_argument("--ablation-mode", default="full", choices=["full", "no_news_body", "no_news", "no_technical_tokens", "no_technical"])
+    parser.add_argument("--temperature", type=float, default=0.0)
+    parser.add_argument("--action-policy", default="derive", choices=["strict", "derive"])
     parser.add_argument("--min-parse-ok-rate", type=float, default=0.80)
     parser.add_argument("--min-schema-ok-rate", type=float, default=0.80)
     parser.add_argument("--allow-fallback", action="store_true")
@@ -255,6 +259,8 @@ def main() -> int:
     import torch
 
     failures: list[str] = []
+    if args.temperature != 0.0:
+        failures.append("prediction smoke must use deterministic temperature 0")
     samples = pd.read_parquet(args.samples)
     tokens = pd.read_parquet(args.tokens) if Path(args.tokens).exists() else pd.DataFrame()
     if args.split != "test":
@@ -287,7 +293,8 @@ def main() -> int:
         run_id = f"test_prediction_smoke_{checkpoint_source}_{args.ablation_mode}_{len(df)}"
         raw_outputs = generate_raw_outputs(tokenizer, model, prompts, args)
         for offset, raw_text in enumerate(raw_outputs):
-            dist, action, pred_label, parse_ok, schema_ok, parse_errors = parse_prediction(raw_text)
+            dist, action, pred_label, parse_ok, schema_ok, parse_errors = parse_prediction(raw_text, args.action_policy)
+            raw_action, expected_action, action_consistency_ok = forecast_action_audit(raw_text)
             source_row = df.iloc[offset]
             rows.append(
                 {
@@ -297,6 +304,9 @@ def main() -> int:
                     "event_date": str(source_row.get("event_date")),
                     "pred_label": pred_label,
                     "action": action,
+                    "raw_action": raw_action,
+                    "expected_action": expected_action,
+                    "action_consistency_ok": action_consistency_ok,
                     "p_strong_down": dist["strong_down"],
                     "p_mild_down": dist["mild_down"],
                     "p_neutral": dist["neutral"],
@@ -331,6 +341,9 @@ def main() -> int:
         "schema_ok_rows": int(out["schema_ok"].sum()) if len(out) and "schema_ok" in out.columns else 0,
         "parse_ok_rows": int(out["parse_ok"].sum()) if len(out) and "parse_ok" in out.columns else 0,
         "action_distribution": out["action"].value_counts(dropna=False).to_dict() if len(out) and "action" in out.columns else {},
+        "raw_action_distribution": out["raw_action"].value_counts(dropna=False).to_dict() if len(out) and "raw_action" in out.columns else {},
+        "action_consistency_rate": float(out["action_consistency_ok"].mean()) if len(out) and "action_consistency_ok" in out.columns else 0.0,
+        "action_policy": args.action_policy,
         "selected_rows": int(len(df)),
         "selected_trading_days": int(df["event_date"].dt.date.nunique()) if len(df) and "event_date" in df.columns else 0,
         "selected_start_date": str(df["event_date"].min().date()) if len(df) and "event_date" in df.columns else None,

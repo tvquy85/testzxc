@@ -24,15 +24,16 @@ def main() -> int:
     parser.add_argument("--predictions", default="outputs/predictions/current_v3_test_predictions.parquet")
     parser.add_argument("--contexts", default="data/processed/ticker_date_contexts_h1_v2_targets.parquet")
     parser.add_argument("--return-col", default="target_return")
-    parser.add_argument("--max-positions-per-day", type=int, default=20)
+    parser.add_argument("--max-positions-per-day", "--position-cap", dest="max_positions_per_day", type=int, default=20)
     parser.add_argument("--threshold", type=float, default=0.20)
     parser.add_argument("--min-trading-days", type=int, default=20)
     parser.add_argument("--min-schema-ok-rate", type=float, default=0.80)
-    parser.add_argument("--cost-bps", type=float, default=5.0)
+    parser.add_argument("--cost-bps", "--transaction-cost-bps", dest="cost_bps", type=float, default=5.0)
     parser.add_argument("--slippage-bps", type=float, default=2.0)
-    parser.add_argument("--short-borrow-bps", type=float, default=1.0)
-    parser.add_argument("--metrics", default="outputs/metrics/backtest_daily_portfolio_current_v3.json")
+    parser.add_argument("--short-borrow-bps", "--borrow-cost-bps", dest="short_borrow_bps", type=float, default=1.0)
+    parser.add_argument("--metrics", "--output", dest="metrics", default="outputs/metrics/backtest_daily_portfolio_current_v3.json")
     parser.add_argument("--daily-output", default="outputs/tables/backtest_daily_returns_current_v3.csv")
+    parser.add_argument("--track-output", default=None)
     parser.add_argument("--status", default=f"outputs/status/{STEP}.status.json")
     parser.add_argument("--manifest", default=f"outputs/manifests/{STEP}.manifest.json")
     args = parser.parse_args()
@@ -42,6 +43,7 @@ def main() -> int:
 
     failures: list[str] = []
     schema_ok_rate = 0.0
+    track_daily = pd.DataFrame(columns=["track", "date", "daily_return_net", "gross_return", "cost", "positions", "turnover"])
     if not Path(args.predictions).exists():
         failures.append(f"predictions missing: {args.predictions}")
         daily = pd.DataFrame(columns=["date", "daily_return_net", "gross_return", "cost"])
@@ -73,7 +75,11 @@ def main() -> int:
         if "split" in preds.columns:
             preds = preds.drop(columns=["split"])
             
-        df = preds.merge(contexts[["sample_id", "ticker", "event_date", args.return_col, "split"]], on="sample_id", how="inner")
+        context_cols = ["sample_id", "ticker", "event_date", args.return_col, "split"]
+        for optional in ["track", "news_reasoning_track", "has_company_event_news"]:
+            if optional in contexts.columns:
+                context_cols.append(optional)
+        df = preds.merge(contexts[context_cols], on="sample_id", how="inner")
         
         # Only evaluate on test split
         df = df[df["split"] == "test"].copy()
@@ -110,10 +116,18 @@ def main() -> int:
             df["date"] = pd.to_datetime(df["event_date"]).dt.date
             
             # Aggregate by date x ticker
+            if "track" not in df.columns:
+                if "news_reasoning_track" in df.columns:
+                    df["track"] = df["news_reasoning_track"]
+                elif "has_company_event_news" in df.columns:
+                    df["track"] = df["has_company_event_news"].map(lambda x: "news_technical" if bool(x) else "technical_only")
+                else:
+                    df["track"] = "unknown"
             agg = df.groupby(["date", "ticker"]).agg(
                 position=("position", "mean"),
                 ret=(args.return_col, "first"),
                 signal_confidence=("signal_confidence", "max"),
+                track=("track", "first"),
             ).reset_index()
             agg["position"] = agg["position"].clip(-1, 1)
             
@@ -144,9 +158,23 @@ def main() -> int:
             by_day["cost"] = by_day["cost"] + by_day["borrow_cost"]
             by_day["daily_return_net"] = by_day["gross_return"] - by_day["cost"]
             daily = by_day
+            track_daily = agg.groupby(["track", "date"]).agg(
+                gross_return=("gross", "mean"),
+                positions=("abs_position", "sum"),
+                turnover=("turnover", "sum"),
+                short_exposure=("short_position", "sum"),
+            ).reset_index()
+            if len(track_daily):
+                track_daily["cost"] = (args.cost_bps + args.slippage_bps) / 10000.0 * track_daily["turnover"].clip(lower=0)
+                track_daily["borrow_cost"] = args.short_borrow_bps / 10000.0 * track_daily["short_exposure"].clip(lower=0)
+                track_daily["cost"] = track_daily["cost"] + track_daily["borrow_cost"]
+                track_daily["daily_return_net"] = track_daily["gross_return"] - track_daily["cost"]
             
     Path(args.daily_output).parent.mkdir(parents=True, exist_ok=True)
     daily.to_csv(args.daily_output, index=False)
+    if args.track_output:
+        Path(args.track_output).parent.mkdir(parents=True, exist_ok=True)
+        track_daily.to_csv(args.track_output, index=False)
     
     ret = daily["daily_return_net"].astype(float).values if len(daily) else np.array([])
     sharpe = float(np.sqrt(252) * np.mean(ret) / np.std(ret, ddof=1)) if len(ret) > 1 and np.std(ret, ddof=1) > 0 else 0.0
@@ -172,6 +200,7 @@ def main() -> int:
     metrics = {
         "num_trading_days": num_trading_days,
         "sharpe_daily_annualized": sharpe,
+        "sharpe_annualized": sharpe,
         "sortino_daily_annualized": sortino,
         "max_drawdown": max_drawdown,
         "avg_positions_per_day": float(daily["positions"].mean()) if len(daily) and "positions" in daily else 0.0,
@@ -204,14 +233,17 @@ def main() -> int:
         metrics["pipeline_pass"] = False
 
     write_json(args.metrics, metrics)
-    write_manifest(args.manifest, [args.predictions, args.contexts, args.metrics, args.daily_output], STEP)
+    manifest_outputs = [args.predictions, args.contexts, args.metrics, args.daily_output]
+    if args.track_output:
+        manifest_outputs.append(args.track_output)
+    write_manifest(args.manifest, manifest_outputs, STEP)
     status = "PASS" if metrics["pipeline_pass"] else "FAIL"
     write_status(
         args.status, 
         STEP, 
         status, 
         [args.predictions, args.contexts], 
-        [args.metrics, args.daily_output, args.manifest, args.status], 
+        [args.metrics, args.daily_output, *([args.track_output] if args.track_output else []), args.manifest, args.status], 
         metrics, 
         failures, 
         status == "PASS"

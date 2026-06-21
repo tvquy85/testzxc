@@ -228,6 +228,7 @@ def main() -> int:
     parser.add_argument("--lora-dropout", type=float, default=0.05)
     parser.add_argument("--attn-implementation", default="auto", choices=["auto", "flash_attention_2", "sdpa", "eager", "none", "default"])
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--metrics", default="outputs/metrics/14_rwsft_train_medium.json")
     parser.add_argument("--status", default=f"outputs/status/{STEP}.status.json")
     parser.add_argument("--manifest", default=f"outputs/manifests/{STEP}.manifest.json")
     args = parser.parse_args()
@@ -283,8 +284,6 @@ def main() -> int:
         artifact_paths.append(str(adapter_config))
     if adapter_model.exists():
         artifact_paths.append(str(adapter_model))
-    write_manifest(args.manifest, artifact_paths, STEP)
-
     metrics = {
         "module_inventory": module_inventory,
         "missing_modules": [k for k, v in module_inventory.items() if v.get("status") != "available"],
@@ -292,6 +291,9 @@ def main() -> int:
         "smoke_train_executed": bool(smoke_metrics),
         **smoke_metrics,
     }
+    write_json(args.metrics, metrics)
+    artifact_paths.append(args.metrics)
+    write_manifest(args.manifest, artifact_paths, STEP)
     status = "PASS" if not failures else "FAIL"
     write_status(
         args.status,

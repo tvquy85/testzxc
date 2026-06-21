@@ -1,0 +1,409 @@
+{
+  "pipeline_decision": "GO_MEDIUM",
+  "claim_decision": "CLAIM_RESTRICTED",
+  "aaaai_main_ready_allowed": false,
+  "claims": [
+    {
+      "claim": "medium_pipeline_reproducible",
+      "claim_allowed": true,
+      "claim_block_reason": "",
+      "evidence": "required status contracts and files"
+    },
+    {
+      "claim": "rationale_medium_quality",
+      "claim_allowed": true,
+      "claim_block_reason": "",
+      "evidence": "outputs\\metrics\\05_generate_rationales_medium.json"
+    },
+    {
+      "claim": "independent_judge_signal",
+      "claim_allowed": true,
+      "claim_block_reason": "",
+      "evidence": "outputs\\metrics\\07_independent_judge_medium.json"
+    },
+    {
+      "claim": "flow_reward_improvement",
+      "claim_allowed": false,
+      "claim_block_reason": "flow did not beat proxy on enough metrics",
+      "evidence": "outputs\\metrics\\12_flow_vs_proxy_medium.json"
+    },
+    {
+      "claim": "alignment_data_and_smoke_training",
+      "claim_allowed": true,
+      "claim_block_reason": "",
+      "evidence": "outputs\\metrics\\13_alignment_dataset_medium.json + outputs\\metrics\\14_alignment_train_medium.json"
+    },
+    {
+      "claim": "trading_alpha",
+      "claim_allowed": false,
+      "claim_block_reason": "requires >=60 trading days and positive alpha gate",
+      "evidence": "outputs\\metrics\\16_backtest_track_breakdown_medium.json"
+    },
+    {
+      "claim": "counterfactual_faithfulness",
+      "claim_allowed": false,
+      "claim_block_reason": "counterfactual pass/no-change gate not met",
+      "evidence": "outputs\\metrics\\17_counterfactual_evidence_medium.json"
+    },
+    {
+      "claim": "medium_ablations_present",
+      "claim_allowed": true,
+      "claim_block_reason": "",
+      "evidence": "outputs\\tables\\medium_ablation_results.csv"
+    },
+    {
+      "claim": "aaai_main_ready",
+      "claim_allowed": false,
+      "claim_block_reason": "medium-scale validation is not enough for main paper readiness",
+      "evidence": "full-scale statistical validation"
+    }
+  ],
+  "status_audit": [
+    {
+      "path": "outputs/status/01_FREEZE_CLEAN_V4_SMALL_BASELINE.status.json",
+      "valid_contract": true,
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": []
+    },
+    {
+      "path": "outputs/status/02_AUDIT_CLEAN_V4_FAILURE_MODES.status.json",
+      "valid_contract": true,
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": []
+    },
+    {
+      "path": "outputs/status/03_BUILD_MEDIUM_SAMPLE_SELECTOR.status.json",
+      "valid_contract": true,
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": []
+    },
+    {
+      "path": "outputs/status/04_EVIDENCE_PACK_QUALITY_GATES_V4_1.status.json",
+      "valid_contract": true,
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": []
+    },
+    {
+      "path": "outputs/status/05_GENERATE_RATIONALES_MEDIUM_500X3.status.json",
+      "valid_contract": true,
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": []
+    },
+    {
+      "path": "outputs/status/06_RATIONALE_DIVERSITY_TEMPLATE_AUDIT.status.json",
+      "valid_contract": true,
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": []
+    },
+    {
+      "path": "outputs/status/07_INDEPENDENT_JUDGE_MEDIUM_FULL.status.json",
+      "valid_contract": true,
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": []
+    },
+    {
+      "path": "outputs/status/08_LABEL_ORDER_DEBIAS_MULTI_PERMUTATION.status.json",
+      "valid_contract": true,
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": []
+    },
+    {
+      "path": "outputs/status/09_GROUNDING_NEWS_NEGATIVE_FIX.status.json",
+      "valid_contract": true,
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": []
+    },
+    {
+      "path": "outputs/status/10_FLOW_SEMANTIC_EMBEDDINGS_V5.status.json",
+      "valid_contract": true,
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": []
+    },
+    {
+      "path": "outputs/status/11_FLOW_TARGET_NORMALIZATION_AND_SPLIT.status.json",
+      "valid_contract": true,
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": []
+    },
+    {
+      "path": "outputs/status/12_FLOW_TRAIN_EVAL_MEDIUM.status.json",
+      "valid_contract": true,
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": []
+    },
+    {
+      "path": "outputs/status/13_ALIGNMENT_DATASET_MEDIUM_RWSFT_DPO.status.json",
+      "valid_contract": true,
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": []
+    },
+    {
+      "path": "outputs/status/14_ALIGNMENT_TRAIN_ADAPTER_V4_MEDIUM.status.json",
+      "valid_contract": true,
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": []
+    },
+    {
+      "path": "outputs/status/15_PREDICT_WITH_ADAPTER_V4_MEDIUM.status.json",
+      "valid_contract": true,
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": []
+    },
+    {
+      "path": "outputs/status/16_BACKTEST_TRACK_BREAKDOWN_MEDIUM.status.json",
+      "valid_contract": true,
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": []
+    },
+    {
+      "path": "outputs/status/17_COUNTERFACTUAL_EVIDENCE_MEDIUM.status.json",
+      "valid_contract": true,
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": []
+    },
+    {
+      "path": "outputs/status/18_MINIMUM_BASELINES_PEN_SEP_POLICY.status.json",
+      "valid_contract": true,
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": []
+    },
+    {
+      "path": "outputs/status/19_ABLATION_SUITE_MEDIUM.status.json",
+      "valid_contract": true,
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": []
+    }
+  ],
+  "missing_metrics": [],
+  "missing_tables": [],
+  "warnings": [
+    "Medium-scale PASS validates the flow mechanics, not AAAI-ready paper claims.",
+    "Full-scale statistical validation is still required before claiming main performance."
+  ],
+  "metrics_snapshot": {
+    "audit": {
+      "pipeline_decision_small": "GO_SMALL",
+      "claim_decision_small": "CLAIM_RESTRICTED",
+      "claim_matrix_small": {
+        "data_cleaning_improved_context_quality": "allowed",
+        "counterfactual_faithfulness": "allowed",
+        "flow_reward_improvement": "allowed",
+        "trading_alpha": "blocked",
+        "multimodal_news_technical_reasoning": "allowed",
+        "aaai_main_ready": "blocked"
+      },
+      "flow_rows": 300,
+      "flow_claim_allowed_small": true,
+      "full_clean_v4_sharpe": -3.0652880294813944,
+      "trading_alpha_allowed_small": false,
+      "counterfactual_pass_rate": 0.54,
+      "counterfactual_no_change_rate": 0.22,
+      "rwsft_examples_small": 88,
+      "dpo_pairs_small": 17,
+      "adapter_v4_trained": false,
+      "prediction_rows_small": 90,
+      "rationale_sample_rows": 8,
+      "grounding_sample_rows": 8,
+      "known_failure_modes": [
+        "small_scale_only",
+        "negative_or_unproven_trading_alpha",
+        "v4_adapter_not_trained_at_medium_scale",
+        "counterfactual_news_needs_breakdown",
+        "flow_needs_true_medium_validation"
+      ],
+      "claim_allowed": false,
+      "pipeline_pass": true
+    },
+    "rationales": {
+      "row_count": 1500,
+      "rows": 1500,
+      "expected_row_count": 1500,
+      "generated_this_run": 1500,
+      "unique_sample_count": 500,
+      "parse_ok_rate": 1.0,
+      "schema_ok_rate": 1.0,
+      "avg_output_tokens_est": 222.55,
+      "run_id": "medium_clean_v4_500x3",
+      "stage": "stage_2_medium_recovery_500x3",
+      "backend": "transformers",
+      "attn_implementation": "flash_attention_2",
+      "elapsed_seconds": 2193.211,
+      "source_status": "outputs/status/05_GENERATE_RATIONALES_MEDIUM_500X3.status.json"
+    },
+    "judge": {
+      "judged_samples": 1500,
+      "variant_rows": 3000,
+      "judge_parse_ok_rate": 1.0,
+      "judge_schema_ok_rate": 0.998,
+      "mean_true_label_probability": 0.20081666666666667,
+      "random_baseline": 0.2,
+      "mean_argmax_consistency": 0.745,
+      "mean_l1_probability_delta": 0.4900933333333333,
+      "inferability_claim_allowed": false,
+      "label_orders": [
+        "normal",
+        "reversed"
+      ],
+      "judge_model_path": "E:/huggingface/models/Qwen3-4B-Instruct-2507",
+      "elapsed_seconds": 1261.006,
+      "by_track": {
+        "news_technical": 0.20081666666666667
+      }
+    },
+    "flow": {
+      "pipeline_pass": true,
+      "claim_allowed": false,
+      "rows": 1500,
+      "eval_rows": 288,
+      "eval_split": "val",
+      "methods": {
+        "flow_reward_v5": {
+          "rank_correlation_with_realized_utility": 0.08249647558999904,
+          "preference_pair_accuracy": 1.0,
+          "top_decile_realized_utility": 0.5393112897872925
+        },
+        "proxy_average_reward": {
+          "rank_correlation_with_realized_utility": 0.10106483374052237,
+          "preference_pair_accuracy": 0.5,
+          "top_decile_realized_utility": 0.6255953311920166
+        }
+      },
+      "metric_wins": {
+        "rank_correlation_with_realized_utility": false,
+        "preference_pair_accuracy": true,
+        "top_decile_realized_utility": false
+      },
+      "flow_reward_improvement": false,
+      "flow_claim_allowed": false
+    },
+    "alignment": {
+      "pipeline_pass": true,
+      "claim_allowed": false,
+      "rwsft_examples": 1370,
+      "dpo_pairs": 451,
+      "unique_samples": 500,
+      "candidate_rows": 1500,
+      "valid_candidate_rows": 1370,
+      "chosen_reward_mean": 0.6606651145737625,
+      "rejected_reward_mean": 0.6232348160895447,
+      "mean_chosen_reward": 0.6606651145737625,
+      "mean_rejected_reward": 0.6232348160895447,
+      "mean_reward_gap": 0.03743029848421766,
+      "min_reward_gap": 0.005,
+      "reward_source": "proxy_average_independent",
+      "flow_reward_improvement": false,
+      "flow_scores_used": false,
+      "train_only": true,
+      "rwsft_sha256": "9341c46f0dae3eb1fff164599cf03a54f9958c0fac1e0fe38e93ba148fcf2f68",
+      "dpo_sha256": "2ac0544c9fcde50763b5d2830cb314bcc1ff7a54b7587b5bee24723372348048"
+    },
+    "training": {
+      "pipeline_pass": true,
+      "claim_allowed": false,
+      "rwsft_smoke_pass": true,
+      "dpo_smoke_pass": true,
+      "rwsft_max_steps": 800,
+      "dpo_max_steps": 800,
+      "rwsft_loss_first": 2.0677337646484375,
+      "rwsft_loss_last": 0.4127736985683441,
+      "dpo_loss_first": 0.6912612915039062,
+      "dpo_loss_last": 0.6927839517593384,
+      "rwsft_adapter": "outputs/models/qwen3_medium_clean_v4_rwsft_adapter/adapter_model.safetensors",
+      "dpo_adapter": "outputs/models/qwen3_medium_clean_v4_dpo_adapter/adapter_model.safetensors",
+      "module_inventory": {
+        "torch": {
+          "status": "available",
+          "version": "2.5.1+cu121",
+          "path": "D:\\LOBProj\\LOBExp\\.venv\\Lib\\site-packages\\torch\\__init__.py"
+        },
+        "transformers": {
+          "status": "available",
+          "version": "5.8.0",
+          "path": "D:\\LOBProj\\LOBExp\\.venv\\Lib\\site-packages\\transformers\\__init__.py"
+        },
+        "peft": {
+          "status": "available",
+          "version": "0.19.1",
+          "path": "D:\\LOBProj\\LOBExp\\.venv\\Lib\\site-packages\\peft\\__init__.py"
+        },
+        "trl": {
+          "status": "available",
+          "version": "1.6.0",
+          "path": "D:\\LOBProj\\LOBExp\\.venv\\Lib\\site-packages\\trl\\__init__.py"
+        },
+        "bitsandbytes": {
+          "status": "available",
+          "version": "0.49.2",
+          "path": "D:\\LOBProj\\LOBExp\\.venv\\Lib\\site-packages\\bitsandbytes\\__init__.py"
+        }
+      }
+    },
+    "backtest": {
+      "num_trading_days": 146,
+      "sharpe_daily_annualized": -0.43705988094406034,
+      "sharpe_annualized": -0.43705988094406034,
+      "sortino_daily_annualized": -0.6377811239872156,
+      "max_drawdown": 0.34706420615073946,
+      "avg_positions_per_day": 1.5684931506849316,
+      "avg_turnover_per_day": 1.417808219178082,
+      "total_turnover": 207.0,
+      "mean_daily_return": -0.000717738432780799,
+      "coverage": 1.0,
+      "cost_bps": 5.0,
+      "slippage_bps": 2.0,
+      "short_borrow_bps": 1.0,
+      "return_column": "target_return",
+      "schema_ok_rate": 0.9666666666666667,
+      "schema_ok_rate_required": 0.8,
+      "min_trading_days_required": 30,
+      "alpha_claim_allowed": false,
+      "pipeline_pass": true
+    },
+    "counterfactual": {
+      "num_tasks": 495,
+      "mean_delta": 0.04923100993237025,
+      "pass_rate": 0.3838383838383838,
+      "wrong_direction_rate": 0.28484848484848485,
+      "no_change_rate": 0.33131313131313134,
+      "parse_ok_rate": 0.997979797979798,
+      "schema_ok_rate": 0.9575757575757575,
+      "temperature": 0.0,
+      "attn_implementation": "flash_attention_2",
+      "checkpoint_used": "outputs/models/qwen3_medium_clean_v4_dpo_adapter",
+      "min_delta": 0.03,
+      "action_policy": "derive",
+      "pass_rate_neutralize_bearish_technical": 0.72,
+      "pass_rate_neutralize_bullish_technical": 0.39,
+      "pass_rate_remove_all_company_evidence": 0.33,
+      "pass_rate_remove_negative_evidence": 0.23157894736842105,
+      "pass_rate_remove_positive_evidence": 0.24,
+      "pipeline_pass": true,
+      "claim_allowed": false,
+      "general_counterfactual_claim_allowed": false,
+      "news_faithfulness_claim_allowed": false,
+      "claim_block_reason": "general claim requires pass_rate >= 0.50 and no_change_rate <= 0.35; news claim requires remove_positive_evidence and remove_negative_evidence pass rates >= 0.35",
+      "min_schema_ok_rate_required": 0.8,
+      "min_pass_rate": 0.5,
+      "max_no_change_rate": 0.35
+    }
+  }
+}

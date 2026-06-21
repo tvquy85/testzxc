@@ -1,0 +1,236 @@
+{
+  "artifacts": [
+    {
+      "path": "review_samples/clean_v4_medium_21062026/00_status_summary_clean_v4_medium_01_20.json",
+      "row_count": 24,
+      "sha256": "950e7d41b14149fc7f09d706262c7740d06bfeb3a536ba71905eb3953cfd4ab0",
+      "timestamp": "2026-06-21T07:16:33.546065+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/01_source_code_index_clean_v4_medium.md",
+      "row_count": null,
+      "sha256": "cfc0e7779982e1c1bbc570db593893e280640d71e994a9cb2caf58b7d159edbc",
+      "timestamp": "2026-06-21T07:16:33.547062+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/02_master_order_clean_v4_medium.md",
+      "row_count": null,
+      "sha256": "19c8592da80e916b3d062b80c29ff948e924384e7604e956707c786d77c93717",
+      "timestamp": "2026-06-21T07:16:33.547062+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/03_medium_context_and_evidence_pack_samples.jsonl",
+      "row_count": 8,
+      "sha256": "8a9ec20b43bef71e0e9ed6fb983644c5e763d22954d4a7393c7aec1ba9830ea4",
+      "timestamp": "2026-06-21T07:16:33.548061+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/04_raw_rationale_generation_samples.jsonl",
+      "row_count": 6,
+      "sha256": "1a0fb17af3ac144c182dbd2bb48fb9d3c00386d96edd98a5bd511fa3ff4721dc",
+      "timestamp": "2026-06-21T07:16:33.548061+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/05_parsed_rationale_generation_samples.jsonl",
+      "row_count": 8,
+      "sha256": "066e8a9e8a4e9f5e383befec487f41cfd9016b395f89cacfb702ab90b915102d",
+      "timestamp": "2026-06-21T07:16:33.549063+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/06_independent_judge_samples.jsonl",
+      "row_count": 6,
+      "sha256": "089ea024c6480eaae06d35773f9a06beef65a935b5c8cb31e40844e0b4026289",
+      "timestamp": "2026-06-21T07:16:33.549063+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/07_debias_multi_permutation_samples.jsonl",
+      "row_count": 6,
+      "sha256": "c9ecba58ddb98fcdd3e4c8da65f887e4b4bfd713ade8c2ac8cb945a416f4ed26",
+      "timestamp": "2026-06-21T07:16:33.550063+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/08_claim_grounding_nli_samples.jsonl",
+      "row_count": 8,
+      "sha256": "1163f906142f4d8b830cffe7c2d8c18f33db43886f6b3dfd6777c4f233bfde0d",
+      "timestamp": "2026-06-21T07:16:33.550063+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/09_flow_embedding_index_samples.jsonl",
+      "row_count": 6,
+      "sha256": "580903cdf4bf8230c1979d76be153caf743965f6410a508519433308be9297e3",
+      "timestamp": "2026-06-21T07:16:33.550063+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/10_flow_dataset_target_samples.json",
+      "row_count": 1,
+      "sha256": "0eafed853eb809372957c44b6f7dcd846d8c48aedea3eb2f4edca579f55f7423",
+      "timestamp": "2026-06-21T07:16:33.561669+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/11_scored_alignment_candidate_samples.jsonl",
+      "row_count": 8,
+      "sha256": "b6213ec6dc4334ae5197154cabbe0bb2ffdc7d23b6e634d1ecc669f683aa0af1",
+      "timestamp": "2026-06-21T07:16:33.570667+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/12_rwsft_alignment_samples.jsonl",
+      "row_count": 6,
+      "sha256": "97c02e6dfb16ffef7ea614bd004c4f7d9cdd6ea3280d60415f42d03ff5efdbc9",
+      "timestamp": "2026-06-21T07:16:33.578668+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/13_dpo_alignment_pair_samples.jsonl",
+      "row_count": 6,
+      "sha256": "02d152200f4ec3435faf23ab14005280ba9151909fd148a698b9c77ba533964b",
+      "timestamp": "2026-06-21T07:16:33.586666+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/14_dpo_prediction_forecast_samples.jsonl",
+      "row_count": 10,
+      "sha256": "7bd89f2ff0716730a84c2b9cfd56dbaccd5246496a0b93e02b9f2d2a1f2f3a01",
+      "timestamp": "2026-06-21T07:16:33.593665+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/15_rwsft_prediction_baseline_samples.jsonl",
+      "row_count": 10,
+      "sha256": "056620ba3082fb2ef3ce0c0319b3992117a208a15faa8fdeec5e8c29be62f969",
+      "timestamp": "2026-06-21T07:16:33.601666+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/16_backtest_daily_returns_sample.csv",
+      "row_count": 30,
+      "sha256": "a4e33b78c9db96e3834742d5e0e6c20264da1f20a93f3990352e942a9f54252d",
+      "timestamp": "2026-06-21T07:16:33.611222+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/17_track_breakdown.csv",
+      "row_count": 146,
+      "sha256": "7e351d31eb5b3f7eb6416be60745591868b1b892f0b3dbed878722c1db2cf404",
+      "timestamp": "2026-06-21T07:16:33.620222+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/18_counterfactual_task_samples.jsonl",
+      "row_count": 8,
+      "sha256": "953e185504f08ceca9bd0861bd1fc132b59d2345b792800423d4d48baf9d41d7",
+      "timestamp": "2026-06-21T07:16:33.628222+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/19_counterfactual_failure_samples.jsonl",
+      "row_count": 8,
+      "sha256": "ef0642e17510db3d548dfca2ca710d2eb1cf1dcc4f77c21be917fb7a70a7accf",
+      "timestamp": "2026-06-21T07:16:33.635221+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/20_counterfactual_breakdown.csv",
+      "row_count": 5,
+      "sha256": "eef620f6ba221054ad81be7915be65c47264aebdfd34404dfaa9e1bef4de7099",
+      "timestamp": "2026-06-21T07:16:33.643223+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/21_baseline_comparison.csv",
+      "row_count": 9,
+      "sha256": "9a31cc464f5ec5c32eaf1ef0da9802584e9b539e1272e8c615b23d3e5d2de40c",
+      "timestamp": "2026-06-21T07:16:33.651222+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/22_ablation_results.csv",
+      "row_count": 16,
+      "sha256": "5f95564bf2d0f8068763da420ae5802c709686f1a12a66deed7c9a7303cfefef",
+      "timestamp": "2026-06-21T07:16:33.658759+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/23_claim_matrix.csv",
+      "row_count": 9,
+      "sha256": "06a811845d5e494ca37c6cbcff21dcefd28a04cd225400d8e557df661450a421",
+      "timestamp": "2026-06-21T07:16:33.659758+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/24_science_gate_report.json",
+      "row_count": 1,
+      "sha256": "3eab3b237ed89c911cd31836124d4e4c80c3bda81a05f85982fb971241cc6da9",
+      "timestamp": "2026-06-21T07:16:33.666759+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/25_metrics_snapshot_clean_v4_medium.json",
+      "row_count": 1,
+      "sha256": "8e81b0174c7b47116e47dbf709201a79be90290725eca2ac2840da8e0d10e539",
+      "timestamp": "2026-06-21T07:16:33.673757+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/26_prompt_rationale_generation_evidence_v4.txt",
+      "row_count": null,
+      "sha256": "6ab5ef7f6ef93abf3aa1eb40eff958f875e118f42148f80698694f7d9bd793ca",
+      "timestamp": "2026-06-21T07:16:33.674757+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/27_prompt_forecast_prediction_qwen3_json.txt",
+      "row_count": null,
+      "sha256": "5730a2a1021584695b274ed35cb6644f608baefb94077e73fe3f8c62a4869f14",
+      "timestamp": "2026-06-21T07:16:33.676053+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    },
+    {
+      "path": "review_samples/clean_v4_medium_21062026/README.md",
+      "row_count": null,
+      "sha256": "d06341a3bc45fdd98b03ad934fdda6b0fdd0f35fa58fb1c15e14953c8ac24e75",
+      "timestamp": "2026-06-21T07:16:33.681757+00:00",
+      "producer_step": "CLEAN_V4_MEDIUM_REVIEW_SAMPLES",
+      "run_id": "clean_v4_medium_21062026"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+counterfactual_type,tasks,pass_rate,no_change_rate,schema_ok_rate,wrong_direction_rate
+neutralize_bearish_technical,100,0.72,0.1,0.95,0.18
+neutralize_bullish_technical,100,0.39,0.2,0.96,0.41
+remove_all_company_evidence,100,0.33,0.15,0.92,0.5199999999999999
+remove_negative_evidence,95,0.231578947368421,0.5578947368421052,0.968421052631579,0.2105263157894736
+remove_positive_evidence,100,0.24,0.66,0.99,0.0999999999999999

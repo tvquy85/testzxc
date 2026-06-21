@@ -107,7 +107,43 @@ class NLIGrounder:
         }
 
 
-def load_nli(model_id: str, hf_home: str, use_nli: bool) -> tuple[NLIGrounder | None, dict[str, Any]]:
+class SentenceTransformerNLIGrounder:
+    def __init__(self, model_id: str, hf_home: str):
+        os.environ["HF_HOME"] = hf_home
+        import numpy as np
+        from sentence_transformers import CrossEncoder
+
+        self.np = np
+        self.model_id = model_id
+        self.model = CrossEncoder(model_id, local_files_only=True)
+
+    def score(self, premise: str, hypothesis: str) -> dict[str, Any]:
+        if not premise.strip() or not hypothesis.strip():
+            return {"label": "neutral", "entailment": 0.0, "contradiction": 0.0, "neutral": 1.0}
+        try:
+            raw = self.model.predict([(premise, hypothesis)], apply_softmax=True)
+        except TypeError:
+            raw = self.model.predict([(premise, hypothesis)])
+        arr = self.np.asarray(raw)
+        if arr.ndim == 2:
+            arr = arr[0]
+        arr = arr.astype(float)
+        if arr.size != 3:
+            return {"label": "neutral", "entailment": 0.0, "contradiction": 0.0, "neutral": 1.0}
+        total = float(arr.sum())
+        if not 0.99 <= total <= 1.01:
+            arr = self.np.exp(arr - arr.max())
+            arr = arr / arr.sum()
+        label = NLI_ID2LABEL.get(int(arr.argmax()), "neutral")
+        return {
+            "label": label,
+            "contradiction": float(arr[0]),
+            "entailment": float(arr[1]),
+            "neutral": float(arr[2]),
+        }
+
+
+def load_nli(model_id: str, hf_home: str, use_nli: bool, loader: str = "transformers") -> tuple[Any | None, dict[str, Any]]:
     info = {
         "nli_backend": False,
         "nli_loader": None,
@@ -118,13 +154,23 @@ def load_nli(model_id: str, hf_home: str, use_nli: bool) -> tuple[NLIGrounder | 
     }
     if not use_nli:
         return None, info
-    try:
-        nli = NLIGrounder(model_id, hf_home)
-        info.update({"nli_backend": True, "nli_loader": "transformers_model_id"})
-        return nli, info
-    except Exception as exc:
-        info["nli_failure"] = f"{type(exc).__name__}: {exc}"
-        return None, info
+    loaders = ["sentence_transformers", "transformers"] if loader == "auto" else [loader]
+    failures: list[str] = []
+    for candidate in loaders:
+        try:
+            if candidate == "sentence_transformers":
+                nli = SentenceTransformerNLIGrounder(model_id, hf_home)
+                info.update({"nli_backend": True, "nli_loader": "sentence_transformers_cross_encoder"})
+                return nli, info
+            if candidate == "transformers":
+                nli = NLIGrounder(model_id, hf_home)
+                info.update({"nli_backend": True, "nli_loader": "transformers_model_id"})
+                return nli, info
+            failures.append(f"unknown_loader:{candidate}")
+        except Exception as exc:
+            failures.append(f"{candidate}:{type(exc).__name__}: {exc}")
+    info["nli_failure"] = " | ".join(failures)
+    return None, info
 
 
 def evidence_index(pack: dict[str, Any]) -> dict[str, dict[str, Any]]:
@@ -272,6 +318,7 @@ def main() -> int:
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--hf-home", default=DEFAULT_HF_HOME)
     parser.add_argument("--nli-model-id", default=DEFAULT_NLI_MODEL_ID)
+    parser.add_argument("--nli-loader", default="transformers", choices=["transformers", "sentence_transformers", "auto"])
     parser.add_argument("--use-nli", default="true", choices=["true", "false"])
     parser.add_argument("--require-nli", action="store_true")
     args = parser.parse_args()
@@ -286,7 +333,7 @@ def main() -> int:
     if contexts.empty:
         failures.append(f"contexts missing or empty: {args.contexts}")
 
-    nli, nli_info = load_nli(args.nli_model_id, args.hf_home, args.use_nli == "true")
+    nli, nli_info = load_nli(args.nli_model_id, args.hf_home, args.use_nli == "true", args.nli_loader)
     if args.require_nli and nli is None:
         failures.append("required NLI backend unavailable")
 

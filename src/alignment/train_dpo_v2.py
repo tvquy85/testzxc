@@ -80,7 +80,7 @@ def sequence_logps(model: Any, tokenizer: Any, prompt_texts: list[str], full_tex
 
 def run_dpo_smoke(args: argparse.Namespace, model_path: str) -> dict[str, Any]:
     import torch
-    from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
+    from peft import LoraConfig, PeftModel, get_peft_model, prepare_model_for_kbit_training
     from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
     records = load_dpo_records(args.train, limit=max(args.max_steps * args.batch_size * 2, 8))
@@ -113,15 +113,18 @@ def run_dpo_smoke(args: argparse.Namespace, model_path: str) -> dict[str, Any]:
     if hasattr(model, "gradient_checkpointing_enable"):
         model.gradient_checkpointing_enable()
     model = prepare_model_for_kbit_training(model)
-    lora_config = LoraConfig(
-        r=args.lora_r,
-        lora_alpha=args.lora_alpha,
-        lora_dropout=args.lora_dropout,
-        bias="none",
-        task_type="CAUSAL_LM",
-        target_modules=QWEN3_TARGET_MODULES,
-    )
-    model = get_peft_model(model, lora_config)
+    if args.rwsft_checkpoint and (Path(args.rwsft_checkpoint) / "adapter_config.json").exists():
+        model = PeftModel.from_pretrained(model, args.rwsft_checkpoint, is_trainable=True)
+    else:
+        lora_config = LoraConfig(
+            r=args.lora_r,
+            lora_alpha=args.lora_alpha,
+            lora_dropout=args.lora_dropout,
+            bias="none",
+            task_type="CAUSAL_LM",
+            target_modules=QWEN3_TARGET_MODULES,
+        )
+        model = get_peft_model(model, lora_config)
     model.train()
     optimizer = torch.optim.AdamW((p for p in model.parameters() if p.requires_grad), lr=args.learning_rate)
 
@@ -211,6 +214,7 @@ def main() -> int:
     parser.add_argument("--lora-alpha", type=int, default=32)
     parser.add_argument("--lora-dropout", type=float, default=0.05)
     parser.add_argument("--attn-implementation", default="auto", choices=["auto", "flash_attention_2", "sdpa", "eager", "none", "default"])
+    parser.add_argument("--metrics", default="outputs/metrics/14_dpo_train_medium.json")
     parser.add_argument("--status", default=f"outputs/status/{STEP}.status.json")
     parser.add_argument("--manifest", default=f"outputs/manifests/{STEP}.manifest.json")
     args = parser.parse_args()
@@ -272,8 +276,6 @@ def main() -> int:
         str(rwsft_checkpoint / "adapter_model.safetensors"),
     ]
     artifact_paths.extend([p for p in rwsft_artifacts if Path(p).exists()])
-    write_manifest(args.manifest, artifact_paths, STEP)
-
     rwsft_status = read_previous_rwsft_status(args.status)
     metrics = {
         "module_inventory": module_inventory,
@@ -290,6 +292,9 @@ def main() -> int:
     if not metrics["dpo_smoke_pass"]:
         failures.append("DPO smoke adapter missing")
     status = "PASS" if not failures else "FAIL"
+    write_json(args.metrics, metrics)
+    artifact_paths.append(args.metrics)
+    write_manifest(args.manifest, artifact_paths, STEP)
     write_status(
         args.status,
         STEP,

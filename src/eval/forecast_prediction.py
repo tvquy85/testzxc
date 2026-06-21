@@ -29,6 +29,17 @@ LABEL_FROM_KEY = {
 }
 
 
+def expected_action_for_distribution(dist: dict[str, float], eps: float = 1e-9) -> str:
+    down_side = float(dist.get("strong_down", 0.0)) + float(dist.get("mild_down", 0.0))
+    up_side = float(dist.get("mild_up", 0.0)) + float(dist.get("strong_up", 0.0))
+    neutral = float(dist.get("neutral", 0.0))
+    if down_side > up_side + eps and down_side > neutral + eps:
+        return "short"
+    if up_side > down_side + eps and up_side > neutral + eps:
+        return "long"
+    return "hold"
+
+
 def clip_text(value: Any, max_chars: int) -> str:
     text = "" if value is None else str(value)
     if len(text) <= max_chars:
@@ -66,7 +77,12 @@ def render_forecast_prompt(prompt_template: str, context: str) -> str:
     return f"{prompt_template.rstrip()}\n\nContext:\n{context}\n\nReturn JSON only."
 
 
-def validate_forecast_prediction(data: dict[str, Any] | None) -> tuple[bool, list[str]]:
+def normalized_forecast_distribution(dist: dict[str, Any]) -> dict[str, float]:
+    total = sum(float(forecast_value(dist, key)) for key in FORECAST_KEYS)
+    return {key: float(forecast_value(dist, key)) / total for key in FORECAST_KEYS}
+
+
+def validate_forecast_prediction(data: dict[str, Any] | None, enforce_action_consistency: bool = True) -> tuple[bool, list[str]]:
     errors: list[str] = []
     if not isinstance(data, dict):
         return False, ["data is not a JSON object"]
@@ -95,24 +111,48 @@ def validate_forecast_prediction(data: dict[str, Any] | None) -> tuple[bool, lis
             total = sum(probs)
             if not 0.99 <= total <= 1.01:
                 errors.append(f"forecast_distribution must sum to 1.0 +/- 0.01, got {total:.6f}")
-    if data.get("action") not in {"long", "short", "hold"}:
+    action = data.get("action")
+    if action not in {"long", "short", "hold"}:
         errors.append("action must be one of long, short, hold")
+    if enforce_action_consistency and not errors and isinstance(dist, dict):
+        normalized = normalized_forecast_distribution(dist)
+        expected_action = expected_action_for_distribution(normalized)
+        if action != expected_action:
+            errors.append(f"action_distribution_inconsistent: expected {expected_action}, got {action}")
     return not errors, errors
 
 
-def parse_forecast_prediction(raw_text: str) -> tuple[dict[str, float], str, str, bool, bool, list[str]]:
+def forecast_action_audit(raw_text: str) -> tuple[str, str, bool]:
+    parsed = parse_llm_json_strict(raw_text)
+    if not isinstance(parsed, dict) or not isinstance(parsed.get("forecast_distribution"), dict):
+        return "invalid", "invalid", False
+    action = parsed.get("action")
+    if action not in {"long", "short", "hold"}:
+        return str(action), "invalid", False
+    schema_ok, _ = validate_forecast_prediction(parsed, enforce_action_consistency=False)
+    if not schema_ok:
+        return str(action), "invalid", False
+    expected = expected_action_for_distribution(normalized_forecast_distribution(parsed["forecast_distribution"]))
+    return str(action), expected, action == expected
+
+
+def parse_forecast_prediction(
+    raw_text: str, action_policy: str = "strict"
+) -> tuple[dict[str, float], str, str, bool, bool, list[str]]:
+    if action_policy not in {"strict", "derive"}:
+        raise ValueError(f"unsupported action_policy: {action_policy}")
     zero_dist = {key: 0.0 for key in FORECAST_KEYS}
     parsed = parse_llm_json_strict(raw_text)
     if parsed is None:
         return zero_dist, "invalid", "invalid", False, False, ["invalid_json"]
-    schema_ok, errors = validate_forecast_prediction(parsed)
+    schema_ok, errors = validate_forecast_prediction(parsed, enforce_action_consistency=action_policy == "strict")
     if not schema_ok:
         return zero_dist, "invalid", "invalid", True, False, errors
     raw_dist = parsed["forecast_distribution"]
-    total = sum(float(forecast_value(raw_dist, key)) for key in FORECAST_KEYS)
-    dist = {key: float(forecast_value(raw_dist, key)) / total for key in FORECAST_KEYS}
+    dist = normalized_forecast_distribution(raw_dist)
     pred_key = max(dist, key=dist.get)
-    return dist, str(parsed["action"]), LABEL_FROM_KEY[pred_key], True, True, []
+    action = expected_action_for_distribution(dist) if action_policy == "derive" else str(parsed["action"])
+    return dist, action, LABEL_FROM_KEY[pred_key], True, True, []
 
 
 def forecast_score(dist: dict[str, float]) -> float:

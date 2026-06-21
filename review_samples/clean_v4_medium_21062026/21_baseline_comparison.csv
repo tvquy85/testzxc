@@ -1,0 +1,10 @@
+method,baseline,status,rows,accuracy,macro_f1,schema_ok_rate,non_hold_rate,reference_only,notes
+Technical_Rule,Technical_Rule,PASS,290,0.2137931034482758,0.2101004560087129,,,False,deterministic technical-token sign rule
+Text_News_Heuristic,Text_News_Heuristic,PASS,290,0.2068965517241379,0.1857567498520617,,,False,deterministic finance keyword text baseline
+News_Technical_Heuristic,News_Technical_Heuristic,PASS,290,0.1551724137931034,0.1382583578305729,,,False,combined text and technical sign rule
+Neutral_Hold_Majority,Neutral_Hold_Majority,PASS,290,0.2034482758620689,0.0676217765042979,,,False,always neutral sanity baseline
+Qwen_DPO_Medium,Qwen_DPO_Medium,PASS,290,0.196551724137931,0.1345689804834204,1.0,0.7896551724137931,False,official medium DPO prediction artifact
+Qwen_RWSFT_Medium,Qwen_RWSFT_Medium,PASS,299,0.217391304347826,0.1531809962189709,1.0,0.7525083612040134,False,same medium adapter family before DPO preference optimization
+PEN_Reference_Only,PEN_Reference_Only,PASS,0,,,,,True,"PEN code exists in repo, but no comparable current-data medium run was executed; do not claim outperforming PEN"
+SEP_Reference_Only,SEP_Reference_Only,PASS,0,,,,,True,"sep code exists in repo, but no comparable current-data medium run was executed; do not claim outperforming SEP"
+Policy_Reference_Only,Policy_Reference_Only,PASS,0,,,,,True,"policy code exists in repo, but no comparable current-data medium run was executed; do not claim outperforming Policy"

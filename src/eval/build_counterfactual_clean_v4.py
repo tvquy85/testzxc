@@ -128,7 +128,8 @@ def build_task(row: pd.Series, cf_type: str) -> dict[str, Any] | None:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--contexts", required=True)
-    parser.add_argument("--output", required=True)
+    parser.add_argument("--predictions", default=None)
+    parser.add_argument("--output", "--output-tasks", dest="output", required=True)
     parser.add_argument("--metrics", required=True)
     parser.add_argument("--status", required=True)
     parser.add_argument("--manifest", default="outputs/manifests/17_COUNTERFACTUAL_TASK_BUILD_CLEAN_V4.manifest.json")
@@ -137,6 +138,10 @@ def main() -> int:
     args = parser.parse_args()
 
     contexts = pd.read_parquet(args.contexts) if Path(args.contexts).exists() else pd.DataFrame()
+    if args.predictions and Path(args.predictions).exists() and len(contexts):
+        preds = pd.read_parquet(args.predictions)
+        if "sample_id" in preds.columns:
+            contexts = contexts[contexts["sample_id"].astype(str).isin(set(preds["sample_id"].astype(str)))].copy()
     df = contexts[contexts["split"].eq("test")].sort_values(["event_date", "sample_id"]).copy() if len(contexts) else pd.DataFrame()
     cf_types = [
         "remove_positive_evidence",
@@ -162,7 +167,12 @@ def main() -> int:
 
     out = pd.DataFrame(rows)
     Path(args.output).parent.mkdir(parents=True, exist_ok=True)
-    out.to_parquet(args.output, index=False)
+    if Path(args.output).suffix.lower() == ".jsonl":
+        with open(args.output, "w", encoding="utf-8") as f:
+            for row in out.to_dict(orient="records"):
+                f.write(json.dumps(row, ensure_ascii=False) + "\n")
+    else:
+        out.to_parquet(args.output, index=False)
     failures: list[str] = []
     if out.empty:
         failures.append("no counterfactual tasks generated")
@@ -179,9 +189,13 @@ def main() -> int:
         "min_per_type": args.min_per_type,
     }
     write_json(args.metrics, metrics)
-    write_manifest(args.manifest, [args.output, args.metrics], STEP)
+    manifest_inputs = [args.output, args.metrics]
+    if args.predictions:
+        manifest_inputs.append(args.predictions)
+    write_manifest(args.manifest, manifest_inputs, STEP)
     status = "PASS" if not failures else "FAIL"
-    write_status(args.status, STEP, status, [args.contexts], [args.output, args.metrics, args.manifest, args.status], metrics, failures, status == "PASS")
+    inputs = [args.contexts] + ([args.predictions] if args.predictions else [])
+    write_status(args.status, STEP, status, inputs, [args.output, args.metrics, args.manifest, args.status], metrics, failures, status == "PASS")
     return 0 if status == "PASS" else 1
 
 
