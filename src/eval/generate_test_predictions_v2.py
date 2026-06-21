@@ -184,6 +184,21 @@ def apply_ablation_to_row(row: Any, mode: str) -> Any:
     if mode == "full":
         return row
     row = row.copy()
+    if "clean_context_text" in row:
+        text = str(row.get("clean_context_text") or "")
+        if mode in {"no_news_body", "no_news"}:
+            marker = "\nTechnical signals:"
+            technical = text[text.find(marker) :] if marker in text else ""
+            row["clean_context_text"] = (
+                f"Ticker: {row.get('ticker', '')}\n"
+                f"Date: {row.get('event_date', '')}\n\n"
+                "Company-specific evidence:\nNone\n\n"
+                "Context-only evidence:\nNone"
+                f"{technical}"
+            )
+        if mode in {"no_technical_tokens", "no_technical"}:
+            marker = "\nTechnical signals:"
+            row["clean_context_text"] = (text[: text.find(marker)] if marker in text else text) + "\nTechnical signals:\nNone"
     if mode in {"no_news_body", "no_news"}:
         for col in ["headline", "body", "aggregated_headlines", "aggregated_body"]:
             if col in row:

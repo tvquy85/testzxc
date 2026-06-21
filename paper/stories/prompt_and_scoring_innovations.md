@@ -64,3 +64,10 @@ During the pipeline design, several advanced ideas were considered but ultimatel
 - The NLI grounding model should be loaded by model id `cross-encoder/nli-deberta-v3-small` with `HF_HOME=E:/huggingface` and `local_files_only=True`. Passing the internal cache directory `models--cross-encoder--nli-deberta-v3-small` directly to `AutoTokenizer` is brittle and can force fallback behavior.
 - Step09 now records whether grounding used the real transformers NLI backend. Lexical fallback must be explicit debug behavior, not silent PASS evidence.
 - On the 500-row current-data small run, the NLI-backed grounding gate passed with `nli_backend=true`, `supported_rate=0.400`, and `not_applicable_rate=0.600`. Rebuilding Flow V3 on the same small slice still did not beat the proxy average, so the flow-reward improvement claim remains blocked.
+
+## 2026-06-21 Evidence-ID Prompt V4 Format Repair
+
+- The clean V4 prompt should reuse the fastest Qwen3 prompt style already present in `prompts/`: short role, explicit `Task`, bullet `Rules`, `Output schema`, and `Context` at the end. This format was more reliable than numbered instructions with context before schema.
+- Evidence-grounded rationales must cite `evidence_id` and `signal_id` directly. After converting the V4 prompt to the Qwen3 fast JSON format and normalizing technical strength values (`low/high` -> `weak/strong`) before rendering, the 100-row stage0 rationale run reached `parse_ok_rate=1.0` and `schema_ok_rate=1.0`.
+- Step11 V4 grounding should set `HF_HOME` before importing `transformers`; otherwise the NLI model id can fail to resolve despite the local cache existing. With the loader order fixed, the stage0 grounding run used `nli_backend=true`.
+- Flow V4 stage0 remains a negative-result control: the clean V4 flow checkpoint won rank correlation against proxy on the 100-row slice, but did not win 2/3 pre-defined metrics, so `flow_reward_improvement=false` and the claim remains blocked.

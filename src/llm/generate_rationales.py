@@ -116,6 +116,10 @@ def normalized_technical_context(row: Any, fallback_text: str, max_chars: int) -
 
 
 def context_text(row: Any, max_input_tokens: int) -> str:
+    if row.get("evidence_pack_json", None):
+        from src.llm.render_context_evidence_v4 import render_evidence_context
+
+        return clip_text(render_evidence_context(row), max_input_tokens * 4)
     ctx = render_context(row)
     # Keep the prompt small before tokenization. Body is least reliable and most verbose.
     body_chars = min(6000, max(1200, max_input_tokens * 2))
@@ -310,6 +314,11 @@ def generate_vllm(model_path: str, items: list[dict[str, Any]], args: argparse.N
 
 
 def raw_record(item: dict[str, Any], args: argparse.Namespace, model_path: str, model_name: str, prompt_hash: str, run_id: str) -> dict[str, Any]:
+    context_meta = {}
+    if item.get("row") is not None and item["row"].get("evidence_pack_json", None):
+        from src.llm.render_context_evidence_v4 import context_meta_from_row
+
+        context_meta = context_meta_from_row(item["row"])
     return {
         "sample_id": item["sample_id"],
         "ticker": item.get("ticker"),
@@ -327,19 +336,28 @@ def raw_record(item: dict[str, Any], args: argparse.Namespace, model_path: str, 
         "prompt": item["prompt"],
         "raw_output": item["raw_output"],
         "raw_text": item["raw_output"],
+        "context_meta_json": json.dumps(context_meta, ensure_ascii=False),
         "generation_config": generation_config(args),
         "run_id": run_id,
         "stage": args.stage,
     }
 
 
-def parsed_records_from_raw(raw_rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def parsed_records_from_raw(raw_rows: list[dict[str, Any]], schema_version: str = "auto") -> list[dict[str, Any]]:
     parsed_records: list[dict[str, Any]] = []
     for record in raw_rows:
         raw_text = record.get("raw_output", record.get("raw_text", ""))
-        parsed = parse_llm_json_strict(raw_text)
+        use_v4 = schema_version == "v4" or (schema_version == "auto" and (record.get("context_meta_json") not in {None, "", "{}"} or "v4" in str(record.get("stage", ""))))
+        if use_v4:
+            from src.llm.parse_and_validate_rationale_v4 import parse_llm_json_strict_v4, validate_rationale_schema_evidence_v4
+
+            parsed = parse_llm_json_strict_v4(raw_text)
+            context_meta = json.loads(record.get("context_meta_json") or "{}")
+            schema_ok, parse_errors = validate_rationale_schema_evidence_v4(parsed, context_meta)
+        else:
+            parsed = parse_llm_json_strict(raw_text)
+            schema_ok, parse_errors = validate_rationale_schema_strict(parsed)
         parse_ok = parsed is not None
-        schema_ok, parse_errors = validate_rationale_schema_strict(parsed)
         parsed_records.append(
             {
                 "sample_id": record.get("sample_id"),
@@ -360,6 +378,8 @@ def parsed_records_from_raw(raw_rows: list[dict[str, Any]]) -> list[dict[str, An
                 "stage": record.get("stage"),
                 "raw_text": raw_text,
                 "raw_output": raw_text,
+                "schema_version": "v4" if use_v4 else "v3",
+                "context_meta_json": record.get("context_meta_json", "{}"),
                 "parse_ok": parse_ok,
                 "schema_ok": bool(schema_ok),
                 "parse_errors": parse_errors,
@@ -409,6 +429,10 @@ def main() -> int:
     parser.add_argument("--raw-output", "--output", dest="raw_output", default="data/rationales/raw/train_candidates.jsonl")
     parser.add_argument("--parsed-output", default="data/rationales/parsed/train_candidates_strict.parquet")
     parser.add_argument("--stage", default="stage_0_sanity_check")
+    parser.add_argument("--schema-version", choices=["auto", "v3", "v4"], default="auto")
+    parser.add_argument("--min-parse-ok-rate", type=float, default=0.0)
+    parser.add_argument("--min-schema-ok-rate", type=float, default=0.0)
+    parser.add_argument("--max-avg-output-tokens", type=float, default=100000.0)
     parser.add_argument("--run-id", default=None)
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--status", default=f"outputs/status/{STEP}.status.json")
@@ -461,7 +485,7 @@ def main() -> int:
 
     raw_rows_all = read_jsonl(raw_path)
     current_raw_rows = [record for record in raw_rows_all if record_key(record) in expected_keys]
-    parsed_records = parsed_records_from_raw(current_raw_rows)
+    parsed_records = parsed_records_from_raw(current_raw_rows, args.schema_version)
     Path(args.parsed_output).parent.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(parsed_records).to_parquet(args.parsed_output, index=False)
 
@@ -476,6 +500,12 @@ def main() -> int:
     avg_output_tokens = sum(int(r.get("output_tokens_est", 0) or 0) for r in current_raw_rows) / max(1, len(current_raw_rows))
     if not parsed_records:
         failures.append("no generated rows")
+    if parse_ok_rate < args.min_parse_ok_rate:
+        failures.append(f"parse_ok_rate {parse_ok_rate:.4f} < {args.min_parse_ok_rate:.4f}")
+    if schema_ok_rate < args.min_schema_ok_rate:
+        failures.append(f"schema_ok_rate {schema_ok_rate:.4f} < {args.min_schema_ok_rate:.4f}")
+    if avg_output_tokens > args.max_avg_output_tokens:
+        failures.append(f"avg_output_tokens_est {avg_output_tokens:.2f} > {args.max_avg_output_tokens:.2f}")
 
     status = "PASS" if not failures else "FAIL"
     write_manifest(args.manifest, [args.raw_output, args.parsed_output], STEP, run_id=run_id)

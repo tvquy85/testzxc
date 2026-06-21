@@ -37,6 +37,15 @@ def clip_text(value: Any, max_chars: int) -> str:
 
 
 def format_forecast_context(row: Any, body_chars: int = 1200, token_chars: int = 1200) -> str:
+    clean_context = row.get("clean_context_text", "") if hasattr(row, "get") else ""
+    if isinstance(clean_context, str) and clean_context.strip():
+        ticker = row.get("ticker", "") if hasattr(row, "get") else ""
+        event_date = row.get("event_date", "") if hasattr(row, "get") else ""
+        return (
+            f"Ticker: {clip_text(ticker, 32)}\n"
+            f"Event Date: {clip_text(event_date, 64)}\n"
+            f"Evidence Context:\n{clip_text(clean_context, body_chars + token_chars)}"
+        )
     rendered = render_context(row)
     ticker = row.get("ticker", "") if hasattr(row, "get") else ""
     event_date = row.get("event_date", "") if hasattr(row, "get") else ""
