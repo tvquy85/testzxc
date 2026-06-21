@@ -1,0 +1,548 @@
+{
+  "purpose": "Canonical DataClean V4 status summary for ChatGPT UI review.",
+  "master_order": "dataclean_v4_codex_md/00_MASTER_DATACLEAN_V4_ORDER.md",
+  "rows": [
+    {
+      "status_file": "outputs/status/01_FREEZE_CURRENTDATA_V3_FOR_CLEAN_V4_SMALL.status.json",
+      "exists": true,
+      "step": "01_FREEZE_CURRENTDATA_V3_FOR_CLEAN_V4",
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": [],
+      "outputs_created_count": 3,
+      "metrics_compact": {
+        "tag": "currentdata_v3_before_clean_v4",
+        "inputs_checked": 7,
+        "copied_files": 6,
+        "referenced_inputs": 7,
+        "manifest_artifacts": 7,
+        "model_weights_copied": false
+      }
+    },
+    {
+      "status_file": "outputs/status/02_AUDIT_CURRENT_V3_FOR_CLEAN_V4_SMALL.status.json",
+      "exists": true,
+      "step": "02_AUDIT_CURRENT_V3_FOR_CLEAN_V4",
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": [],
+      "outputs_created_count": 4,
+      "metrics_compact": {
+        "rationale_sample_rows": 8,
+        "no_news_rationale_rate": 1.0,
+        "empty_headline_rate": 0.0,
+        "empty_body_rate": 0.1840126074645415,
+        "technical_template_rate": 0.0,
+        "multi_company_like_rate_sample": 0.596,
+        "flow_rank_correlation": 0.05648953904166842,
+        "proxy_rank_correlation": 0.5514491292709657,
+        "flow_vs_proxy_gap": 0.49495959022929725,
+        "sharpe_daily_annualized": -1.346671701299499,
+        "mean_daily_return": -0.0006471793200739779,
+        "counterfactual_pass_rate": 0.422,
+        "counterfactual_no_change_rate": 0.446,
+        "counterfactual_by_type": {},
+        "failure_interpretation": [
+          "V3.1 rationale samples are dominated by no-news/technical-template evidence.",
+          "Flow underperforms proxy, so data quality should be improved before reward scaling.",
+          "Trading alpha remains blocked while Sharpe is non-positive."
+        ]
+      }
+    },
+    {
+      "status_file": "outputs/status/03_ENTITY_ALIAS_MAP_V4_SMALL.status.json",
+      "exists": true,
+      "step": "03_ENTITY_ALIAS_MAP_V4",
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": [],
+      "outputs_created_count": 4,
+      "metrics_compact": {
+        "input_rows": 135393,
+        "unique_tickers": 36,
+        "alias_tickers": 36,
+        "ticker_coverage": 1.0,
+        "mean_aliases_per_ticker": 1.0,
+        "company_name_columns_present": [],
+        "fallback_ticker_only": true
+      }
+    },
+    {
+      "status_file": "outputs/status/04_ENTITY_EVENT_SCORING_V4_SMALL.status.json",
+      "exists": true,
+      "step": "04_ENTITY_EVENT_SCORING_V4",
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": [],
+      "outputs_created_count": 4,
+      "metrics_compact": {
+        "input_rows": 135393,
+        "rows": 16000,
+        "split_distribution": {
+          "train": 12000,
+          "val": 2000,
+          "test": 2000
+        },
+        "quality_tier_distribution": {
+          "A_company_event": 8438,
+          "D_noise": 5357,
+          "B_relevant": 1745,
+          "C_context_only": 460
+        },
+        "article_type_prelim_distribution": {
+          "earnings_or_guidance": 9305,
+          "empty_or_weak": 3047,
+          "company_event": 1091,
+          "multi_company_roundup": 892,
+          "analyst_rating": 645,
+          "technical_backtest_article": 470,
+          "sector_etf": 363,
+          "macro_market": 160,
+          "opinion_listicle": 27
+        },
+        "ab_quality_rate": 0.6364375,
+        "mean_evidence_quality_score": 0.6264546874999999,
+        "entity_event_keep_rate": 0.6651875
+      }
+    },
+    {
+      "status_file": "outputs/status/05_ARTICLE_TYPE_AND_NOISE_FILTER_V4_SMALL.status.json",
+      "exists": true,
+      "step": "05_ARTICLE_TYPE_AND_NOISE_FILTER_V4",
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": [],
+      "outputs_created_count": 4,
+      "metrics_compact": {
+        "input_rows": 16000,
+        "rows": 16000,
+        "article_type_distribution": {
+          "earnings_or_guidance": 9290,
+          "empty_or_weak": 3133,
+          "company_event": 1025,
+          "multi_company_roundup": 892,
+          "analyst_rating": 645,
+          "technical_backtest_article": 470,
+          "sector_etf": 359,
+          "macro_market": 159,
+          "opinion_listicle": 27
+        },
+        "article_type_by_split": {
+          "test": {
+            "earnings_or_guidance": 1348,
+            "analyst_rating": 243,
+            "multi_company_roundup": 148,
+            "company_event": 88,
+            "sector_etf": 73,
+            "macro_market": 52,
+            "technical_backtest_article": 48
+          },
+          "train": {
+            "earnings_or_guidance": 6505,
+            "empty_or_weak": 3133,
+            "company_event": 827,
+            "multi_company_roundup": 560,
+            "technical_backtest_article": 342,
+            "analyst_rating": 287,
+            "sector_etf": 255,
+            "macro_market": 64,
+            "opinion_listicle": 27
+          },
+          "val": {
+            "earnings_or_guidance": 1437,
+            "multi_company_roundup": 184,
+            "analyst_rating": 115,
+            "company_event": 110,
+            "technical_backtest_article": 80,
+            "macro_market": 43,
+            "sector_etf": 31
+          }
+        },
+        "quality_tier_distribution": {
+          "A_company_event": 8438,
+          "D_noise": 5367,
+          "B_relevant": 1740,
+          "C_context_only": 455
+        },
+        "entity_event_keep_rate": 0.6645625
+      }
+    },
+    {
+      "status_file": "outputs/status/06_DEDUP_NEWS_V4_SMALL.status.json",
+      "exists": true,
+      "step": "06_DEDUP_NEWS_V4",
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": [],
+      "outputs_created_count": 4,
+      "metrics_compact": {
+        "input_rows": 16000,
+        "clustered_rows": 16000,
+        "output_rows": 10609,
+        "dedup_drop_rate": 0.3369375,
+        "mean_cluster_size": 1.00375,
+        "max_cluster_size": 2,
+        "quality_tier_distribution_after": {
+          "A_company_event": 8417,
+          "B_relevant": 1738,
+          "C_context_only": 454
+        },
+        "split_distribution_after": {
+          "train": 7410,
+          "val": 1611,
+          "test": 1588
+        }
+      }
+    },
+    {
+      "status_file": "outputs/status/07_TICKER_DATE_EVIDENCE_PACK_V4_SMALL.status.json",
+      "exists": true,
+      "step": "07_TICKER_DATE_EVIDENCE_PACK_V4",
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": [],
+      "outputs_created_count": 4,
+      "metrics_compact": {
+        "rows": 3129,
+        "split_distribution": {
+          "train": 2453,
+          "val": 390,
+          "test": 286
+        },
+        "evidence_pack_parse_rate": 1.0,
+        "mean_evidence_per_context": 2.292425695110259,
+        "train_company_event_contexts": 2409,
+        "has_company_event_rate": 0.983381271971876,
+        "no_news_context_rate": 0.0
+      }
+    },
+    {
+      "status_file": "outputs/status/08_RENDER_CONTEXT_EVIDENCE_V4_SMALL.status.json",
+      "exists": true,
+      "step": "08_RENDER_CONTEXT_EVIDENCE_V4",
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": [],
+      "outputs_created_count": 3,
+      "metrics_compact": {
+        "sample_rows": 50,
+        "avg_rendered_chars": 1181.18,
+        "has_evidence_id_or_none": true,
+        "has_signal_id": true
+      }
+    },
+    {
+      "status_file": "outputs/status/09_RATIONALE_PROMPT_EVIDENCE_ID_V4_SMALL.status.json",
+      "exists": true,
+      "step": "09_RATIONALE_PROMPT_EVIDENCE_ID_V4",
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": [],
+      "outputs_created_count": 2,
+      "metrics_compact": {
+        "prompt_chars": 1930,
+        "required_terms_present": 5
+      }
+    },
+    {
+      "status_file": "outputs/status/10_STRICT_EVIDENCE_SCHEMA_VALIDATION_V4_SMALL.status.json",
+      "exists": true,
+      "step": "10_STRICT_EVIDENCE_SCHEMA_VALIDATION_V4",
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": [],
+      "outputs_created_count": 2,
+      "metrics_compact": {
+        "valid_example_ok": true,
+        "invalid_example_rejected": true,
+        "invalid_errors": [
+          "news_rationale[0] unknown evidence_id: N9"
+        ]
+      }
+    },
+    {
+      "status_file": "outputs/status/11_EVIDENCE_GROUNDING_JUDGE_V4_STAGE0_COMBINED.status.json",
+      "exists": true,
+      "step": "11_EVIDENCE_GROUNDING_JUDGE_V4",
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": [],
+      "outputs_created_count": 5,
+      "metrics_compact": {
+        "rows": 300,
+        "total_claims": 940,
+        "news_claims": 340,
+        "technical_claims": 600,
+        "row_status_counts": {
+          "supported": 177,
+          "unverified": 77,
+          "unsupported": 35,
+          "contradiction": 11
+        },
+        "claim_status_counts": {
+          "supported": 801,
+          "unsupported": 36,
+          "unverified": 92,
+          "contradiction": 11
+        },
+        "missing_evidence_id_rate": 0.0,
+        "unknown_evidence_id_rate": 0.0,
+        "technical_unknown_signal_rate": 0.0,
+        "unsupported_news_claim_rate": 0.10588235294117647,
+        "mean_news_grounding_score": 0.5975103734439834,
+        "mean_technical_grounding_score": 1.0,
+        "bad_examples_saved": 100,
+        "nli_backend": true,
+        "nli_loader": "transformers_model_id",
+        "nli_model_id": "cross-encoder/nli-deberta-v3-small",
+        "nli_hf_home": "E:/huggingface",
+        "nli_local_files_only": true,
+        "nli_failure": null,
+        "require_nli": true
+      }
+    },
+    {
+      "status_file": "outputs/status/12_TRACK_SPLIT_AND_TRAIN_POOL_V4_SMALL.status.json",
+      "exists": true,
+      "step": "12_TRACK_SPLIT_AND_TRAIN_POOL_V4",
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": [],
+      "outputs_created_count": 5,
+      "metrics_compact": {
+        "contexts": 3129,
+        "train_pool_rows": 2453,
+        "track_distribution": {
+          "news_technical": 3077,
+          "technical_only": 52
+        },
+        "track_by_split": {
+          "test": {
+            "news_technical": 281,
+            "technical_only": 5
+          },
+          "train": {
+            "news_technical": 2409,
+            "technical_only": 44
+          },
+          "val": {
+            "news_technical": 387,
+            "technical_only": 3
+          }
+        },
+        "train_news_technical_rows": 2409,
+        "mean_training_weight": 0.8825000595739504
+      }
+    },
+    {
+      "status_file": "outputs/status/13_REGENERATE_RATIONALES_V4_STAGE0_SMALL.status.json",
+      "exists": true,
+      "step": "09_RATIONALE_GENERATION_SCALEUP_TRAIN_ONLY",
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": [],
+      "outputs_created_count": 4,
+      "metrics_compact": {
+        "row_count": 100,
+        "expected_row_count": 100,
+        "generated_this_run": 100,
+        "unique_sample_count": 100,
+        "parse_ok_rate": 1.0,
+        "schema_ok_rate": 1.0,
+        "avg_output_tokens_est": 235.86,
+        "run_id": "current_clean_v4_stage0_small_5ed5873e",
+        "stage": "current_clean_v4_stage0_small",
+        "backend": "transformers",
+        "attn_implementation": "flash_attention_2",
+        "elapsed_seconds": 386.679
+      }
+    },
+    {
+      "status_file": "outputs/status/13_REGENERATE_RATIONALES_V4_STAGE0_EXTRA_CANDIDATES.status.json",
+      "exists": true,
+      "step": "09_RATIONALE_GENERATION_SCALEUP_TRAIN_ONLY",
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": [],
+      "outputs_created_count": 4,
+      "metrics_compact": {
+        "row_count": 200,
+        "expected_row_count": 200,
+        "generated_this_run": 200,
+        "unique_sample_count": 100,
+        "parse_ok_rate": 1.0,
+        "schema_ok_rate": 1.0,
+        "avg_output_tokens_est": 236.04,
+        "run_id": "current_clean_v4_stage0_extra_candidates_ccef9088",
+        "stage": "current_clean_v4_stage0_extra_candidates",
+        "backend": "transformers",
+        "attn_implementation": "flash_attention_2",
+        "elapsed_seconds": 704.395
+      }
+    },
+    {
+      "status_file": "outputs/status/13_COMBINE_RATIONALE_CANDIDATES_V4_STAGE0_SMALL.status.json",
+      "exists": true,
+      "step": "13_COMBINE_RATIONALE_CANDIDATES_V4",
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": [],
+      "outputs_created_count": 3,
+      "metrics_compact": {
+        "rows": 300,
+        "unique_samples": 100,
+        "min_candidates_per_sample_observed": 3,
+        "mean_candidates_per_sample": 3.0,
+        "candidate_distribution": {
+          "0": 100,
+          "1": 100,
+          "2": 100
+        },
+        "split_distribution": {
+          "train": 300
+        }
+      }
+    },
+    {
+      "status_file": "outputs/status/14_INDEPENDENT_JUDGE_RERUN_EVIDENCE_V4_STAGE0_COMBINED.status.json",
+      "exists": true,
+      "step": "14_INDEPENDENT_JUDGE_RERUN_EVIDENCE_V4",
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": [],
+      "outputs_created_count": 4,
+      "metrics_compact": {
+        "judged_samples": 300,
+        "variant_rows": 600,
+        "judge_parse_ok_rate": 1.0,
+        "judge_schema_ok_rate": 1.0,
+        "mean_true_label_probability": 0.2725,
+        "random_baseline": 0.2,
+        "mean_argmax_consistency": 0.7516666666666667,
+        "mean_l1_probability_delta": 0.4893333333333334,
+        "inferability_claim_allowed": true,
+        "label_orders": [
+          "normal",
+          "reversed"
+        ],
+        "judge_model_path": "E:/huggingface/models/Qwen3-4B-Instruct-2507",
+        "elapsed_seconds": 614.567,
+        "by_track": {
+          "news_technical": 0.2739795918367347,
+          "technical_only": 0.20000000000000004
+        }
+      }
+    },
+    {
+      "status_file": "outputs/status/15_FLOW_REWARD_REBUILD_CLEAN_V4_STAGE0_COMBINED.status.json",
+      "exists": true,
+      "step": "15_FLOW_REWARD_REBUILD_CLEAN_V4",
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": [],
+      "outputs_created_count": 4,
+      "metrics_compact": {
+        "rows": 300,
+        "eval_rows": 63,
+        "holdout_frac": 0.2,
+        "seed": 42,
+        "methods": {
+          "flow_reward_v4": {
+            "rank_correlation_with_realized_utility": -0.08578253938659824,
+            "preference_pair_accuracy": 0.8333333333333334,
+            "top_decile_realized_utility": 0.0020801888313144445
+          },
+          "proxy_average_reward": {
+            "rank_correlation_with_realized_utility": -0.14160169958014082,
+            "preference_pair_accuracy": 0.6666666666666666,
+            "top_decile_realized_utility": 4.1300310840597376e-05
+          }
+        },
+        "metric_wins": {
+          "rank_correlation_with_realized_utility": true,
+          "preference_pair_accuracy": true,
+          "top_decile_realized_utility": true
+        },
+        "flow_reward_improvement": true,
+        "flow_claim_allowed": true
+      }
+    },
+    {
+      "status_file": "outputs/status/16_ALIGNMENT_REBUILD_CLEAN_V4_STAGE0_SMALL.status.json",
+      "exists": true,
+      "step": "16_ALIGNMENT_REBUILD_CLEAN_V4",
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": [],
+      "outputs_created_count": 6,
+      "metrics_compact": {
+        "rwsft_examples": 88,
+        "dpo_pairs": 17,
+        "unique_samples": 100,
+        "candidate_rows": 300,
+        "mean_reward_selected": 0.4878392491727139,
+        "mean_chosen_reward": 0.5466380172448566,
+        "mean_rejected_reward": 0.4123366355928446,
+        "min_reward_gap": 0.08,
+        "reward_source": "flow_v4",
+        "flow_reward_improvement": true,
+        "flow_scores_used": true,
+        "flow_reward_normalized_for_selection": true,
+        "train_only": true,
+        "rwsft_sha256": "2279c0d3368e6f44a530eb3b8eeb6387a81122f4911a33d376164dff15d2172f",
+        "dpo_sha256": "42c3778cdfa0e9c35acf4c2b5c00b6c90aaf9f96ee1b37fe8fe38e5121cc617f",
+        "small_scale_thresholds": {
+          "min_rwsft": 80,
+          "min_dpo": 15
+        }
+      }
+    },
+    {
+      "status_file": "outputs/status/17_BACKTEST_COUNTERFACTUAL_ABLATION_V4.status.json",
+      "exists": true,
+      "step": "17_BACKTEST_COUNTERFACTUAL_ABLATION_V4",
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": [],
+      "outputs_created_count": 3,
+      "metrics_compact": {
+        "prediction_rows": 90,
+        "prediction_schema_ok_rate": 0.9888888888888889,
+        "num_trading_days": 14,
+        "sharpe_daily_annualized": -3.0652880294813944,
+        "trading_alpha_claim_allowed": false,
+        "counterfactual_pass_rate": 0.54,
+        "counterfactual_no_change_rate": 0.22,
+        "ablation_rows": 7,
+        "pipeline_decision": "GO_SMALL",
+        "claim_notes": {
+          "trading_alpha": "blocked",
+          "counterfactual": "reported_small_scale",
+          "ablation": "reported_no_not_run"
+        }
+      }
+    },
+    {
+      "status_file": "outputs/status/18_SCIENCE_GATE_AND_RUNBOOK_V4.status.json",
+      "exists": true,
+      "step": "18_SCIENCE_GATE_AND_RUNBOOK_V4",
+      "status": "PASS",
+      "next_step_allowed": true,
+      "failures": [],
+      "outputs_created_count": 3,
+      "metrics_compact": {
+        "pipeline_decision": "GO_SMALL",
+        "claim_decision": "CLAIM_RESTRICTED",
+        "claim_matrix": {
+          "data_cleaning_improved_context_quality": "allowed",
+          "counterfactual_faithfulness": "allowed",
+          "flow_reward_improvement": "allowed",
+          "trading_alpha": "blocked",
+          "multimodal_news_technical_reasoning": "allowed",
+          "aaai_main_ready": "blocked"
+        },
+        "missing_or_failed_count": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "producer": "src/repro/export_dataclean_v4_samples.py",
+  "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+  "run_id": "dataclean_v4_review_samples_20062026",
+  "purpose": "Small GitHub-friendly samples for ChatGPT UI review of DataClean V4 flow.",
+  "master_order": "dataclean_v4_codex_md/00_MASTER_DATACLEAN_V4_ORDER.md",
+  "sample_files": [
+    {
+      "path": "review_samples/dataclean_v4_20062026/00_status_summary_dataclean_v4_01_18.json",
+      "row_count": 1,
+      "sha256": "5936fba0fd5cffc32dc48493e7079f4a10a0d3981b373e3c6e0aa422c66cbf85",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/01_source_code_index_dataclean_v4.md",
+      "row_count": null,
+      "sha256": "a027b8201e019d08ed5d8e600d0758b6572e9407e222e4f20eb7dceee902f18d",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/02_master_order_dataclean_v4.md",
+      "row_count": null,
+      "sha256": "d55ea2248f92c0578498fac6904b554ad7036f947f272d504f2b73b3a5f71db8",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/03_ticker_alias_map_sample.json",
+      "row_count": 1,
+      "sha256": "12a317e346e5385c377956fa0123917c8cf0f90b3d438702ecc464102eb8c0c0",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/04_entity_event_scoring_samples.jsonl",
+      "row_count": 8,
+      "sha256": "99333e7c5549afb34479d6290a48e5066d21e69dbed254993b9ff4bd5d115a74",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/05_article_type_noise_filter_samples.jsonl",
+      "row_count": 8,
+      "sha256": "cab3a239e13dec6f1281bf854e3610fe2cf2f783d28b104ee92d42e2ccea37e8",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/06_dedup_news_samples.jsonl",
+      "row_count": 8,
+      "sha256": "59943ac191280e79567ffeac5c57df8c3f7a904d14210aeeb1bd89ab13eca42c",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/07_evidence_pack_context_samples.jsonl",
+      "row_count": 8,
+      "sha256": "02ffcad3a53691fb2b0543c814f05f3d631ef7a699b3193162521b322cf3cd61",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/08_rendered_context_text_samples.jsonl",
+      "row_count": 8,
+      "sha256": "779dfd9ef1709673565e3327ffb840c884776e85af123c51fd04413c04ddc3f7",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/09_prompt_template_evidence_v4.md",
+      "row_count": null,
+      "sha256": "7620214df3aee24ffa52a6acefd9410b5b3d36589826b177b221a2e3fbb16b94",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/10_sample_parsed_rationale.json",
+      "row_count": 1,
+      "sha256": "e359f6ac79d68f1e38fa068dabdd26ee9c411ebd4e3e3f25ea63092fcb2028df",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/10_sample_raw_rationale.jsonl",
+      "row_count": 5,
+      "sha256": "20fabeb4ccd027ab1f3e2fb61aaad7685e68ac57f850914b88453f521c2c5cc9",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/10_sample_technical_tokens.json",
+      "row_count": 1,
+      "sha256": "9ab05f9e1d4c8410b77d17ca3c46eec59d9d7a454f07675fc94ce8526ebf6c42",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/11_claim_grounding_nli_samples.jsonl",
+      "row_count": 8,
+      "sha256": "ec40c12f7470b007addc817a8fbdf3b94a9865691cdea6c39872b985af844581",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/12_track_train_pool_samples.jsonl",
+      "row_count": 8,
+      "sha256": "5ee3a460b914091dd96f8e902a0224711c0c291986a504a3fa3ac0facd4cc7fa",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/13_rationale_generation_samples.jsonl",
+      "row_count": 8,
+      "sha256": "5d7f058e9e698e27fe050e3a92e0a3aa470458b930fd3d42c84f2465fef4513f",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/14_independent_judge_debias_samples.jsonl",
+      "row_count": 8,
+      "sha256": "e0ad1a332c57db8ea3d8d630d14c89a8623c129eaeb83623d56e16b2848c8565",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/15_flow_reward_dataset_samples.json",
+      "row_count": 1,
+      "sha256": "ec8d6eb986f6a325ca389f2683aaa598f06e6ddb38d570069ac9576b64b4c9bf",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/15_flow_vs_proxy_clean_v4_stage0_combined.csv",
+      "row_count": 300,
+      "sha256": "9f8af1017af8a326c2f9c581bfaea318fc1c8a28db2801f0de5b342f66e3d3a9",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/16_dpo_alignment_pair_samples.jsonl",
+      "row_count": 8,
+      "sha256": "dcdee7f50df75102bea3b74bd7c7eacc6891f2e650f2b954f6f16e7402345c4a",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/16_rwsft_alignment_samples.jsonl",
+      "row_count": 8,
+      "sha256": "aa2a1e59c43aa15f3a504441b2a6f21f0603dc5078c614727e4e2abc0777f9bc",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/16_scored_alignment_candidates_samples.jsonl",
+      "row_count": 8,
+      "sha256": "483a31ffa1058215a2fe5f0483c3e6ce9147a62eda3a598db0f3ab0519d06a5f",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/17_ablation_current_clean_v4.csv",
+      "row_count": 7,
+      "sha256": "cf4a28a944ce5e1d8e777e7673fb4afce37253cff03850abd87d8448f4173ca5",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/17_backtest_daily_returns_sample.csv",
+      "row_count": 14,
+      "sha256": "f91fd5deb2d90361fb0dcb28a7eb6535fb3918eaeb314f5d996956f5cf7f1bfe",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/17_counterfactual_fail_examples.json",
+      "row_count": 1,
+      "sha256": "5bd0b7b3cd230792624fd48057e07f75c544ee19f1b0f33aed5f2188e719b25c",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/17_counterfactual_task_samples.jsonl",
+      "row_count": 10,
+      "sha256": "c02b12c1a34bd1f90f64be717eb895829dc4ec7336da6a676e4bcb200d25eee4",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/17_prediction_forecast_samples.jsonl",
+      "row_count": 10,
+      "sha256": "fe988f1b252314e2798268957626e567ffcd8a5902e864bf977d022a3a9c4675",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/18_science_gate_report.json",
+      "row_count": 1,
+      "sha256": "271abd2a3af1b6ccb6bd56dd3d45fa1d8fb9dbf46a2bf1fb07f861620df47ed5",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/metrics_snapshot_dataclean_v4.json",
+      "row_count": 1,
+      "sha256": "9f71ab55b0c2ddabc28fed8213887e6663c32ad09e60778f31278ff01a12b45d",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    },
+    {
+      "path": "review_samples/dataclean_v4_20062026/README.md",
+      "row_count": null,
+      "sha256": "77f7838dc00d032460635d2cd3ba1e28f6f184b8dc30b06b288009ea0f8b39ff",
+      "timestamp": "2026-06-21T02:30:40+00:00",
+      "producer_step": "DATACLEAN_V4_REVIEW_SAMPLES",
+      "run_id": "dataclean_v4_review_samples_20062026"
+    }
+  ],
+  "source_map": {
+    "00_status_summary_dataclean_v4_01_18.json": "outputs/status/*DATACLEAN_V4*.status.json and canonical step statuses 01-18",
+    "03_ticker_alias_map_sample.json": "data/quality/ticker_alias_map_v4_small.json",
+    "04_entity_event_scoring_samples.jsonl": "data/quality/current_entity_event_scores_v4_small.parquet",
+    "05_article_type_noise_filter_samples.jsonl": "data/quality/current_article_type_scores_v4_small.parquet",
+    "06_dedup_news_samples.jsonl": "data/processed/current_deduped_news_v4_small.parquet",
+    "07_evidence_pack_context_samples.jsonl": "data/processed/ticker_date_evidence_contexts_h1_v4_small.parquet",
+    "08_rendered_context_text_samples.jsonl": "data/processed/ticker_date_evidence_contexts_h1_v4_small.parquet",
+    "12_track_train_pool_samples.jsonl": "data/processed/current_clean_train_pool_v4_small.parquet",
+    "13_rationale_generation_samples.jsonl": "data/rationales/parsed/current_clean_train_qwen3_4b_v4_stage0_combined.parquet",
+    "11_claim_grounding_nli_samples.jsonl": "data/judges/claim_grounding_evidence_v4_stage0_combined.parquet",
+    "14_independent_judge_debias_samples.jsonl": "data/judges/independent_inferability_evidence_v4_stage0_combined.parquet",
+    "15_flow_reward_dataset_samples.json": "data/reward/flow_v4_stage0_combined_dataset.pt",
+    "16_rwsft_alignment_samples.jsonl": "data/alignment/rwsft_current_clean_v4_stage0_small.jsonl",
+    "16_dpo_alignment_pair_samples.jsonl": "data/alignment/dpo_current_clean_v4_stage0_small.jsonl",
+    "17_prediction_forecast_samples.jsonl": "outputs/predictions/current_clean_v4_test_predictions.parquet",
+    "17_backtest_daily_returns_sample.csv": "outputs/tables/backtest_daily_returns_current_clean_v4.csv",
+    "17_counterfactual_task_samples.jsonl": "data/counterfactual/current_clean_v4_cf_tasks.parquet",
+    "17_ablation_current_clean_v4.csv": "outputs/tables/ablation_current_clean_v4.csv",
+    "18_science_gate_report.json": "outputs/repro/currentdata_clean_v4_science_gate_report.json"
+  }
+}

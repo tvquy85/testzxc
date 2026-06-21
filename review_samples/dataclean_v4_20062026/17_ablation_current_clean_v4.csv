@@ -1,0 +1,8 @@
+ablation,status,ablation_type,rows,schema_ok_rate,non_hold_rate,action_distribution,backtest_status,num_trading_days,sharpe_daily_annualized,mean_daily_return,total_turnover,alpha_claim_allowed,claim_allowed,claim_block_reason
+Full_Clean_V4,PASS,small_inference_ablation,90,0.9888888888888888,0.3820224719101123,"{'hold': 55, 'long': 23, 'short': 11, 'invalid': 1}",PASS,14.0,-3.0652880294813944,-0.0021614087938667,26.0,False,False,non_positive_sharpe
+No_News_Evidence,PASS,small_inference_ablation,90,1.0,0.6111111111111112,"{'long': 36, 'hold': 35, 'short': 19}",PASS,15.0,0.5867506054960215,0.0004219081024106,33.0,False,True,
+No_Technical_Tokens,PASS,small_inference_ablation,90,0.9888888888888888,0.1910112359550561,"{'hold': 72, 'long': 10, 'short': 7, 'invalid': 1}",FAIL,9.0,-2.9942270963940625,-0.0020668702228078,13.0,False,False,non_positive_sharpe
+SFT_Only_or_Base_Model,PASS,small_inference_ablation,90,1.0,0.6444444444444445,"{'long': 42, 'hold': 32, 'short': 16}",PASS,15.0,-7.112859645670482,-0.0037498415211467,43.0,False,False,non_positive_sharpe
+News_Technical_Track,PASS,small_inference_ablation,88,0.9886363636363636,0.3908045977011494,"{'hold': 53, 'long': 23, 'short': 11, 'invalid': 1}",PASS,14.0,-3.0652880294813944,-0.0021614087938667,26.0,False,False,non_positive_sharpe
+Technical_Only_Track,PASS,small_inference_ablation,2,1.0,0.0,{'hold': 2},PASS,14.0,-3.0652880294813944,-0.0021614087938667,26.0,False,False,non_positive_sharpe
+No_Flow_Reward,PASS,reward_selection_ablation,300,,,,,,,,,,True,

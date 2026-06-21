@@ -1,0 +1,30 @@
+{
+  "source": "data\\quality\\ticker_alias_map_v4_small.json",
+  "total_tickers": 36,
+  "sample": {
+    "AAPL": [
+      "AAPL"
+    ],
+    "ADBE": [
+      "ADBE"
+    ],
+    "AMD": [
+      "AMD"
+    ],
+    "AMZN": [
+      "AMZN"
+    ],
+    "AVGO": [
+      "AVGO"
+    ],
+    "BA": [
+      "BA"
+    ],
+    "BAC": [
+      "BAC"
+    ],
+    "COST": [
+      "COST"
+    ]
+  }
+}

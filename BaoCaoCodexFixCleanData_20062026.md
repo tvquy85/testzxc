@@ -1008,3 +1008,132 @@ Các claim chưa được phép:
 - AAAI main readiness.
 - Full-scale reproducibility.
 - Adapter V4 outperforming, vì chưa retrain adapter V4 full/medium.
+
+## 12. Bộ File Sample Để Đưa Lên GitHub Và ChatGPT UI Review
+
+Đã tạo một sample pack riêng cho flow `dataclean_v4_codex_md` tại:
+
+- Thư mục chính: `review_samples/dataclean_v4_20062026/`
+- Số file sample: `31`
+- README: `review_samples/dataclean_v4_20062026/README.md`
+- Manifest trong sample pack: `review_samples/dataclean_v4_20062026/sample_manifest.json`
+- Manifest artifact chuẩn: `outputs/manifests/DATACLEAN_V4_REVIEW_SAMPLES.manifest.json`
+- Status export sample: `outputs/status/DATACLEAN_V4_REVIEW_SAMPLES.status.json`
+- Script tái tạo sample: `src/repro/export_dataclean_v4_samples.py`
+
+Lệnh đã dùng để tạo lại toàn bộ sample pack:
+
+```bash
+/mnt/d/LOBProj/LOBExp/.venv/Scripts/python.exe src/repro/export_dataclean_v4_samples.py \
+  --output-dir review_samples/dataclean_v4_20062026 \
+  --sample-size 8 \
+  --prediction-per-action 3 \
+  --counterfactual-per-type 2 \
+  --backtest-days 20
+```
+
+Verification:
+
+```bash
+/mnt/d/LOBProj/LOBExp/.venv/Scripts/python.exe -m src.utils.verify_status \
+  --status outputs/status/DATACLEAN_V4_REVIEW_SAMPLES.status.json
+# PASS
+```
+
+### 12.1. Mục Đích Của Sample Pack
+
+Sample pack này dùng để đưa lên GitHub và mở trong ChatGPT UI nhằm review:
+
+- Chất lượng code theo từng bước trong DataClean V4.
+- Chất lượng dữ liệu sau entity-event scoring, article filtering và dedup.
+- Chất lượng evidence pack và prompt context có `evidence_id`/`signal_id`.
+- Chất lượng rationale JSON do Qwen3 sinh ra.
+- Chất lượng grounding bằng NLI local và independent judge normal/reversed.
+- Cách flow reward tạo target/mask và so với proxy.
+- Cách build RWSFT/DPO nhỏ từ reward.
+- Chất lượng prediction, backtest, counterfactual và ablation.
+- Science gate cuối cùng, đặc biệt việc tách `pipeline_decision` và `claim_decision`.
+
+Các file sample được truncate chuỗi dài để phù hợp review trên GitHub/ChatGPT UI. Đây không phải raw dataset đầy đủ, không chứa model weights hoặc checkpoint lớn.
+
+### 12.2. Danh Sách File Sample Đã Tạo
+
+| Nhóm review | File sample | Nguồn gốc chính |
+|---|---|---|
+| Status/master order | `review_samples/dataclean_v4_20062026/00_status_summary_dataclean_v4_01_18.json` | `outputs/status/*V4*.status.json` canonical Step 01-18 |
+| Source index | `review_samples/dataclean_v4_20062026/01_source_code_index_dataclean_v4.md` | Danh sách source code DataClean V4 |
+| Master order | `review_samples/dataclean_v4_20062026/02_master_order_dataclean_v4.md` | `dataclean_v4_codex_md/00_MASTER_DATACLEAN_V4_ORDER.md` |
+| Alias map | `review_samples/dataclean_v4_20062026/03_ticker_alias_map_sample.json` | `data/quality/ticker_alias_map_v4_small.json` |
+| Entity-event scoring | `review_samples/dataclean_v4_20062026/04_entity_event_scoring_samples.jsonl` | `data/quality/current_entity_event_scores_v4_small.parquet` |
+| Article/noise filter | `review_samples/dataclean_v4_20062026/05_article_type_noise_filter_samples.jsonl` | `data/quality/current_article_type_scores_v4_small.parquet` |
+| Dedup news | `review_samples/dataclean_v4_20062026/06_dedup_news_samples.jsonl` | `data/processed/current_deduped_news_v4_small.parquet` |
+| Evidence pack/context | `review_samples/dataclean_v4_20062026/07_evidence_pack_context_samples.jsonl` | `data/processed/ticker_date_evidence_contexts_h1_v4_small.parquet` |
+| Rendered context text | `review_samples/dataclean_v4_20062026/08_rendered_context_text_samples.jsonl` | `data/processed/ticker_date_evidence_contexts_h1_v4_small.parquet` |
+| Prompt template | `review_samples/dataclean_v4_20062026/09_prompt_template_evidence_v4.md` | `prompts/rationale_generation_prompt_evidence_v4.txt` |
+| Strict raw sample | `review_samples/dataclean_v4_20062026/10_sample_raw_rationale.jsonl` | `outputs/data_samples/sample_raw_rationale.jsonl` |
+| Strict parsed sample | `review_samples/dataclean_v4_20062026/10_sample_parsed_rationale.json` | `outputs/data_samples/sample_parsed_rationale.json` |
+| Technical token sample | `review_samples/dataclean_v4_20062026/10_sample_technical_tokens.json` | `outputs/data_samples/sample_technical_tokens.json` |
+| NLI grounding | `review_samples/dataclean_v4_20062026/11_claim_grounding_nli_samples.jsonl` | `data/judges/claim_grounding_evidence_v4_stage0_combined.parquet` |
+| Train pool/track | `review_samples/dataclean_v4_20062026/12_track_train_pool_samples.jsonl` | `data/processed/current_clean_train_pool_v4_small.parquet` |
+| Rationale generation | `review_samples/dataclean_v4_20062026/13_rationale_generation_samples.jsonl` | `data/rationales/parsed/current_clean_train_qwen3_4b_v4_stage0_combined.parquet` |
+| Independent judge | `review_samples/dataclean_v4_20062026/14_independent_judge_debias_samples.jsonl` | `data/judges/independent_inferability_evidence_v4_stage0_combined.parquet` |
+| Flow dataset | `review_samples/dataclean_v4_20062026/15_flow_reward_dataset_samples.json` | `data/reward/flow_v4_stage0_combined_dataset.pt` |
+| Flow vs proxy | `review_samples/dataclean_v4_20062026/15_flow_vs_proxy_clean_v4_stage0_combined.csv` | `outputs/tables/flow_vs_proxy_clean_v4_stage0_combined.csv` |
+| RWSFT samples | `review_samples/dataclean_v4_20062026/16_rwsft_alignment_samples.jsonl` | `data/alignment/rwsft_current_clean_v4_stage0_small.jsonl` |
+| DPO pair samples | `review_samples/dataclean_v4_20062026/16_dpo_alignment_pair_samples.jsonl` | `data/alignment/dpo_current_clean_v4_stage0_small.jsonl` |
+| Scored alignment candidates | `review_samples/dataclean_v4_20062026/16_scored_alignment_candidates_samples.jsonl` | `data/alignment/scored_current_clean_v4_stage0_small.parquet` |
+| Forecast prediction | `review_samples/dataclean_v4_20062026/17_prediction_forecast_samples.jsonl` | `outputs/predictions/current_clean_v4_test_predictions.parquet` |
+| Backtest daily returns | `review_samples/dataclean_v4_20062026/17_backtest_daily_returns_sample.csv` | `outputs/tables/backtest_daily_returns_current_clean_v4.csv` |
+| Counterfactual tasks | `review_samples/dataclean_v4_20062026/17_counterfactual_task_samples.jsonl` | `data/counterfactual/current_clean_v4_cf_tasks.parquet` |
+| Counterfactual fail examples | `review_samples/dataclean_v4_20062026/17_counterfactual_fail_examples.json` | `outputs/data_samples/counterfactual_fail_examples_current_clean_v4.json` |
+| Ablation | `review_samples/dataclean_v4_20062026/17_ablation_current_clean_v4.csv` | `outputs/tables/ablation_current_clean_v4.csv` |
+| Science gate | `review_samples/dataclean_v4_20062026/18_science_gate_report.json` | `outputs/repro/currentdata_clean_v4_science_gate_report.json` |
+| Metrics snapshot | `review_samples/dataclean_v4_20062026/metrics_snapshot_dataclean_v4.json` | Các file metric chính trong `outputs/metrics/` |
+| Sample manifest | `review_samples/dataclean_v4_20062026/sample_manifest.json` | Hash/row count/source map của sample pack |
+
+### 12.3. Thứ Tự Review Đề Xuất Trong ChatGPT UI
+
+1. Đọc `01_source_code_index_dataclean_v4.md` để biết source code nào tương ứng từng bước.
+2. Đọc `02_master_order_dataclean_v4.md` để hiểu contract gốc.
+3. Review data-clean samples:
+   - `04_entity_event_scoring_samples.jsonl`
+   - `05_article_type_noise_filter_samples.jsonl`
+   - `06_dedup_news_samples.jsonl`
+4. Review context/prompt:
+   - `07_evidence_pack_context_samples.jsonl`
+   - `08_rendered_context_text_samples.jsonl`
+   - `09_prompt_template_evidence_v4.md`
+5. Review model outputs:
+   - `13_rationale_generation_samples.jsonl`
+   - `11_claim_grounding_nli_samples.jsonl`
+   - `14_independent_judge_debias_samples.jsonl`
+6. Review reward/alignment:
+   - `15_flow_reward_dataset_samples.json`
+   - `15_flow_vs_proxy_clean_v4_stage0_combined.csv`
+   - `16_rwsft_alignment_samples.jsonl`
+   - `16_dpo_alignment_pair_samples.jsonl`
+7. Review finance evaluation:
+   - `17_prediction_forecast_samples.jsonl`
+   - `17_backtest_daily_returns_sample.csv`
+   - `17_counterfactual_task_samples.jsonl`
+   - `17_ablation_current_clean_v4.csv`
+8. Cuối cùng đọc:
+   - `18_science_gate_report.json`
+   - `00_status_summary_dataclean_v4_01_18.json`
+   - `sample_manifest.json`
+
+### 12.4. Điểm Cần ChatGPT UI Review Kỹ
+
+Các câu hỏi chính nên dùng khi đưa sample pack vào ChatGPT UI:
+
+1. Entity-event scoring có đang giữ đúng company-specific news hay vẫn giữ quá nhiều multi-company/context-only news?
+2. Article type/noise filter có loại bỏ đúng weak/empty/macro generic article không?
+3. Evidence pack có làm rõ ràng `company_evidence`, `context_evidence`, `technical_signals` không?
+4. Prompt V4 có đủ chặt để không leak label và không invent evidence không?
+5. Rationale output có cite đúng `evidence_id`/`signal_id` không?
+6. NLI grounding có phát hiện unsupported/contradiction thật hay vẫn quá dễ dãi?
+7. Independent judge normal/reversed có ổn định đủ để làm reward component không?
+8. Flow reward target/mask có hợp lý, có tránh dùng missing component sai cách không?
+9. RWSFT/DPO sample có train-only, cùng sample_id cho DPO pair và reward gap hợp lý không?
+10. Prediction/backtest/counterfactual có đúng test-only và forecast-only schema không?
+11. Science gate có chặn claim trading alpha đúng khi Sharpe âm không?

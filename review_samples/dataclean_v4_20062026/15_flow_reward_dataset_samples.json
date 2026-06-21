@@ -1,0 +1,211 @@
+{
+  "source": "data\\reward\\flow_v4_stage0_combined_dataset.pt",
+  "rows_total": 300,
+  "target_names": [
+    "true_label_probability_independent",
+    "inferability_confidence",
+    "news_grounding_score",
+    "technical_grounding_score",
+    "evidence_quality_weight",
+    "counterfactual_proxy_if_available",
+    "utility_proxy"
+  ],
+  "metadata": {
+    "semantic_backend": false,
+    "embedding_backend": "hash_blake2b_64"
+  },
+  "samples": [
+    {
+      "sample_id": "01f41287b5cfe4612c0acecc956af3d667e4fb91d05d195e026d7b49238eddd5",
+      "candidate_id": 0,
+      "split": "train",
+      "track": "news_technical",
+      "target": {
+        "true_label_probability_independent": 0.3499999940395355,
+        "inferability_confidence": 0.10644224286079407,
+        "news_grounding_score": 0.0,
+        "technical_grounding_score": 1.0,
+        "evidence_quality_weight": 0.5649999976158142,
+        "counterfactual_proxy_if_available": 0.0,
+        "utility_proxy": 0.015270429663360119
+      },
+      "mask": {
+        "true_label_probability_independent": 1.0,
+        "inferability_confidence": 1.0,
+        "news_grounding_score": 1.0,
+        "technical_grounding_score": 1.0,
+        "evidence_quality_weight": 1.0,
+        "counterfactual_proxy_if_available": 0.0,
+        "utility_proxy": 1.0
+      }
+    },
+    {
+      "sample_id": "01f41287b5cfe4612c0acecc956af3d667e4fb91d05d195e026d7b49238eddd5",
+      "candidate_id": 1,
+      "split": "train",
+      "track": "news_technical",
+      "target": {
+        "true_label_probability_independent": 0.3499999940395355,
+        "inferability_confidence": 0.10644224286079407,
+        "news_grounding_score": 1.0,
+        "technical_grounding_score": 1.0,
+        "evidence_quality_weight": 0.5649999976158142,
+        "counterfactual_proxy_if_available": 0.0,
+        "utility_proxy": 0.015270429663360119
+      },
+      "mask": {
+        "true_label_probability_independent": 1.0,
+        "inferability_confidence": 1.0,
+        "news_grounding_score": 1.0,
+        "technical_grounding_score": 1.0,
+        "evidence_quality_weight": 1.0,
+        "counterfactual_proxy_if_available": 0.0,
+        "utility_proxy": 1.0
+      }
+    },
+    {
+      "sample_id": "01f41287b5cfe4612c0acecc956af3d667e4fb91d05d195e026d7b49238eddd5",
+      "candidate_id": 2,
+      "split": "train",
+      "track": "news_technical",
+      "target": {
+        "true_label_probability_independent": 0.30000001192092896,
+        "inferability_confidence": 0.08508255332708359,
+        "news_grounding_score": 0.0,
+        "technical_grounding_score": 1.0,
+        "evidence_quality_weight": 0.5649999976158142,
+        "counterfactual_proxy_if_available": 0.0,
+        "utility_proxy": 0.015270429663360119
+      },
+      "mask": {
+        "true_label_probability_independent": 1.0,
+        "inferability_confidence": 1.0,
+        "news_grounding_score": 1.0,
+        "technical_grounding_score": 1.0,
+        "evidence_quality_weight": 1.0,
+        "counterfactual_proxy_if_available": 0.0,
+        "utility_proxy": 1.0
+      }
+    },
+    {
+      "sample_id": "0823f6e27e7cb17dce34e33a33946ecf554a30dd7c1dfe6232ae9c6f7f56806a",
+      "candidate_id": 0,
+      "split": "train",
+      "track": "news_technical",
+      "target": {
+        "true_label_probability_independent": 0.10000000149011612,
+        "inferability_confidence": 0.14803007245063782,
+        "news_grounding_score": 1.0,
+        "technical_grounding_score": 1.0,
+        "evidence_quality_weight": 0.8100000023841858,
+        "counterfactual_proxy_if_available": 0.0,
+        "utility_proxy": -0.0
+      },
+      "mask": {
+        "true_label_probability_independent": 1.0,
+        "inferability_confidence": 1.0,
+        "news_grounding_score": 1.0,
+        "technical_grounding_score": 1.0,
+        "evidence_quality_weight": 1.0,
+        "counterfactual_proxy_if_available": 0.0,
+        "utility_proxy": 1.0
+      }
+    },
+    {
+      "sample_id": "0823f6e27e7cb17dce34e33a33946ecf554a30dd7c1dfe6232ae9c6f7f56806a",
+      "candidate_id": 1,
+      "split": "train",
+      "track": "news_technical",
+      "target": {
+        "true_label_probability_independent": 0.10000000149011612,
+        "inferability_confidence": 0.14803007245063782,
+        "news_grounding_score": 0.0,
+        "technical_grounding_score": 1.0,
+        "evidence_quality_weight": 0.8100000023841858,
+        "counterfactual_proxy_if_available": 0.0,
+        "utility_proxy": -0.0
+      },
+      "mask": {
+        "true_label_probability_independent": 1.0,
+        "inferability_confidence": 1.0,
+        "news_grounding_score": 1.0,
+        "technical_grounding_score": 1.0,
+        "evidence_quality_weight": 1.0,
+        "counterfactual_proxy_if_available": 0.0,
+        "utility_proxy": 1.0
+      }
+    },
+    {
+      "sample_id": "0823f6e27e7cb17dce34e33a33946ecf554a30dd7c1dfe6232ae9c6f7f56806a",
+      "candidate_id": 2,
+      "split": "train",
+      "track": "news_technical",
+      "target": {
+        "true_label_probability_independent": 0.10000000149011612,
+        "inferability_confidence": 0.11145871132612228,
+        "news_grounding_score": 1.0,
+        "technical_grounding_score": 1.0,
+        "evidence_quality_weight": 0.8100000023841858,
+        "counterfactual_proxy_if_available": 0.0,
+        "utility_proxy": -0.0
+      },
+      "mask": {
+        "true_label_probability_independent": 1.0,
+        "inferability_confidence": 1.0,
+        "news_grounding_score": 1.0,
+        "technical_grounding_score": 1.0,
+        "evidence_quality_weight": 1.0,
+        "counterfactual_proxy_if_available": 0.0,
+        "utility_proxy": 1.0
+      }
+    },
+    {
+      "sample_id": "0bcbb72d9d05be6652a704db8455c1bd27771dee9f52d26b337b842c1e5b5044",
+      "candidate_id": 0,
+      "split": "train",
+      "track": "technical_only",
+      "target": {
+        "true_label_probability_independent": 0.30000001192092896,
+        "inferability_confidence": 0.13327066600322723,
+        "news_grounding_score": 0.0,
+        "technical_grounding_score": 1.0,
+        "evidence_quality_weight": 0.4449999928474426,
+        "counterfactual_proxy_if_available": 0.0,
+        "utility_proxy": -0.008247114717960358
+      },
+      "mask": {
+        "true_label_probability_independent": 1.0,
+        "inferability_confidence": 1.0,
+        "news_grounding_score": 0.0,
+        "technical_grounding_score": 1.0,
+        "evidence_quality_weight": 1.0,
+        "counterfactual_proxy_if_available": 0.0,
+        "utility_proxy": 1.0
+      }
+    },
+    {
+      "sample_id": "0bcbb72d9d05be6652a704db8455c1bd27771dee9f52d26b337b842c1e5b5044",
+      "candidate_id": 1,
+      "split": "train",
+      "track": "technical_only",
+      "target": {
+        "true_label_probability_independent": 0.30000001192092896,
+        "inferability_confidence": 0.13327066600322723,
+        "news_grounding_score": 0.0,
+        "technical_grounding_score": 1.0,
+        "evidence_quality_weight": 0.4449999928474426,
+        "counterfactual_proxy_if_available": 0.0,
+        "utility_proxy": -0.008247114717960358
+      },
+      "mask": {
+        "true_label_probability_independent": 1.0,
+        "inferability_confidence": 1.0,
+        "news_grounding_score": 0.0,
+        "technical_grounding_score": 1.0,
+        "evidence_quality_weight": 1.0,
+        "counterfactual_proxy_if_available": 0.0,
+        "utility_proxy": 1.0
+      }
+    }
+  ]
+}

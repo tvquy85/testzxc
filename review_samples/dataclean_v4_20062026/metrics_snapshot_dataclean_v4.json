@@ -1,0 +1,392 @@
+{
+  "outputs/metrics/current_v3_failure_diagnosis_for_clean_v4_small.json": {
+    "rationale_sample_rows": 8,
+    "no_news_rationale_rate": 1.0,
+    "empty_headline_rate": 0.0,
+    "empty_body_rate": 0.1840126074645415,
+    "technical_template_rate": 0.0,
+    "multi_company_like_rate_sample": 0.596,
+    "flow_rank_correlation": 0.05648953904166842,
+    "proxy_rank_correlation": 0.5514491292709657,
+    "flow_vs_proxy_gap": 0.49495959022929725,
+    "sharpe_daily_annualized": -1.346671701299499,
+    "mean_daily_return": -0.0006471793200739779,
+    "counterfactual_pass_rate": 0.422,
+    "counterfactual_no_change_rate": 0.446,
+    "counterfactual_by_type": {},
+    "failure_interpretation": [
+      "V3.1 rationale samples are dominated by no-news/technical-template evidence.",
+      "Flow underperforms proxy, so data quality should be improved before reward scaling.",
+      "Trading alpha remains blocked while Sharpe is non-positive."
+    ]
+  },
+  "outputs/metrics/ticker_alias_map_v4_small.json": {
+    "input_rows": 135393,
+    "unique_tickers": 36,
+    "alias_tickers": 36,
+    "ticker_coverage": 1.0,
+    "mean_aliases_per_ticker": 1.0,
+    "company_name_columns_present": [],
+    "fallback_ticker_only": true
+  },
+  "outputs/metrics/current_entity_event_scores_v4_small.json": {
+    "input_rows": 135393,
+    "rows": 16000,
+    "split_distribution": {
+      "train": 12000,
+      "val": 2000,
+      "test": 2000
+    },
+    "quality_tier_distribution": {
+      "A_company_event": 8438,
+      "D_noise": 5357,
+      "B_relevant": 1745,
+      "C_context_only": 460
+    },
+    "article_type_prelim_distribution": {
+      "earnings_or_guidance": 9305,
+      "empty_or_weak": 3047,
+      "company_event": 1091,
+      "multi_company_roundup": 892,
+      "analyst_rating": 645,
+      "technical_backtest_article": 470,
+      "sector_etf": 363,
+      "macro_market": 160,
+      "opinion_listicle": 27
+    },
+    "ab_quality_rate": 0.6364375,
+    "mean_evidence_quality_score": 0.6264546874999999,
+    "entity_event_keep_rate": 0.6651875
+  },
+  "outputs/metrics/current_article_type_scores_v4_small.json": {
+    "input_rows": 16000,
+    "rows": 16000,
+    "article_type_distribution": {
+      "earnings_or_guidance": 9290,
+      "empty_or_weak": 3133,
+      "company_event": 1025,
+      "multi_company_roundup": 892,
+      "analyst_rating": 645,
+      "technical_backtest_article": 470,
+      "sector_etf": 359,
+      "macro_market": 159,
+      "opinion_listicle": 27
+    },
+    "article_type_by_split": {
+      "test": {
+        "earnings_or_guidance": 1348,
+        "analyst_rating": 243,
+        "multi_company_roundup": 148,
+        "company_event": 88,
+        "sector_etf": 73,
+        "macro_market": 52,
+        "technical_backtest_article": 48
+      },
+      "train": {
+        "earnings_or_guidance": 6505,
+        "empty_or_weak": 3133,
+        "company_event": 827,
+        "multi_company_roundup": 560,
+        "technical_backtest_article": 342,
+        "analyst_rating": 287,
+        "sector_etf": 255,
+        "macro_market": 64,
+        "opinion_listicle": 27
+      },
+      "val": {
+        "earnings_or_guidance": 1437,
+        "multi_company_roundup": 184,
+        "analyst_rating": 115,
+        "company_event": 110,
+        "technical_backtest_article": 80,
+        "macro_market": 43,
+        "sector_etf": 31
+      }
+    },
+    "quality_tier_distribution": {
+      "A_company_event": 8438,
+      "D_noise": 5367,
+      "B_relevant": 1740,
+      "C_context_only": 455
+    },
+    "entity_event_keep_rate": 0.6645625
+  },
+  "outputs/metrics/current_deduped_news_v4_small.json": {
+    "input_rows": 16000,
+    "clustered_rows": 16000,
+    "output_rows": 10609,
+    "dedup_drop_rate": 0.3369375,
+    "mean_cluster_size": 1.00375,
+    "max_cluster_size": 2,
+    "quality_tier_distribution_after": {
+      "A_company_event": 8417,
+      "B_relevant": 1738,
+      "C_context_only": 454
+    },
+    "split_distribution_after": {
+      "train": 7410,
+      "val": 1611,
+      "test": 1588
+    }
+  },
+  "outputs/metrics/ticker_date_evidence_contexts_h1_v4_small.json": {
+    "rows": 3129,
+    "split_distribution": {
+      "train": 2453,
+      "val": 390,
+      "test": 286
+    },
+    "evidence_pack_parse_rate": 1.0,
+    "mean_evidence_per_context": 2.292425695110259,
+    "train_company_event_contexts": 2409,
+    "has_company_event_rate": 0.983381271971876,
+    "no_news_context_rate": 0.0
+  },
+  "outputs/metrics/claim_grounding_evidence_v4_stage0_combined.json": {
+    "rows": 300,
+    "total_claims": 940,
+    "news_claims": 340,
+    "technical_claims": 600,
+    "row_status_counts": {
+      "supported": 177,
+      "unverified": 77,
+      "unsupported": 35,
+      "contradiction": 11
+    },
+    "claim_status_counts": {
+      "supported": 801,
+      "unsupported": 36,
+      "unverified": 92,
+      "contradiction": 11
+    },
+    "missing_evidence_id_rate": 0.0,
+    "unknown_evidence_id_rate": 0.0,
+    "technical_unknown_signal_rate": 0.0,
+    "unsupported_news_claim_rate": 0.10588235294117647,
+    "mean_news_grounding_score": 0.5975103734439834,
+    "mean_technical_grounding_score": 1.0,
+    "bad_examples_saved": 100,
+    "nli_backend": true,
+    "nli_loader": "transformers_model_id",
+    "nli_model_id": "cross-encoder/nli-deberta-v3-small",
+    "nli_hf_home": "E:/huggingface",
+    "nli_local_files_only": true,
+    "nli_failure": null,
+    "require_nli": true
+  },
+  "outputs/metrics/independent_inferability_evidence_v4_stage0_combined.json": {
+    "judged_samples": 300,
+    "variant_rows": 600,
+    "judge_parse_ok_rate": 1.0,
+    "judge_schema_ok_rate": 1.0,
+    "mean_true_label_probability": 0.2725,
+    "random_baseline": 0.2,
+    "mean_argmax_consistency": 0.7516666666666667,
+    "mean_l1_probability_delta": 0.4893333333333334,
+    "inferability_claim_allowed": true,
+    "label_orders": [
+      "normal",
+      "reversed"
+    ],
+    "judge_model_path": "E:/huggingface/models/Qwen3-4B-Instruct-2507",
+    "elapsed_seconds": 614.567,
+    "by_track": {
+      "news_technical": 0.2739795918367347,
+      "technical_only": 0.20000000000000004
+    }
+  },
+  "outputs/metrics/flow_v4_stage0_combined_dataset.json": {
+    "rows": 300,
+    "target_dim": 7,
+    "cond_dim": 64,
+    "mask_coverage": 0.8290476202964783,
+    "target_names": [
+      "true_label_probability_independent",
+      "inferability_confidence",
+      "news_grounding_score",
+      "technical_grounding_score",
+      "evidence_quality_weight",
+      "counterfactual_proxy_if_available",
+      "utility_proxy"
+    ],
+    "semantic_backend": false,
+    "embedding_backend": "hash_blake2b_64",
+    "split_distribution": {
+      "train": 300
+    },
+    "track_distribution": {
+      "news_technical": 294,
+      "technical_only": 6
+    }
+  },
+  "outputs/metrics/flow_train_v4_stage0_combined.json": {
+    "rows": 300,
+    "train_rows": 240,
+    "val_rows": 60,
+    "epochs_completed": 8,
+    "train_loss_history": [
+      1.3926758289337158,
+      1.374526611963908,
+      1.3345325152079264,
+      1.171229902903239,
+      1.307956600189209,
+      1.2635982354482016,
+      1.268091328938802,
+      1.1474637905756633
+    ],
+    "val_loss_history": [
+      1.3444766998291016,
+      1.2931036949157715,
+      1.163925051689148,
+      1.511393666267395,
+      1.2330502271652222,
+      1.2351588010787964,
+      1.2079163789749146,
+      1.1039258241653442
+    ],
+    "best_val_loss": 1.1039258241653442,
+    "holdout_loss_decreased": true,
+    "device": "cuda"
+  },
+  "outputs/metrics/flow_vs_proxy_clean_v4_stage0_combined.json": {
+    "rows": 300,
+    "eval_rows": 63,
+    "holdout_frac": 0.2,
+    "seed": 42,
+    "methods": {
+      "flow_reward_v4": {
+        "rank_correlation_with_realized_utility": -0.08578253938659824,
+        "preference_pair_accuracy": 0.8333333333333334,
+        "top_decile_realized_utility": 0.0020801888313144445
+      },
+      "proxy_average_reward": {
+        "rank_correlation_with_realized_utility": -0.14160169958014082,
+        "preference_pair_accuracy": 0.6666666666666666,
+        "top_decile_realized_utility": 4.1300310840597376e-05
+      }
+    },
+    "metric_wins": {
+      "rank_correlation_with_realized_utility": true,
+      "preference_pair_accuracy": true,
+      "top_decile_realized_utility": true
+    },
+    "flow_reward_improvement": true,
+    "flow_claim_allowed": true
+  },
+  "outputs/metrics/alignment_dataset_current_clean_v4_stage0_small.json": {
+    "rwsft_examples": 88,
+    "dpo_pairs": 17,
+    "unique_samples": 100,
+    "candidate_rows": 300,
+    "mean_reward_selected": 0.4878392491727139,
+    "mean_chosen_reward": 0.5466380172448566,
+    "mean_rejected_reward": 0.4123366355928446,
+    "min_reward_gap": 0.08,
+    "reward_source": "flow_v4",
+    "flow_reward_improvement": true,
+    "flow_scores_used": true,
+    "flow_reward_normalized_for_selection": true,
+    "train_only": true,
+    "rwsft_sha256": "2279c0d3368e6f44a530eb3b8eeb6387a81122f4911a33d376164dff15d2172f",
+    "dpo_sha256": "42c3778cdfa0e9c35acf4c2b5c00b6c90aaf9f96ee1b37fe8fe38e5121cc617f",
+    "small_scale_thresholds": {
+      "min_rwsft": 80,
+      "min_dpo": 15
+    }
+  },
+  "outputs/metrics/current_clean_v4_test_predictions_full.json": {
+    "rows": 90,
+    "split": "test",
+    "checkpoint_used": "checkpoints\\aligned\\qwen3_4b\\current_v3_dpo",
+    "checkpoint_source": "primary",
+    "parse_ok_rate": 1.0,
+    "schema_ok_rate": 0.9888888888888889,
+    "fallback_used": false,
+    "temperature": 0.0,
+    "do_sample": false,
+    "attn_implementation": "flash_attention_2",
+    "schema_ok_rows": 89,
+    "parse_ok_rows": 90,
+    "action_distribution": {
+      "hold": 55,
+      "long": 23,
+      "short": 11,
+      "invalid": 1
+    },
+    "selected_rows": 90,
+    "selected_trading_days": 15,
+    "selected_start_date": "2023-01-03",
+    "selected_end_date": "2023-01-24",
+    "max_days": 15,
+    "max_rows_per_day": 6,
+    "ablation_mode": "full"
+  },
+  "outputs/metrics/backtest_daily_portfolio_current_clean_v4.json": {
+    "num_trading_days": 14,
+    "sharpe_daily_annualized": -3.0652880294813944,
+    "sortino_daily_annualized": -3.4318664090768887,
+    "max_drawdown": 0.02898226207653144,
+    "avg_positions_per_day": 2.4285714285714284,
+    "avg_turnover_per_day": 1.8571428571428572,
+    "total_turnover": 26.0,
+    "mean_daily_return": -0.0021614087938667988,
+    "coverage": 1.0,
+    "cost_bps": 5.0,
+    "slippage_bps": 2.0,
+    "short_borrow_bps": 1.0,
+    "return_column": "abnormal_return_h1",
+    "schema_ok_rate": 0.9888888888888889,
+    "schema_ok_rate_required": 0.8,
+    "min_trading_days_required": 10,
+    "alpha_claim_allowed": false,
+    "pipeline_pass": true
+  },
+  "outputs/metrics/counterfactual_directional_current_clean_v4.json": {
+    "num_tasks": 50,
+    "mean_delta": -0.21499999999999994,
+    "pass_rate": 0.54,
+    "wrong_direction_rate": 0.24,
+    "no_change_rate": 0.22,
+    "parse_ok_rate": 1.0,
+    "schema_ok_rate": 0.98,
+    "temperature": 0.0,
+    "attn_implementation": "flash_attention_2",
+    "checkpoint_used": "checkpoints/aligned/qwen3_4b/current_v3_dpo",
+    "pass_rate_neutralize_bullish_technical": 1.0,
+    "pass_rate_remove_negative_evidence": 0.2,
+    "pass_rate_remove_positive_evidence": 0.5,
+    "pass_rate_neutralize_bearish_technical": 0.5,
+    "pass_rate_remove_all_company_evidence": 0.5
+  },
+  "outputs/metrics/ablation_current_clean_v4.json": {
+    "ablation_count": 7,
+    "pass_count": 7,
+    "not_run_count": 0,
+    "missing_count": 0,
+    "required_ablations": [
+      "Full_Clean_V4",
+      "No_News_Evidence",
+      "No_Technical_Tokens",
+      "SFT_Only_or_Base_Model",
+      "News_Technical_Track",
+      "Technical_Only_Track",
+      "No_Flow_Reward"
+    ]
+  },
+  "outputs/metrics/current_clean_v4_step17_metrics.json": {
+    "prediction_rows": 90,
+    "prediction_schema_ok_rate": 0.9888888888888889,
+    "num_trading_days": 14,
+    "sharpe_daily_annualized": -3.0652880294813944,
+    "trading_alpha_claim_allowed": false,
+    "counterfactual_pass_rate": 0.54,
+    "counterfactual_no_change_rate": 0.22,
+    "ablation_rows": 7,
+    "pipeline_decision": "GO_SMALL",
+    "claim_notes": {
+      "trading_alpha": "blocked",
+      "counterfactual": "reported_small_scale",
+      "ablation": "reported_no_not_run"
+    }
+  }
+}
