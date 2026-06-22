@@ -19,10 +19,13 @@ from src.eval.forecast_prediction import (
 from src.eval.generate_test_predictions_v2 import generate_raw_outputs, load_model
 from src.utils.artifacts import write_json, write_manifest, write_status
 
-STEP = "17_COUNTERFACTUAL_DIRECTIONAL_EVAL_MEDIUM"
+STEP = "16_COUNTERFACTUAL_NEWS_EVIDENCE_V6"
 
 
 def pass_expected_direction(expected: str, original_score: float, counterfactual_score: float, min_delta: float) -> tuple[bool, bool, float]:
+    from src.eval.counterfactual_direction_rules_v6 import normalized_expected_direction
+
+    expected = normalized_expected_direction(expected)
     delta = counterfactual_score - original_score
     no_change = abs(delta) < min_delta
     if expected == "down_decrease":
@@ -147,14 +150,18 @@ def evaluate_tasks_with_llm(tasks: list[dict[str, Any]], args: argparse.Namespac
     pass_count = sum(1 for row in rows if row["directional_pass"])
     no_change_count = sum(1 for row in rows if row["no_change"])
     wrong_count = max(0, num_rows - pass_count - no_change_count)
+    individual_parse_count = sum(row["original_parse_ok"] for row in rows) + sum(row["counterfactual_parse_ok"] for row in rows)
+    individual_schema_count = sum(row["original_schema_ok"] for row in rows) + sum(row["counterfactual_schema_ok"] for row in rows)
     metrics = {
         "num_tasks": num_rows,
         "mean_delta": float(sum(row["delta"] for row in rows) / num_rows) if num_rows else None,
         "pass_rate": float(pass_count / num_rows) if num_rows else 0.0,
         "wrong_direction_rate": float(wrong_count / num_rows) if num_rows else 0.0,
         "no_change_rate": float(no_change_count / num_rows) if num_rows else 0.0,
-        "parse_ok_rate": float(sum(row["both_parse_ok"] for row in rows) / num_rows) if num_rows else 0.0,
-        "schema_ok_rate": float(sum(row["both_schema_ok"] for row in rows) / num_rows) if num_rows else 0.0,
+        "parse_ok_rate": float(individual_parse_count / (2 * num_rows)) if num_rows else 0.0,
+        "schema_ok_rate": float(individual_schema_count / (2 * num_rows)) if num_rows else 0.0,
+        "pair_parse_ok_rate": float(sum(row["both_parse_ok"] for row in rows) / num_rows) if num_rows else 0.0,
+        "pair_schema_ok_rate": float(sum(row["both_schema_ok"] for row in rows) / num_rows) if num_rows else 0.0,
         "temperature": 0.0,
         "attn_implementation": attn_implementation,
         "checkpoint_used": args.adapter,
@@ -192,11 +199,13 @@ def main() -> int:
     parser.add_argument("--min-schema-ok-rate", type=float, default=0.80)
     parser.add_argument("--min-pass-rate", type=float, default=0.50)
     parser.add_argument("--max-no-change-rate", type=float, default=0.35)
-    parser.add_argument("--output", default="outputs/metrics/counterfactual_directional_medium_v4.json")
-    parser.add_argument("--breakdown-output", default="outputs/tables/counterfactual_directional_medium_breakdown.csv")
-    parser.add_argument("--failures-output", "--fail-examples", dest="failures_output", default="outputs/data_samples/counterfactual_fail_examples_medium_v4.json")
+    parser.add_argument("--output", "--metrics", dest="output", default="outputs/metrics/counterfactual_directional_medium_v4.json")
+    parser.add_argument("--breakdown-output", "--breakdown", dest="breakdown_output", default="outputs/tables/counterfactual_directional_medium_breakdown.csv")
+    parser.add_argument("--failures-output", "--fail-examples", "--failures", dest="failures_output", default="outputs/data_samples/counterfactual_fail_examples_medium_v4.json")
+    parser.add_argument("--rows-output", default=None)
     parser.add_argument("--status", default=f"outputs/status/{STEP}.status.json")
     parser.add_argument("--manifest", default=f"outputs/manifests/{STEP}.manifest.json")
+    parser.add_argument("--step-name", default=STEP)
     args = parser.parse_args()
 
     if args.hf_home:
@@ -235,6 +244,11 @@ def main() -> int:
     with open(args.failures_output, "w", encoding="utf-8") as f:
         json.dump(fail_examples[:100], f, indent=2, ensure_ascii=False)
     write_breakdown(args.breakdown_output, rows)
+    if args.rows_output:
+        import pandas as pd
+
+        Path(args.rows_output).parent.mkdir(parents=True, exist_ok=True)
+        pd.DataFrame(rows).to_csv(args.rows_output, index=False)
 
     schema_ok_rate = float(metrics.get("schema_ok_rate") or 0.0)
     pass_rate = float(metrics.get("pass_rate") or 0.0)
@@ -258,14 +272,17 @@ def main() -> int:
     metrics["pipeline_pass"] = not failures and bool(tasks)
 
     write_json(args.output, metrics)
-    write_manifest(args.manifest, [args.tasks, args.output, args.breakdown_output, args.failures_output], STEP)
+    manifest_paths = [args.tasks, args.output, args.breakdown_output, args.failures_output]
+    if args.rows_output:
+        manifest_paths.append(args.rows_output)
+    write_manifest(args.manifest, manifest_paths, args.step_name)
     status = "PASS" if metrics["pipeline_pass"] else "FAIL"
     write_status(
         args.status,
-        STEP,
+        args.step_name,
         status,
         [args.tasks, args.adapter, args.prompt],
-        [args.output, args.breakdown_output, args.failures_output, args.manifest, args.status],
+        [args.output, args.breakdown_output, args.failures_output, *([args.rows_output] if args.rows_output else []), args.manifest, args.status],
         metrics,
         failures,
         status == "PASS",

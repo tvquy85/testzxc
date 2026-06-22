@@ -128,8 +128,11 @@ def prediction_quality_failures(out: Any, args: argparse.Namespace, checkpoint_u
     if len(out) == 0:
         failures.append("prediction output is empty")
         return failures
-    if set(out["split"].dropna()) != {"test"}:
-        failures.append("prediction output contains non-test rows")
+    if getattr(args, "min_rows", 0) and len(out) < args.min_rows:
+        failures.append(f"prediction rows {len(out)} < {args.min_rows}")
+    expected_split = args.split if getattr(args, "allow_non_test_split", False) else "test"
+    if set(out["split"].dropna()) != {expected_split}:
+        failures.append(f"prediction output contains rows outside expected split={expected_split}")
     parse_ok_rate = float(out["parse_ok"].mean()) if "parse_ok" in out.columns else 0.0
     schema_ok_rate = float(out["schema_ok"].mean()) if "schema_ok" in out.columns else 0.0
     if parse_ok_rate < args.min_parse_ok_rate:
@@ -213,7 +216,7 @@ def apply_ablation_to_row(row: Any, mode: str) -> Any:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--samples", "--contexts", dest="samples", default="data/labels/labels_h1_abnormal.parquet")
+    parser.add_argument("--contexts", "--samples-input", dest="samples", default="data/labels/labels_h1_abnormal.parquet")
     parser.add_argument("--tokens", default="data/indicators/technical_event_tokens_h1_v2.parquet")
     parser.add_argument("--prompt", default="prompts/forecast_prediction_prompt_qwen3_json.txt")
     parser.add_argument("--config", default="configs/default_paths.yaml")
@@ -224,6 +227,7 @@ def main() -> int:
     parser.add_argument("--schema-version", default="forecast_v1")
     parser.add_argument("--split", default="test")
     parser.add_argument("--limit", type=int, default=500)
+    parser.add_argument("--min-rows", type=int, default=0)
     parser.add_argument("--start-date", default=None)
     parser.add_argument("--end-date", default=None)
     parser.add_argument("--max-days", type=int, default=None)
@@ -242,11 +246,13 @@ def main() -> int:
     parser.add_argument("--min-schema-ok-rate", type=float, default=0.80)
     parser.add_argument("--allow-fallback", action="store_true")
     parser.add_argument("--allow-non-dpo-checkpoint", action="store_true")
+    parser.add_argument("--allow-non-test-split", action="store_true")
     parser.add_argument("--attn-implementation", default="auto", choices=["auto", "flash_attention_2", "sdpa", "eager", "none", "default"])
     parser.add_argument("--hf-home", default=None)
     parser.add_argument("--extra-site-packages", action="append", default=[])
     parser.add_argument("--output", default="outputs/predictions/test_predictions_qwen3_dpo_smoke.parquet")
     parser.add_argument("--metrics", default="outputs/metrics/test_predictions_qwen3_dpo_smoke.json")
+    parser.add_argument("--samples", dest="review_samples", default=None)
     parser.add_argument("--status", default="outputs/status/PREDICTION_SMOKE_V2.status.json")
     parser.add_argument("--manifest", default="outputs/manifests/PREDICTION_SMOKE_V2.manifest.json")
     args = parser.parse_args()
@@ -263,11 +269,13 @@ def main() -> int:
         failures.append("prediction smoke must use deterministic temperature 0")
     samples = pd.read_parquet(args.samples)
     tokens = pd.read_parquet(args.tokens) if Path(args.tokens).exists() else pd.DataFrame()
-    if args.split != "test":
+    if args.split != "test" and not args.allow_non_test_split:
         failures.append("prediction smoke must use test split")
     df = select_prediction_rows(samples, tokens, args)
     if df.empty:
         failures.append("no prediction samples selected")
+    if args.min_rows > 0 and len(df) < args.min_rows:
+        failures.append(f"selected prediction rows {len(df)} < {args.min_rows}")
     prompt_template = Path(args.prompt).read_text(encoding="utf-8")
     model_path = resolve_model_path(args.model, args.model_path, args.config)
     checkpoint_used = None
@@ -327,6 +335,11 @@ def main() -> int:
     out = pd.DataFrame(rows)
     Path(args.output).parent.mkdir(parents=True, exist_ok=True)
     out.to_parquet(args.output, index=False)
+    if args.review_samples:
+        Path(args.review_samples).parent.mkdir(parents=True, exist_ok=True)
+        with open(args.review_samples, "w", encoding="utf-8") as f:
+            for row in rows[:50]:
+                f.write(json.dumps(row, ensure_ascii=False) + "\n")
     metrics = {
         "rows": int(len(out)),
         "split": args.split,
@@ -345,6 +358,7 @@ def main() -> int:
         "action_consistency_rate": float(out["action_consistency_ok"].mean()) if len(out) and "action_consistency_ok" in out.columns else 0.0,
         "action_policy": args.action_policy,
         "selected_rows": int(len(df)),
+        "min_rows": int(args.min_rows),
         "selected_trading_days": int(df["event_date"].dt.date.nunique()) if len(df) and "event_date" in df.columns else 0,
         "selected_start_date": str(df["event_date"].min().date()) if len(df) and "event_date" in df.columns else None,
         "selected_end_date": str(df["event_date"].max().date()) if len(df) and "event_date" in df.columns else None,
@@ -354,14 +368,17 @@ def main() -> int:
     }
     failures.extend(prediction_quality_failures(out, args, checkpoint_used, checkpoint_source))
     write_json(args.metrics, metrics)
-    write_manifest(args.manifest, [args.output, args.metrics], STEP)
+    manifest_outputs = [args.output, args.metrics]
+    if args.review_samples:
+        manifest_outputs.append(args.review_samples)
+    write_manifest(args.manifest, manifest_outputs, STEP)
     status = "PASS" if not failures else "FAIL"
     write_status(
         args.status,
         STEP,
         status,
         [args.samples, args.tokens, args.prompt, args.checkpoint],
-        [args.output, args.metrics, args.manifest, args.status],
+        [*manifest_outputs, args.manifest, args.status],
         metrics,
         failures,
         status == "PASS",

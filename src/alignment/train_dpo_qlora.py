@@ -10,7 +10,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--model-key", default="qwen3_4b")
     parser.add_argument("--base-adapter", required=True)
-    parser.add_argument("--train-file", required=True)
+    parser.add_argument("--train-file", "--train-jsonl", dest="train_file", required=True)
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--max-steps", type=int, default=800)
     parser.add_argument("--batch-size", type=int, default=1)
